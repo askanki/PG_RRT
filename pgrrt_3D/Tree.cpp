@@ -3,7 +3,6 @@
 //
 
 #include "Tree.h"
-#include "Utils.h"
 #include <math.h>
 #include <algorithm>
 #include <iostream>
@@ -22,8 +21,8 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
     special_nodes.push_back(canvas_->start.first);
 //    gauss1 = new Gaussian(5., 10.f, 0.5);
 //    gauss2 = new Gaussian(std::fmod(-5., 360.), 10.f,0.5);
-    gauss1 = new Gaussian(35., 10.f, 0.5);
-    gauss2 = new Gaussian(25, 10.f,0.5);
+    gauss1 = new Gaussian(35., 10.f, 0.5, 0);
+    gauss2 = new Gaussian(25, 10.f,0.5, 0);
     std::vector<Gaussian> gauss_;
     gauss_.emplace_back(*gauss1); gauss_.emplace_back(*gauss2);
 //    GMM start_gmm(gauss_, true);
@@ -198,28 +197,28 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
 }
 
 //AG: return value: is_sucessfull, node, yaw_direction
-std::tuple<bool, Node, float> Tree::make_action(Node node, float sampled_direction){
+std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gaussian> sampled_direction){
     if(actions.find(node) != actions.end()){
         std::vector<float> actions_ = actions[node];
         if(actions_.empty()){
             actions.erase(node);
             // TODO:: change this
-            return std::tuple(false, std::make_tuple(-1, -1), -1);
+            return std::tuple(false, std::make_tuple(-1, -1, -1), -1);
         }
         float closest = actions_[0];
         for(auto action: actions_){
-            if(Utils::dist_mean(action, sampled_direction) < Utils::dist_mean(closest, sampled_direction)){
+            if(Utils::dist_mean(action, sampled_direction.first) < Utils::dist_mean(closest, sampled_direction.first)){
                 closest = action;
             }
         }
         Node sample = Utils::extend(node, canvas->end.first, step_size);
-        sample = Utils::rotate(node, sample, closest);
+        sample = Utils::rotate(node, sample, closest, sampled_direction.second.axis);
         remove_action(node, closest);
         rejected_yaws[node].insert(closest);
         return std::make_tuple(true, sample, closest);
     }
     // TODO:: change this
-    return std::make_tuple(false, std::make_tuple(-1, -1), -1);
+    return std::make_tuple(false, std::make_tuple(-1, -1, -1), -1);
 }
 
 //AG: Remove the action from the current node which is used to generate a new sample
@@ -337,7 +336,7 @@ std::tuple<Node, Node, float, Gaussian> Tree::pick_random(int &iterations) {
         int random_index = ceil(dis(generator));
         Node parent_ = special_nodes[random_index];
         std::pair<float , Gaussian> sample_direction = prob_dist[parent_].sample();
-        std::tuple<bool, Node, float> new_Node = make_action(parent_, sample_direction.first);
+        std::tuple<bool, Node, float> new_Node = make_action(parent_, sample_direction);
         if(std::get<0>(new_Node)){
             return std::make_tuple(parent_, std::get<1>(new_Node), std::get<2>(new_Node), sample_direction.second);
         } else{

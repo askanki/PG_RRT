@@ -7,7 +7,8 @@
 
 #include <tuple>
 #include <vector>
-#define Node std::tuple<float, float>
+#include <string>
+#include "Utils.h"
 
 class Canvas {
 
@@ -18,7 +19,7 @@ public:
     std::vector <Node> obs_points;
     void add_obstacles(std::vector <Node> obs);
     void add_obs_from_file(std::string path_to_file);
-    bool check_collision(std::tuple<float, float> node1, std::tuple<float, float> node2, float step_size);
+    bool check_collision(Node node1, Node node2, float step_size);
 };
 
 

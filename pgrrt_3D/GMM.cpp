@@ -53,8 +53,9 @@ GMM::GMM() {
 
 }
 
-Gaussian::Gaussian(float mean_, float variance_, float probability_) {
+Gaussian::Gaussian(float mean_, float variance_, float probability_, float axis_) {
     mean = mean_;
     variance = variance_;
     probability = probability_;
+    axis = axis_;
 }

@@ -8,10 +8,13 @@
 Node Utils::extend(Node start, Node end, float step_size) {
     float distance = eul_dist(start, end);
     float ratio = step_size/distance;
-    return std::make_tuple((1 - ratio) * std::get<0>(start) + ratio * std::get<0>(end), ((1 - ratio) * std::get<1>(start) + ratio * std::get<1>(end)));
+    return std::make_tuple((1 - ratio) * std::get<0>(start) + ratio * std::get<0>(end),
+            ((1 - ratio) * std::get<1>(start) + ratio * std::get<1>(end)),
+            ((1 - ratio) * std::get<2>(start) + ratio * std::get<2>(end)));
 }
 
-Node Utils::rotate(Node root, Node node, float angle){
+Node Utils::rotate(Node root, Node node, float angle, float axis){
+    // roll, yaw, pitch
     angle *= M_PI / 180;
     float ox = std::get<0>(root);
     float oy = std::get<1>(root);
@@ -19,7 +22,7 @@ Node Utils::rotate(Node root, Node node, float angle){
     float py = std::get<1>(node);
     float qx = ox + cos(angle) * (px - ox) - sin(angle) * (py - oy);
     float qy = oy + sin(angle) * (px - ox) + cos(angle) * (py - oy);
-    return std::make_tuple(qx, qy);
+    return std::make_tuple(qx, qy, 0);
 }
 
 float Utils::eul_dist(Node node1, Node node2) {

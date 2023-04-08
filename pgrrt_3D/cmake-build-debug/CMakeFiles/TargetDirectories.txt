@@ -1,3 +1,0 @@
-/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/cmake-build-debug/CMakeFiles/pgrrt.dir
-/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/cmake-build-debug/CMakeFiles/edit_cache.dir

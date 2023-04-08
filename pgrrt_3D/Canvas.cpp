@@ -10,7 +10,7 @@
 #include "Canvas.h"
 #include "Utils.h"
 
-bool Canvas::check_collision(std::tuple<float, float> node1, std::tuple<float, float> node2, float step_size) {
+bool Canvas::check_collision(Node node1, Node node2, float step_size) {
     for(auto obs: obs_points){
         if(Utils::eul_dist(node1, obs) < step_size/pow(2, .5)){
             return true;
@@ -19,7 +19,7 @@ bool Canvas::check_collision(std::tuple<float, float> node1, std::tuple<float, f
     return Utils::eul_dist(node1, node2) < step_size/pow(2, .5);
 }
 
-void Canvas::add_obstacles(std::vector<Node > obs) {
+void Canvas::add_obstacles(std::vector<Node> obs) {
     obs_points = obs;
 }
 
@@ -36,7 +36,7 @@ void Canvas::add_obs_from_file(std::string path_to_file) {
             std::copy(std::istream_iterator<float>(line_),
                       std::istream_iterator<float>(),
                       std::back_inserter(v));
-            obs_points.emplace_back(std::make_tuple(v[0], v[1]));
+            obs_points.emplace_back(v[0], v[1], v[2]);
         }
         obs_file.close();
     }

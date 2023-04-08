@@ -8,10 +8,11 @@
 #include <vector>
 
 struct Gaussian{
-    Gaussian(float mean_, float variance_, float probability_);
+    Gaussian(float mean_, float variance_, float probability_, float axis_);
     float mean;
     float variance;
     float probability;
+    float axis;
     float probability_start{};
     float probability_end{};
 };
