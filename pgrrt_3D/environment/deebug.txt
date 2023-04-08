@@ -1,0 +1,3574 @@
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:06:21.973825
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:06:25.108015
+Iterations:  3700
+Nodes:  1376
+3702.0
+Min calls:  3702
+Max calls:  3702
+Min iter:  3700
+Max iter:  3700
+Min nodes:  1376
+Max nodes:  1376
+Avg iter:  3700.0 0
+Avg nodes:  1376.0 0
+Min time:  3.13419
+Max time:  3.13419
+Avg time diff:  3.13419
+Avg SubOpt cost:  61.587883592403514
+WITH
+Start time-stamp:  2020-03-02 09:06:25.124188
+Resolution  Angle:  90
+No path
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:06:42.178282
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:06:46.027883
+Iterations:  4456
+Nodes:  1468
+4458.0
+Min calls:  4458
+Max calls:  4458
+Min iter:  4456
+Max iter:  4456
+Min nodes:  1468
+Max nodes:  1468
+Avg iter:  4456.0 0
+Avg nodes:  1468.0 0
+Min time:  3.849601
+Max time:  3.849601
+Avg time diff:  3.849601
+Avg SubOpt cost:  58.08542768636955
+WITH
+Start time-stamp:  2020-03-02 09:06:46.048801
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:06:49.352979
+Iterations:  3878
+Nodes:  1384
+4169.0
+Min calls:  3880
+Max calls:  4458
+Min iter:  3878
+Max iter:  4456
+Min nodes:  1384
+Max nodes:  1468
+Avg iter:  4167.0 1
+Avg nodes:  1426.0 1
+Min time:  3.304178
+Max time:  3.849601
+Avg time diff:  3.5768895
+Avg SubOpt cost:  58.86578471993826
+WITH
+Start time-stamp:  2020-03-02 09:06:49.356945
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:06:52.773822
+Iterations:  4068
+Nodes:  1394
+4136.0
+Min calls:  3880
+Max calls:  8528
+Min iter:  3878
+Max iter:  4456
+Min nodes:  1384
+Max nodes:  1468
+Avg iter:  4134.0 2
+Avg nodes:  1415.3333333333333 2
+Min time:  3.304178
+Max time:  3.849601
+Avg time diff:  3.523552
+Avg SubOpt cost:  60.82332520881854
+WITH
+Start time-stamp:  2020-03-02 09:06:52.790961
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:06:55.972801
+Iterations:  3764
+Nodes:  1381
+4043.5
+Min calls:  3880
+Max calls:  8528
+Min iter:  3764
+Max iter:  4456
+Min nodes:  1381
+Max nodes:  1468
+Avg iter:  4041.5 3
+Avg nodes:  1406.75 3
+Min time:  3.18184
+Max time:  3.849601
+Avg time diff:  3.4381239999999997
+Avg SubOpt cost:  60.25947891675065
+WITH
+Start time-stamp:  2020-03-02 09:06:55.991348
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:06:57.619805
+Iterations:  2480
+Nodes:  883
+3731.2
+Min calls:  3880
+Max calls:  11010
+Min iter:  2480
+Max iter:  4456
+Min nodes:  883
+Max nodes:  1468
+Avg iter:  3729.2 4
+Avg nodes:  1302.0 4
+Min time:  1.628457
+Max time:  3.849601
+Avg time diff:  3.0761905999999994
+Avg SubOpt cost:  60.6488980111571
+WITH
+Start time-stamp:  2020-03-02 09:06:57.638745
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:07:00.641809
+Iterations:  3640
+Nodes:  1359
+3716.3333333333335
+Min calls:  3880
+Max calls:  11288
+Min iter:  2480
+Max iter:  4456
+Min nodes:  883
+Max nodes:  1468
+Avg iter:  3714.3333333333335 5
+Avg nodes:  1311.5 5
+Min time:  1.628457
+Max time:  3.849601
+Avg time diff:  3.0640028333333333
+Avg SubOpt cost:  60.90778056060975
+WITH
+Start time-stamp:  2020-03-02 09:07:00.666155
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:07:04.050755
+Iterations:  3932
+Nodes:  1392
+3747.4285714285716
+Min calls:  3880
+Max calls:  14944
+Min iter:  2480
+Max iter:  4456
+Min nodes:  883
+Max nodes:  1468
+Avg iter:  3745.4285714285716 6
+Avg nodes:  1323.0 6
+Min time:  1.628457
+Max time:  3.849601
+Avg time diff:  3.1098024285714283
+Avg SubOpt cost:  60.80707889250635
+WITH
+Start time-stamp:  2020-03-02 09:07:04.068860
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:07:07.679748
+Iterations:  4096
+Nodes:  1453
+3791.25
+Min calls:  3880
+Max calls:  15386
+Min iter:  2480
+Max iter:  4456
+Min nodes:  883
+Max nodes:  1468
+Avg iter:  3789.25 7
+Avg nodes:  1339.25 7
+Min time:  1.628457
+Max time:  3.849601
+Avg time diff:  3.1724381249999998
+Avg SubOpt cost:  60.59335597056995
+WITH
+Start time-stamp:  2020-03-02 09:07:07.698592
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:07:11.631810
+Iterations:  4566
+Nodes:  1464
+3877.5555555555557
+Min calls:  3880
+Max calls:  19512
+Min iter:  2480
+Max iter:  4566
+Min nodes:  883
+Max nodes:  1468
+Avg iter:  3875.5555555555557 8
+Avg nodes:  1353.111111111111 8
+Min time:  1.628457
+Max time:  3.933218
+Avg time diff:  3.256969222222222
+Avg SubOpt cost:  60.54900329643917
+WITH
+Start time-stamp:  2020-03-02 09:07:11.650803
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:07:15.828632
+Iterations:  4622
+Nodes:  1454
+3952.2
+Min calls:  3880
+Max calls:  20010
+Min iter:  2480
+Max iter:  4622
+Min nodes:  883
+Max nodes:  1468
+Avg iter:  3950.2 9
+Avg nodes:  1363.2 9
+Min time:  1.628457
+Max time:  4.177829
+Avg time diff:  3.3490552
+Avg SubOpt cost:  60.65560689744791
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:07:59.149311
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:03.533328
+Iterations:  5164
+Nodes:  1375
+5166.0
+Min calls:  5166
+Max calls:  5166
+Min iter:  5164
+Max iter:  5164
+Min nodes:  1375
+Max nodes:  1375
+Avg iter:  5164.0 0
+Avg nodes:  1375.0 0
+Min time:  4.384017
+Max time:  4.384017
+Avg time diff:  4.384017
+Avg SubOpt cost:  61.69295538850956
+WITH
+Start time-stamp:  2020-03-02 09:08:03.575622
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:05.852902
+Iterations:  2920
+Nodes:  803
+4044.0
+Min calls:  2922
+Max calls:  5166
+Min iter:  2920
+Max iter:  5164
+Min nodes:  803
+Max nodes:  1375
+Avg iter:  4042.0 1
+Avg nodes:  1089.0 1
+Min time:  2.27728
+Max time:  4.384017
+Avg time diff:  3.3306485
+Avg SubOpt cost:  60.44531260218983
+WITH
+Start time-stamp:  2020-03-02 09:08:05.872519
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:10.725260
+Iterations:  5758
+Nodes:  1394
+4616.0
+Min calls:  2922
+Max calls:  10926
+Min iter:  2920
+Max iter:  5758
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4614.0 2
+Avg nodes:  1190.6666666666667 2
+Min time:  2.27728
+Max time:  4.852741
+Avg time diff:  3.8380126666666663
+Avg SubOpt cost:  60.18830324517188
+WITH
+Start time-stamp:  2020-03-02 09:08:10.742597
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:15.726284
+Iterations:  5802
+Nodes:  1379
+4913.0
+Min calls:  2922
+Max calls:  10926
+Min iter:  2920
+Max iter:  5802
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4911.0 3
+Avg nodes:  1237.75 3
+Min time:  2.27728
+Max time:  4.983687
+Avg time diff:  4.12443125
+Avg SubOpt cost:  59.686578770817604
+WITH
+Start time-stamp:  2020-03-02 09:08:15.750772
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:20.067828
+Iterations:  4304
+Nodes:  1221
+4791.6
+Min calls:  2922
+Max calls:  15232
+Min iter:  2920
+Max iter:  5802
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4789.6 4
+Avg nodes:  1234.4 4
+Min time:  2.27728
+Max time:  4.983687
+Avg time diff:  4.1629562
+Avg SubOpt cost:  59.98140237247026
+WITH
+Start time-stamp:  2020-03-02 09:08:20.085679
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:24.105749
+Iterations:  4876
+Nodes:  1335
+4806.0
+Min calls:  2922
+Max calls:  15232
+Min iter:  2920
+Max iter:  5802
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4804.0 5
+Avg nodes:  1251.1666666666667 5
+Min time:  2.27728
+Max time:  4.983687
+Avg time diff:  4.139141833333333
+Avg SubOpt cost:  60.834356845220874
+WITH
+Start time-stamp:  2020-03-02 09:08:24.124492
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:28.205752
+Iterations:  4958
+Nodes:  1356
+4828.0
+Min calls:  2922
+Max calls:  20192
+Min iter:  2920
+Max iter:  5802
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4826.0 6
+Avg nodes:  1266.142857142857 6
+Min time:  2.27728
+Max time:  4.983687
+Avg time diff:  4.130873
+Avg SubOpt cost:  60.091866410469024
+WITH
+Start time-stamp:  2020-03-02 09:08:28.224483
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:32.616721
+Iterations:  5320
+Nodes:  1313
+4889.75
+Min calls:  2922
+Max calls:  20192
+Min iter:  2920
+Max iter:  5802
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4887.75 7
+Avg nodes:  1272.0 7
+Min time:  2.27728
+Max time:  4.983687
+Avg time diff:  4.163543625
+Avg SubOpt cost:  60.16876784889334
+WITH
+Start time-stamp:  2020-03-02 09:08:32.636749
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:37.305664
+Iterations:  5584
+Nodes:  1374
+4967.111111111111
+Min calls:  2922
+Max calls:  25778
+Min iter:  2920
+Max iter:  5802
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4965.111111111111 8
+Avg nodes:  1283.3333333333333 8
+Min time:  2.27728
+Max time:  4.983687
+Avg time diff:  4.219696
+Avg SubOpt cost:  60.166915892088824
+WITH
+Start time-stamp:  2020-03-02 09:08:37.325275
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:08:40.985657
+Iterations:  4700
+Nodes:  1209
+4940.6
+Min calls:  2922
+Max calls:  25778
+Min iter:  2920
+Max iter:  5802
+Min nodes:  803
+Max nodes:  1394
+Avg iter:  4938.6 9
+Avg nodes:  1275.9 9
+Min time:  2.27728
+Max time:  4.983687
+Avg time diff:  4.1637645999999995
+Avg SubOpt cost:  59.76405228539973
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:09:24.063701
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:09:29.367803
+Iterations:  6356
+Nodes:  1549
+6358.0
+Min calls:  6358
+Max calls:  6358
+Min iter:  6356
+Max iter:  6356
+Min nodes:  1549
+Max nodes:  1549
+Avg iter:  6356.0 0
+Avg nodes:  1549.0 0
+Min time:  5.304102
+Max time:  5.304102
+Avg time diff:  5.304102
+Avg SubOpt cost:  65.11611741265753
+WITH
+Start time-stamp:  2020-03-02 09:09:29.408536
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:09:35.473799
+Iterations:  6714
+Nodes:  1624
+6537.0
+Min calls:  6358
+Max calls:  6716
+Min iter:  6356
+Max iter:  6714
+Min nodes:  1549
+Max nodes:  1624
+Avg iter:  6535.0 1
+Avg nodes:  1586.5 1
+Min time:  5.304102
+Max time:  6.065263
+Avg time diff:  5.6846825
+Avg SubOpt cost:  62.64678457856067
+WITH
+Start time-stamp:  2020-03-02 09:09:35.493293
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:09:40.186892
+Iterations:  5432
+Nodes:  1486
+6169.333333333333
+Min calls:  6358
+Max calls:  11792
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1486
+Max nodes:  1624
+Avg iter:  6167.333333333333 2
+Avg nodes:  1553.0 2
+Min time:  4.693599
+Max time:  6.065263
+Avg time diff:  5.354321333333334
+Avg SubOpt cost:  64.13259958368305
+WITH
+Start time-stamp:  2020-03-02 09:09:40.204960
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:09:46.136893
+Iterations:  6526
+Nodes:  1641
+6259.0
+Min calls:  6358
+Max calls:  13244
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1486
+Max nodes:  1641
+Avg iter:  6257.0 3
+Avg nodes:  1575.0 3
+Min time:  4.693599
+Max time:  6.065263
+Avg time diff:  5.49872425
+Avg SubOpt cost:  64.76459579594831
+WITH
+Start time-stamp:  2020-03-02 09:09:46.161416
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:09:53.668479
+Iterations:  6526
+Nodes:  1616
+6312.8
+Min calls:  6358
+Max calls:  18320
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1486
+Max nodes:  1641
+Avg iter:  6310.8 4
+Avg nodes:  1583.2 4
+Min time:  4.693599
+Max time:  7.507063
+Avg time diff:  5.900392
+Avg SubOpt cost:  63.551719162691086
+WITH
+Start time-stamp:  2020-03-02 09:09:53.685235
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:09:58.846784
+Iterations:  5768
+Nodes:  1543
+6222.333333333333
+Min calls:  6358
+Max calls:  19014
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1486
+Max nodes:  1641
+Avg iter:  6220.333333333333 5
+Avg nodes:  1576.5 5
+Min time:  4.693599
+Max time:  7.507063
+Avg time diff:  5.777251499999999
+Avg SubOpt cost:  64.15693206366548
+WITH
+Start time-stamp:  2020-03-02 09:09:58.866306
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:10:04.624874
+Iterations:  5862
+Nodes:  1586
+6171.142857142857
+Min calls:  6358
+Max calls:  24184
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1486
+Max nodes:  1641
+Avg iter:  6169.142857142857 6
+Avg nodes:  1577.857142857143 6
+Min time:  4.693599
+Max time:  7.507063
+Avg time diff:  5.774582428571429
+Avg SubOpt cost:  63.6696796292956
+WITH
+Start time-stamp:  2020-03-02 09:10:04.644444
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:10:10.706785
+Iterations:  6410
+Nodes:  1629
+6201.25
+Min calls:  6358
+Max calls:  25426
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1486
+Max nodes:  1641
+Avg iter:  6199.25 7
+Avg nodes:  1584.25 7
+Min time:  4.693599
+Max time:  7.507063
+Avg time diff:  5.810552250000001
+Avg SubOpt cost:  63.36536066587691
+WITH
+Start time-stamp:  2020-03-02 09:10:10.725299
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:10:16.149169
+Iterations:  6020
+Nodes:  1580
+6181.333333333333
+Min calls:  6358
+Max calls:  30206
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1486
+Max nodes:  1641
+Avg iter:  6179.333333333333 8
+Avg nodes:  1583.7777777777778 8
+Min time:  4.693599
+Max time:  7.507063
+Avg time diff:  5.767587555555556
+Avg SubOpt cost:  63.50924853401011
+WITH
+Start time-stamp:  2020-03-02 09:10:16.180824
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:10:21.346896
+Iterations:  5820
+Nodes:  1474
+6145.4
+Min calls:  6358
+Max calls:  31248
+Min iter:  5432
+Max iter:  6714
+Min nodes:  1474
+Max nodes:  1641
+Avg iter:  6143.4 9
+Avg nodes:  1572.8 9
+Min time:  4.693599
+Max time:  7.507063
+Avg time diff:  5.707436
+Avg SubOpt cost:  63.33207654744259
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:10:46.579347
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:11:22.512774
+Iterations:  18228
+Nodes:  4590
+18230.0
+Min calls:  18230
+Max calls:  18230
+Min iter:  18228
+Max iter:  18228
+Min nodes:  4590
+Max nodes:  4590
+Avg iter:  18228.0 0
+Avg nodes:  4590.0 0
+Min time:  35.933427
+Max time:  35.933427
+Avg time diff:  35.933427
+Avg SubOpt cost:  104.07272515506659
+WITH
+Start time-stamp:  2020-03-02 09:11:22.551838
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:12:00.445696
+Iterations:  18548
+Nodes:  4692
+18390.0
+Min calls:  18230
+Max calls:  18550
+Min iter:  18228
+Max iter:  18548
+Min nodes:  4590
+Max nodes:  4692
+Avg iter:  18388.0 1
+Avg nodes:  4641.0 1
+Min time:  35.933427
+Max time:  37.893858
+Avg time diff:  36.9136425
+Avg SubOpt cost:  105.6067461323918
+WITH
+Start time-stamp:  2020-03-02 09:12:53.211831
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:13:33.045859
+Iterations:  19614
+Nodes:  4781
+18798.666666666668
+Min calls:  18230
+Max calls:  37846
+Min iter:  18228
+Max iter:  19614
+Min nodes:  4590
+Max nodes:  4781
+Avg iter:  18796.666666666668 2
+Avg nodes:  4687.666666666667 2
+Min time:  35.933427
+Max time:  39.834028
+Avg time diff:  37.88710433333333
+Avg SubOpt cost:  103.78353125392842
+WITH
+Start time-stamp:  2020-03-02 09:13:33.064849
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:14:10.345774
+Iterations:  18902
+Nodes:  4718
+18825.0
+Min calls:  18230
+Max calls:  37846
+Min iter:  18228
+Max iter:  19614
+Min nodes:  4590
+Max nodes:  4781
+Avg iter:  18823.0 3
+Avg nodes:  4695.25 3
+Min time:  35.933427
+Max time:  39.834028
+Avg time diff:  37.7355595
+Avg SubOpt cost:  102.86618687209834
+WITH
+Start time-stamp:  2020-03-02 09:14:10.370561
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:14:46.179892
+Iterations:  18240
+Nodes:  4705
+18708.4
+Min calls:  18230
+Max calls:  56088
+Min iter:  18228
+Max iter:  19614
+Min nodes:  4590
+Max nodes:  4781
+Avg iter:  18706.4 4
+Avg nodes:  4697.2 4
+Min time:  35.809331
+Max time:  39.834028
+Avg time diff:  37.3503138
+Avg SubOpt cost:  102.02115408322196
+WITH
+Start time-stamp:  2020-03-02 09:14:46.204895
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:15:22.325565
+Iterations:  18186
+Nodes:  4580
+18621.666666666668
+Min calls:  18230
+Max calls:  56088
+Min iter:  18186
+Max iter:  19614
+Min nodes:  4580
+Max nodes:  4781
+Avg iter:  18619.666666666668 5
+Avg nodes:  4677.666666666667 5
+Min time:  35.809331
+Max time:  39.834028
+Avg time diff:  37.145373166666666
+Avg SubOpt cost:  100.44820231050602
+WITH
+Start time-stamp:  2020-03-02 09:15:22.343046
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:15:56.348972
+Iterations:  17964
+Nodes:  4460
+18528.0
+Min calls:  18230
+Max calls:  74054
+Min iter:  17964
+Max iter:  19614
+Min nodes:  4460
+Max nodes:  4781
+Avg iter:  18526.0 6
+Avg nodes:  4646.571428571428 6
+Min time:  34.005926
+Max time:  39.834028
+Avg time diff:  36.69688071428572
+Avg SubOpt cost:  100.62707232503918
+WITH
+Start time-stamp:  2020-03-02 09:15:56.366907
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:16:37.401783
+Iterations:  19300
+Nodes:  4779
+18624.75
+Min calls:  18230
+Max calls:  74944
+Min iter:  17964
+Max iter:  19614
+Min nodes:  4460
+Max nodes:  4781
+Avg iter:  18622.75 7
+Avg nodes:  4663.125 7
+Min time:  34.005926
+Max time:  41.034876
+Avg time diff:  37.239130125
+Avg SubOpt cost:  101.13472569032831
+WITH
+Start time-stamp:  2020-03-02 09:16:37.419885
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:17:15.248813
+Iterations:  18506
+Nodes:  4650
+18611.777777777777
+Min calls:  18230
+Max calls:  92562
+Min iter:  17964
+Max iter:  19614
+Min nodes:  4460
+Max nodes:  4781
+Avg iter:  18609.777777777777 8
+Avg nodes:  4661.666666666667 8
+Min time:  34.005926
+Max time:  41.034876
+Avg time diff:  37.304663222222224
+Avg SubOpt cost:  101.02973121030367
+WITH
+Start time-stamp:  2020-03-02 09:17:15.267849
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:17:52.126730
+Iterations:  19066
+Nodes:  4672
+18657.4
+Min calls:  18230
+Max calls:  94012
+Min iter:  17964
+Max iter:  19614
+Min nodes:  4460
+Max nodes:  4781
+Avg iter:  18655.4 9
+Avg nodes:  4662.7 9
+Min time:  34.005926
+Max time:  41.034876
+Avg time diff:  37.260085000000004
+Avg SubOpt cost:  100.79435435711937
+Traceback (most recent call last):
+  File "rgt_0.py", line 544, in <module>
+    plt.scatter(nodes[0], nodes[1], color="blue", marker="o", alpha=.5, s=5)
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\pyplot.py", line 3475, in scatter
+    edgecolors=edgecolors, data=data, **kwargs)
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\__init__.py", line 1867, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\axes\_axes.py", line 4364, in scatter
+    self.autoscale_view()
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\axes\_base.py", line 2476, in autoscale_view
+    stickies = [artist.sticky_edges for artist in self.get_children()]
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\axes\_base.py", line 2476, in <listcomp>
+    stickies = [artist.sticky_edges for artist in self.get_children()]
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\artist.py", line 961, in sticky_edges
+    return self._sticky_edges
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:18:19.533484
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:18:43.305790
+Iterations:  12558
+Nodes:  4345
+12560.0
+Min calls:  12560
+Max calls:  12560
+Min iter:  12558
+Max iter:  12558
+Min nodes:  4345
+Max nodes:  4345
+Avg iter:  12558.0 0
+Avg nodes:  4345.0 0
+Min time:  23.772306
+Max time:  23.772306
+Avg time diff:  23.772306
+Avg SubOpt cost:  105.09510758661217
+WITH
+Start time-stamp:  2020-03-02 09:18:43.347654
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:19:07.579821
+Iterations:  12532
+Nodes:  4337
+12547.0
+Min calls:  12534
+Max calls:  12560
+Min iter:  12532
+Max iter:  12558
+Min nodes:  4337
+Max nodes:  4345
+Avg iter:  12545.0 1
+Avg nodes:  4341.0 1
+Min time:  23.772306
+Max time:  24.232167
+Avg time diff:  24.002236500000002
+Avg SubOpt cost:  108.41045618805242
+WITH
+Start time-stamp:  2020-03-02 09:19:07.604036
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:19:31.590736
+Iterations:  12590
+Nodes:  4345
+12562.0
+Min calls:  12534
+Max calls:  25152
+Min iter:  12532
+Max iter:  12590
+Min nodes:  4337
+Max nodes:  4345
+Avg iter:  12560.0 2
+Avg nodes:  4342.333333333333 2
+Min time:  23.772306
+Max time:  24.232167
+Avg time diff:  23.997057666666667
+Avg SubOpt cost:  108.30924312005577
+WITH
+Start time-stamp:  2020-03-02 09:19:31.610155
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:19:55.340525
+Iterations:  11694
+Nodes:  4022
+12345.5
+Min calls:  12534
+Max calls:  25152
+Min iter:  11694
+Max iter:  12590
+Min nodes:  4022
+Max nodes:  4345
+Avg iter:  12343.5 3
+Avg nodes:  4262.25 3
+Min time:  23.73037
+Max time:  24.232167
+Avg time diff:  23.93038575
+Avg SubOpt cost:  107.27146409348047
+WITH
+Start time-stamp:  2020-03-02 09:19:55.358548
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:20:21.744758
+Iterations:  12586
+Nodes:  4381
+12394.0
+Min calls:  12534
+Max calls:  37740
+Min iter:  11694
+Max iter:  12590
+Min nodes:  4022
+Max nodes:  4381
+Avg iter:  12392.0 4
+Avg nodes:  4286.0 4
+Min time:  23.73037
+Max time:  26.38621
+Avg time diff:  24.4215506
+Avg SubOpt cost:  105.84808396262206
+WITH
+Start time-stamp:  2020-03-02 09:20:21.765653
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:20:46.374831
+Iterations:  12444
+Nodes:  4308
+12402.666666666666
+Min calls:  12534
+Max calls:  37740
+Min iter:  11694
+Max iter:  12590
+Min nodes:  4022
+Max nodes:  4381
+Avg iter:  12400.666666666666 5
+Avg nodes:  4289.666666666667 5
+Min time:  23.73037
+Max time:  26.38621
+Avg time diff:  24.45282183333333
+Avg SubOpt cost:  105.82594900150211
+WITH
+Start time-stamp:  2020-03-02 09:20:46.393801
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:21:12.374989
+Iterations:  13072
+Nodes:  4363
+12498.57142857143
+Min calls:  12534
+Max calls:  50814
+Min iter:  11694
+Max iter:  13072
+Min nodes:  4022
+Max nodes:  4381
+Avg iter:  12496.57142857143 6
+Avg nodes:  4300.142857142857 6
+Min time:  23.73037
+Max time:  26.38621
+Avg time diff:  24.671159857142857
+Avg SubOpt cost:  106.29718821086831
+WITH
+Start time-stamp:  2020-03-02 09:21:12.394042
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:21:39.955807
+Iterations:  12606
+Nodes:  4332
+12512.25
+Min calls:  12534
+Max calls:  50814
+Min iter:  11694
+Max iter:  13072
+Min nodes:  4022
+Max nodes:  4381
+Avg iter:  12510.25 7
+Avg nodes:  4304.125 7
+Min time:  23.73037
+Max time:  27.561765
+Avg time diff:  25.0324855
+Avg SubOpt cost:  106.71194361501855
+WITH
+Start time-stamp:  2020-03-02 09:21:39.974757
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:22:05.880758
+Iterations:  12990
+Nodes:  4415
+12565.555555555555
+Min calls:  12534
+Max calls:  63806
+Min iter:  11694
+Max iter:  13072
+Min nodes:  4022
+Max nodes:  4415
+Avg iter:  12563.555555555555 8
+Avg nodes:  4316.444444444444 8
+Min time:  23.73037
+Max time:  27.561765
+Avg time diff:  25.12954277777778
+Avg SubOpt cost:  106.65342559650144
+WITH
+Start time-stamp:  2020-03-02 09:22:05.906335
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:22:31.022680
+Iterations:  12150
+Nodes:  4330
+12524.2
+Min calls:  12534
+Max calls:  63806
+Min iter:  11694
+Max iter:  13072
+Min nodes:  4022
+Max nodes:  4415
+Avg iter:  12522.2 9
+Avg nodes:  4317.8 9
+Min time:  23.73037
+Max time:  27.561765
+Avg time diff:  25.128223
+Avg SubOpt cost:  106.20781318027198
+Traceback (most recent call last):
+  File "rgt_0.py", line 546, in <module>
+    plt.scatter(nodes[0], nodes[1], color="red", marker="o", alpha=.5, s=5)
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\pyplot.py", line 3475, in scatter
+    edgecolors=edgecolors, data=data, **kwargs)
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\__init__.py", line 1867, in inner
+    return func(ax, *args, **kwargs)
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\axes\_axes.py", line 4363, in scatter
+    self.add_collection(collection)
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\axes\_base.py", line 1925, in add_collection
+    self.update_datalim(collection.get_datalim(self.transData))
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\matplotlib\collections.py", line 207, in get_datalim
+    result = mpath.get_path_collection_extents(
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:23:00.484110
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:23:31.412219
+Iterations:  15910
+Nodes:  4115
+15912.0
+Min calls:  15912
+Max calls:  15912
+Min iter:  15910
+Max iter:  15910
+Min nodes:  4115
+Max nodes:  4115
+Avg iter:  15910.0 0
+Avg nodes:  4115.0 0
+Min time:  30.928109
+Max time:  30.928109
+Avg time diff:  30.928109
+Avg SubOpt cost:  101.6420967268009
+WITH
+Start time-stamp:  2020-03-02 09:23:31.451665
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:24:05.301017
+Iterations:  16368
+Nodes:  4174
+16141.0
+Min calls:  15912
+Max calls:  16370
+Min iter:  15910
+Max iter:  16368
+Min nodes:  4115
+Max nodes:  4174
+Avg iter:  16139.0 1
+Avg nodes:  4144.5 1
+Min time:  30.928109
+Max time:  33.849352
+Avg time diff:  32.3887305
+Avg SubOpt cost:  101.66779114022039
+WITH
+Start time-stamp:  2020-03-02 09:24:05.320196
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:24:33.451742
+Iterations:  16032
+Nodes:  4043
+16105.333333333334
+Min calls:  15912
+Max calls:  31946
+Min iter:  15910
+Max iter:  16368
+Min nodes:  4043
+Max nodes:  4174
+Avg iter:  16103.333333333334 2
+Avg nodes:  4110.666666666667 2
+Min time:  28.131546
+Max time:  33.849352
+Avg time diff:  30.969669
+Avg SubOpt cost:  100.49447946628594
+WITH
+Start time-stamp:  2020-03-02 09:24:33.473396
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:25:03.923858
+Iterations:  15898
+Nodes:  4072
+16054.0
+Min calls:  15912
+Max calls:  32270
+Min iter:  15898
+Max iter:  16368
+Min nodes:  4043
+Max nodes:  4174
+Avg iter:  16052.0 3
+Avg nodes:  4101.0 3
+Min time:  28.131546
+Max time:  33.849352
+Avg time diff:  30.83986725
+Avg SubOpt cost:  100.3882384805774
+WITH
+Start time-stamp:  2020-03-02 09:25:03.943805
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:25:35.857547
+Iterations:  16590
+Nodes:  4211
+16161.6
+Min calls:  15912
+Max calls:  48538
+Min iter:  15898
+Max iter:  16590
+Min nodes:  4043
+Max nodes:  4211
+Avg iter:  16159.6 4
+Avg nodes:  4123.0 4
+Min time:  28.131546
+Max time:  33.849352
+Avg time diff:  31.0546422
+Avg SubOpt cost:  101.24852930807194
+WITH
+Start time-stamp:  2020-03-02 09:25:35.875794
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:26:06.138872
+Iterations:  16300
+Nodes:  4115
+16185.0
+Min calls:  15912
+Max calls:  48572
+Min iter:  15898
+Max iter:  16590
+Min nodes:  4043
+Max nodes:  4211
+Avg iter:  16183.0 5
+Avg nodes:  4121.666666666667 5
+Min time:  28.131546
+Max time:  33.849352
+Avg time diff:  30.922714833333334
+Avg SubOpt cost:  101.57352588126334
+WITH
+Start time-stamp:  2020-03-02 09:26:06.156986
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:26:34.072617
+Iterations:  15180
+Nodes:  3976
+16041.714285714286
+Min calls:  15912
+Max calls:  63720
+Min iter:  15180
+Max iter:  16590
+Min nodes:  3976
+Max nodes:  4211
+Avg iter:  16039.714285714286 6
+Avg nodes:  4100.857142857143 6
+Min time:  27.915631
+Max time:  33.849352
+Avg time diff:  30.493131428571427
+Avg SubOpt cost:  101.66688407960979
+WITH
+Start time-stamp:  2020-03-02 09:26:34.092571
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:26:59.394512
+Iterations:  14754
+Nodes:  3846
+15881.0
+Min calls:  15912
+Max calls:  63720
+Min iter:  14754
+Max iter:  16590
+Min nodes:  3846
+Max nodes:  4211
+Avg iter:  15879.0 7
+Avg nodes:  4069.0 7
+Min time:  25.301941
+Max time:  33.849352
+Avg time diff:  29.844232625
+Avg SubOpt cost:  102.35641415188388
+WITH
+Start time-stamp:  2020-03-02 09:26:59.412621
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:27:31.077713
+Iterations:  16526
+Nodes:  4087
+15952.888888888889
+Min calls:  15912
+Max calls:  80248
+Min iter:  14754
+Max iter:  16590
+Min nodes:  3846
+Max nodes:  4211
+Avg iter:  15950.888888888889 8
+Avg nodes:  4071.0 8
+Min time:  25.301941
+Max time:  33.849352
+Avg time diff:  30.046550333333332
+Avg SubOpt cost:  101.9517395953271
+WITH
+Start time-stamp:  2020-03-02 09:27:31.094394
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:27:59.009738
+Iterations:  15726
+Nodes:  4004
+15930.4
+Min calls:  15912
+Max calls:  80248
+Min iter:  14754
+Max iter:  16590
+Min nodes:  3846
+Max nodes:  4211
+Avg iter:  15928.4 9
+Avg nodes:  4064.3 9
+Min time:  25.301941
+Max time:  33.849352
+Avg time diff:  29.8334297
+Avg SubOpt cost:  101.41512726960825
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:30:22.295743
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:30:41.264674
+Iterations:  10956
+Nodes:  3943
+10958.0
+Min calls:  10958
+Max calls:  10958
+Min iter:  10956
+Max iter:  10956
+Min nodes:  3943
+Max nodes:  3943
+Avg iter:  10956.0 0
+Avg nodes:  3943.0 0
+Min time:  18.968931
+Max time:  18.968931
+Avg time diff:  18.968931
+Avg SubOpt cost:  234.1911308109816
+WITH
+Start time-stamp:  2020-03-02 09:30:41.303768
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:31:00.904770
+Iterations:  11186
+Nodes:  4078
+11073.0
+Min calls:  10958
+Max calls:  11188
+Min iter:  10956
+Max iter:  11186
+Min nodes:  3943
+Max nodes:  4078
+Avg iter:  11071.0 1
+Avg nodes:  4010.5 1
+Min time:  18.968931
+Max time:  19.601002
+Avg time diff:  19.284966500000003
+Avg SubOpt cost:  236.71277536032864
+WITH
+Start time-stamp:  2020-03-02 09:31:00.928307
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:31:25.194688
+Iterations:  11012
+Nodes:  4072
+11053.333333333334
+Min calls:  10958
+Max calls:  21972
+Min iter:  10956
+Max iter:  11186
+Min nodes:  3943
+Max nodes:  4078
+Avg iter:  11051.333333333334 2
+Avg nodes:  4031.0 2
+Min time:  18.968931
+Max time:  24.266381
+Avg time diff:  20.945438
+Avg SubOpt cost:  236.68859079729938
+WITH
+Start time-stamp:  2020-03-02 09:31:25.213592
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:31:49.839919
+Iterations:  11966
+Nodes:  4381
+11282.0
+Min calls:  10958
+Max calls:  23156
+Min iter:  10956
+Max iter:  11966
+Min nodes:  3943
+Max nodes:  4381
+Avg iter:  11280.0 3
+Avg nodes:  4118.5 3
+Min time:  18.968931
+Max time:  24.626327
+Avg time diff:  21.86566025
+Avg SubOpt cost:  235.67115522711782
+WITH
+Start time-stamp:  2020-03-02 09:31:49.857765
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:32:13.191089
+Iterations:  11672
+Nodes:  4321
+11360.4
+Min calls:  10958
+Max calls:  33646
+Min iter:  10956
+Max iter:  11966
+Min nodes:  3943
+Max nodes:  4381
+Avg iter:  11358.4 4
+Avg nodes:  4159.0 4
+Min time:  18.968931
+Max time:  24.626327
+Avg time diff:  22.159193000000002
+Avg SubOpt cost:  235.3631254682487
+WITH
+Start time-stamp:  2020-03-02 09:32:13.210948
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:32:38.085970
+Iterations:  11836
+Nodes:  4377
+11440.0
+Min calls:  10958
+Max calls:  34994
+Min iter:  10956
+Max iter:  11966
+Min nodes:  3943
+Max nodes:  4381
+Avg iter:  11438.0 5
+Avg nodes:  4195.333333333333 5
+Min time:  18.968931
+Max time:  24.875022
+Avg time diff:  22.611831166666672
+Avg SubOpt cost:  234.50340543543848
+WITH
+Start time-stamp:  2020-03-02 09:32:38.110405
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:33:00.506769
+Iterations:  11724
+Nodes:  4365
+11480.857142857143
+Min calls:  10958
+Max calls:  45372
+Min iter:  10956
+Max iter:  11966
+Min nodes:  3943
+Max nodes:  4381
+Avg iter:  11478.857142857143 6
+Avg nodes:  4219.571428571428 6
+Min time:  18.968931
+Max time:  24.875022
+Avg time diff:  22.581050142857148
+Avg SubOpt cost:  235.03823960199196
+WITH
+Start time-stamp:  2020-03-02 09:33:00.531667
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:33:25.764621
+Iterations:  12108
+Nodes:  4416
+11559.5
+Min calls:  10958
+Max calls:  47104
+Min iter:  10956
+Max iter:  12108
+Min nodes:  3943
+Max nodes:  4416
+Avg iter:  11557.5 7
+Avg nodes:  4244.125 7
+Min time:  18.968931
+Max time:  25.232954
+Avg time diff:  22.912538125000005
+Avg SubOpt cost:  234.67072756829057
+WITH
+Start time-stamp:  2020-03-02 09:33:25.785633
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:33:48.681716
+Iterations:  11610
+Nodes:  4360
+11565.333333333334
+Min calls:  10958
+Max calls:  56984
+Min iter:  10956
+Max iter:  12108
+Min nodes:  3943
+Max nodes:  4416
+Avg iter:  11563.333333333334 8
+Avg nodes:  4257.0 8
+Min time:  18.968931
+Max time:  25.232954
+Avg time diff:  22.910709777777782
+Avg SubOpt cost:  234.05908201737384
+WITH
+Start time-stamp:  2020-03-02 09:33:48.701238
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 09:34:10.071905
+Iterations:  11336
+Nodes:  4204
+11542.6
+Min calls:  10958
+Max calls:  58442
+Min iter:  10956
+Max iter:  12108
+Min nodes:  3943
+Max nodes:  4416
+Avg iter:  11540.6 9
+Avg nodes:  4251.7 9
+Min time:  18.968931
+Max time:  25.232954
+Avg time diff:  22.756705500000002
+Avg SubOpt cost:  234.11189370579854
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:35:13.575351
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:35:42.785622
+Iterations:  15430
+Nodes:  4166
+15432.0
+Min calls:  15432
+Max calls:  15432
+Min iter:  15430
+Max iter:  15430
+Min nodes:  4166
+Max nodes:  4166
+Avg iter:  15430.0 0
+Avg nodes:  4166.0 0
+Min time:  29.210271
+Max time:  29.210271
+Avg time diff:  29.210271
+Avg SubOpt cost:  223.24419939629246
+WITH
+Start time-stamp:  2020-03-02 09:35:42.823923
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:36:17.136054
+Iterations:  16606
+Nodes:  4457
+16020.0
+Min calls:  15432
+Max calls:  16608
+Min iter:  15430
+Max iter:  16606
+Min nodes:  4166
+Max nodes:  4457
+Avg iter:  16018.0 1
+Avg nodes:  4311.5 1
+Min time:  29.210271
+Max time:  34.312131
+Avg time diff:  31.761201
+Avg SubOpt cost:  222.1780620992584
+WITH
+Start time-stamp:  2020-03-02 09:36:25.109006
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:36:58.448953
+Iterations:  15586
+Nodes:  4228
+15876.0
+Min calls:  15432
+Max calls:  31020
+Min iter:  15430
+Max iter:  16606
+Min nodes:  4166
+Max nodes:  4457
+Avg iter:  15874.0 2
+Avg nodes:  4283.666666666667 2
+Min time:  29.210271
+Max time:  34.312131
+Avg time diff:  32.28744966666667
+Avg SubOpt cost:  222.69708390543187
+WITH
+Start time-stamp:  2020-03-02 09:36:58.468423
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:37:29.610558
+Iterations:  15788
+Nodes:  4247
+15854.5
+Min calls:  15432
+Max calls:  32398
+Min iter:  15430
+Max iter:  16606
+Min nodes:  4166
+Max nodes:  4457
+Avg iter:  15852.5 3
+Avg nodes:  4274.5 3
+Min time:  29.210271
+Max time:  34.312131
+Avg time diff:  32.001121
+Avg SubOpt cost:  222.90933673174868
+WITH
+Start time-stamp:  2020-03-02 09:37:29.628785
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:37:56.583442
+Iterations:  15330
+Nodes:  4087
+15750.0
+Min calls:  15432
+Max calls:  46352
+Min iter:  15330
+Max iter:  16606
+Min nodes:  4087
+Max nodes:  4457
+Avg iter:  15748.0 4
+Avg nodes:  4237.0 4
+Min time:  26.954657
+Max time:  34.312131
+Avg time diff:  30.991828199999997
+Avg SubOpt cost:  222.53940451022194
+WITH
+Start time-stamp:  2020-03-02 09:37:56.602794
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:38:28.602856
+Iterations:  16846
+Nodes:  4400
+15933.0
+Min calls:  15432
+Max calls:  49246
+Min iter:  15330
+Max iter:  16846
+Min nodes:  4087
+Max nodes:  4457
+Avg iter:  15931.0 5
+Avg nodes:  4264.166666666667 5
+Min time:  26.954657
+Max time:  34.312131
+Avg time diff:  31.15986716666667
+Avg SubOpt cost:  223.73937225692347
+WITH
+Start time-stamp:  2020-03-02 09:38:28.622842
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:38:51.175146
+Iterations:  13604
+Nodes:  3900
+15600.57142857143
+Min calls:  15432
+Max calls:  59958
+Min iter:  13604
+Max iter:  16846
+Min nodes:  3900
+Max nodes:  4457
+Avg iter:  15598.57142857143 6
+Avg nodes:  4212.142857142857 6
+Min time:  22.552304
+Max time:  34.312131
+Avg time diff:  29.930215285714286
+Avg SubOpt cost:  223.00887564242385
+WITH
+Start time-stamp:  2020-03-02 09:38:51.192100
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:39:18.570368
+Iterations:  14780
+Nodes:  4063
+15498.25
+Min calls:  15432
+Max calls:  64028
+Min iter:  13604
+Max iter:  16846
+Min nodes:  3900
+Max nodes:  4457
+Avg iter:  15496.25 7
+Avg nodes:  4193.5 7
+Min time:  22.552304
+Max time:  34.312131
+Avg time diff:  29.611221875
+Avg SubOpt cost:  223.7083234401419
+WITH
+Start time-stamp:  2020-03-02 09:39:18.588631
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:39:50.149154
+Iterations:  16494
+Nodes:  4290
+15609.111111111111
+Min calls:  15432
+Max calls:  76454
+Min iter:  13604
+Max iter:  16846
+Min nodes:  3900
+Max nodes:  4457
+Avg iter:  15607.111111111111 8
+Avg nodes:  4204.222222222223 8
+Min time:  22.552304
+Max time:  34.312131
+Avg time diff:  29.827810888888887
+Avg SubOpt cost:  223.31804763827427
+WITH
+Start time-stamp:  2020-03-02 09:39:50.173683
+Resolution  Angle:  70
+End time-stamp:  2020-03-02 09:40:17.721847
+Iterations:  14966
+Nodes:  4113
+15545.0
+Min calls:  15432
+Max calls:  78996
+Min iter:  13604
+Max iter:  16846
+Min nodes:  3900
+Max nodes:  4457
+Avg iter:  15543.0 9
+Avg nodes:  4195.1 9
+Min time:  22.552304
+Max time:  34.312131
+Avg time diff:  29.599846199999995
+Avg SubOpt cost:  222.65476267160557
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:41:46.481963
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:42:24.753268
+Iterations:  18172
+Nodes:  4882
+18174.0
+Min calls:  18174
+Max calls:  18174
+Min iter:  18172
+Max iter:  18172
+Min nodes:  4882
+Max nodes:  4882
+Avg iter:  18172.0 0
+Avg nodes:  4882.0 0
+Min time:  38.271305
+Max time:  38.271305
+Avg time diff:  38.271305
+Avg SubOpt cost:  220.23306123295006
+WITH
+Start time-stamp:  2020-03-02 09:42:24.786990
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:43:09.799711
+Iterations:  21332
+Nodes:  5247
+19754.0
+Min calls:  18174
+Max calls:  21334
+Min iter:  18172
+Max iter:  21332
+Min nodes:  4882
+Max nodes:  5247
+Avg iter:  19752.0 1
+Avg nodes:  5064.5 1
+Min time:  38.271305
+Max time:  45.012721
+Avg time diff:  41.642013
+Avg SubOpt cost:  220.71265985487136
+WITH
+Start time-stamp:  2020-03-02 09:43:09.818065
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:43:44.635884
+Iterations:  17140
+Nodes:  4615
+18883.333333333332
+Min calls:  18174
+Max calls:  35316
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5247
+Avg iter:  18881.333333333332 2
+Avg nodes:  4914.666666666667 2
+Min time:  34.817819
+Max time:  45.012721
+Avg time diff:  39.36728166666666
+Avg SubOpt cost:  220.55127938626163
+WITH
+Start time-stamp:  2020-03-02 09:43:44.654777
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:44:21.289613
+Iterations:  18572
+Nodes:  4975
+18806.0
+Min calls:  18174
+Max calls:  39908
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5247
+Avg iter:  18804.0 3
+Avg nodes:  4929.75 3
+Min time:  34.817819
+Max time:  45.012721
+Avg time diff:  38.68417025
+Avg SubOpt cost:  220.41995838829334
+WITH
+Start time-stamp:  2020-03-02 09:44:21.310929
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:45:01.577735
+Iterations:  19042
+Nodes:  4909
+18853.6
+Min calls:  18174
+Max calls:  54360
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5247
+Avg iter:  18851.6 4
+Avg nodes:  4925.6 4
+Min time:  34.817819
+Max time:  45.012721
+Avg time diff:  39.0006974
+Avg SubOpt cost:  221.57862351731302
+WITH
+Start time-stamp:  2020-03-02 09:45:01.594139
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:45:47.418811
+Iterations:  20508
+Nodes:  5321
+19129.666666666668
+Min calls:  18174
+Max calls:  60418
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5321
+Avg iter:  19127.666666666668 5
+Avg nodes:  4991.5 5
+Min time:  34.817819
+Max time:  45.824672
+Avg time diff:  40.1380265
+Avg SubOpt cost:  221.85595112469096
+WITH
+Start time-stamp:  2020-03-02 09:45:47.439030
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:46:27.124751
+Iterations:  19242
+Nodes:  5055
+19146.0
+Min calls:  18174
+Max calls:  73604
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5321
+Avg iter:  19144.0 6
+Avg nodes:  5000.571428571428 6
+Min time:  34.817819
+Max time:  45.824672
+Avg time diff:  40.073411428571426
+Avg SubOpt cost:  221.54095460868152
+WITH
+Start time-stamp:  2020-03-02 09:46:27.142435
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:47:05.922528
+Iterations:  19646
+Nodes:  4925
+19208.75
+Min calls:  18174
+Max calls:  80066
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5321
+Avg iter:  19206.75 7
+Avg nodes:  4991.125 7
+Min time:  34.817819
+Max time:  45.824672
+Avg time diff:  39.911746625
+Avg SubOpt cost:  222.48167997620035
+WITH
+Start time-stamp:  2020-03-02 09:47:05.941888
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:47:46.080045
+Iterations:  20388
+Nodes:  5092
+19340.0
+Min calls:  18174
+Max calls:  93994
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5321
+Avg iter:  19338.0 8
+Avg nodes:  5002.333333333333 8
+Min time:  34.817819
+Max time:  45.824672
+Avg time diff:  39.93690333333333
+Avg SubOpt cost:  222.88173963997164
+WITH
+Start time-stamp:  2020-03-02 09:47:46.099976
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 09:48:25.793133
+Iterations:  19672
+Nodes:  5099
+19373.4
+Min calls:  18174
+Max calls:  99740
+Min iter:  17140
+Max iter:  21332
+Min nodes:  4615
+Max nodes:  5321
+Avg iter:  19371.4 9
+Avg nodes:  5012.0 9
+Min time:  34.817819
+Max time:  45.824672
+Avg time diff:  39.912528699999996
+Avg SubOpt cost:  222.5527219979359
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:50:15.518795
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:50:51.122704
+Iterations:  21596
+Nodes:  4107
+21598.0
+Min calls:  21598
+Max calls:  21598
+Min iter:  21596
+Max iter:  21596
+Min nodes:  4107
+Max nodes:  4107
+Avg iter:  21596.0 0
+Avg nodes:  4107.0 0
+Min time:  35.603909
+Max time:  35.603909
+Avg time diff:  35.603909
+Avg SubOpt cost:  224.60313754272048
+WITH
+Start time-stamp:  2020-03-02 09:50:51.165865
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:51:24.556742
+Iterations:  20888
+Nodes:  4047
+21244.0
+Min calls:  20890
+Max calls:  21598
+Min iter:  20888
+Max iter:  21596
+Min nodes:  4047
+Max nodes:  4107
+Avg iter:  21242.0 1
+Avg nodes:  4077.0 1
+Min time:  33.390877
+Max time:  35.603909
+Avg time diff:  34.497393
+Avg SubOpt cost:  226.9191103054599
+WITH
+Start time-stamp:  2020-03-02 09:51:24.576863
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:51:56.847497
+Iterations:  20930
+Nodes:  3887
+21140.0
+Min calls:  20890
+Max calls:  42530
+Min iter:  20888
+Max iter:  21596
+Min nodes:  3887
+Max nodes:  4107
+Avg iter:  21138.0 2
+Avg nodes:  4013.6666666666665 2
+Min time:  32.270634
+Max time:  35.603909
+Avg time diff:  33.755140000000004
+Avg SubOpt cost:  229.18036560116334
+WITH
+Start time-stamp:  2020-03-02 09:51:56.870826
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:52:25.316554
+Iterations:  19106
+Nodes:  3711
+20632.0
+Min calls:  20890
+Max calls:  42530
+Min iter:  19106
+Max iter:  21596
+Min nodes:  3711
+Max nodes:  4107
+Avg iter:  20630.0 3
+Avg nodes:  3938.0 3
+Min time:  28.445728
+Max time:  35.603909
+Avg time diff:  32.427787
+Avg SubOpt cost:  228.31565981588693
+WITH
+Start time-stamp:  2020-03-02 09:52:25.340264
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:53:04.611916
+Iterations:  23888
+Nodes:  4203
+21283.6
+Min calls:  20890
+Max calls:  66420
+Min iter:  19106
+Max iter:  23888
+Min nodes:  3711
+Max nodes:  4203
+Avg iter:  21281.6 4
+Avg nodes:  3991.0 4
+Min time:  28.445728
+Max time:  39.271652
+Avg time diff:  33.79656
+Avg SubOpt cost:  229.50089599528252
+WITH
+Start time-stamp:  2020-03-02 09:53:04.630902
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:53:42.424761
+Iterations:  21528
+Nodes:  4093
+21324.666666666668
+Min calls:  20890
+Max calls:  66420
+Min iter:  19106
+Max iter:  23888
+Min nodes:  3711
+Max nodes:  4203
+Avg iter:  21322.666666666668 5
+Avg nodes:  4008.0 5
+Min time:  28.445728
+Max time:  39.271652
+Avg time diff:  34.4627765
+Avg SubOpt cost:  230.09843528385173
+WITH
+Start time-stamp:  2020-03-02 09:55:19.107064
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:55:52.315814
+Iterations:  20504
+Nodes:  4020
+21207.714285714286
+Min calls:  20890
+Max calls:  86926
+Min iter:  19106
+Max iter:  23888
+Min nodes:  3711
+Max nodes:  4203
+Avg iter:  21205.714285714286 6
+Avg nodes:  4009.714285714286 6
+Min time:  28.445728
+Max time:  39.271652
+Avg time diff:  34.283629857142856
+Avg SubOpt cost:  229.47680010455892
+WITH
+Start time-stamp:  2020-03-02 09:55:52.340766
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:56:27.772079
+Iterations:  21432
+Nodes:  4146
+21236.0
+Min calls:  20890
+Max calls:  86926
+Min iter:  19106
+Max iter:  23888
+Min nodes:  3711
+Max nodes:  4203
+Avg iter:  21234.0 7
+Avg nodes:  4026.75 7
+Min time:  28.445728
+Max time:  39.271652
+Avg time diff:  34.42709025
+Avg SubOpt cost:  229.25745035966014
+WITH
+Start time-stamp:  2020-03-02 09:56:27.790585
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:57:11.115594
+Iterations:  21814
+Nodes:  4231
+21300.444444444445
+Min calls:  20890
+Max calls:  108742
+Min iter:  19106
+Max iter:  23888
+Min nodes:  3711
+Max nodes:  4231
+Avg iter:  21298.444444444445 8
+Avg nodes:  4049.4444444444443 8
+Min time:  28.445728
+Max time:  43.325009
+Avg time diff:  35.41574788888889
+Avg SubOpt cost:  229.62795292632524
+WITH
+Start time-stamp:  2020-03-02 09:57:11.133574
+Resolution  Angle:  50
+End time-stamp:  2020-03-02 09:57:51.394263
+Iterations:  21746
+Nodes:  4082
+21345.2
+Min calls:  20890
+Max calls:  108742
+Min iter:  19106
+Max iter:  23888
+Min nodes:  3711
+Max nodes:  4231
+Avg iter:  21343.2 9
+Avg nodes:  4052.7 9
+Min time:  28.445728
+Max time:  43.325009
+Avg time diff:  35.900242000000006
+Avg SubOpt cost:  230.17103205688468
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 09:59:02.308874
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 09:59:32.019019
+Iterations:  20244
+Nodes:  3683
+20246.0
+Min calls:  20246
+Max calls:  20246
+Min iter:  20244
+Max iter:  20244
+Min nodes:  3683
+Max nodes:  3683
+Avg iter:  20244.0 0
+Avg nodes:  3683.0 0
+Min time:  29.710145
+Max time:  29.710145
+Avg time diff:  29.710145
+Avg SubOpt cost:  228.17160572183343
+WITH
+Start time-stamp:  2020-03-02 09:59:32.061005
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:00:10.530586
+Iterations:  23804
+Nodes:  4116
+22026.0
+Min calls:  20246
+Max calls:  23806
+Min iter:  20244
+Max iter:  23804
+Min nodes:  3683
+Max nodes:  4116
+Avg iter:  22024.0 1
+Avg nodes:  3899.5 1
+Min time:  29.710145
+Max time:  38.469581
+Avg time diff:  34.089863
+Avg SubOpt cost:  229.95986678978204
+WITH
+Start time-stamp:  2020-03-02 10:00:10.550062
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:00:44.810287
+Iterations:  22056
+Nodes:  3943
+22036.666666666668
+Min calls:  20246
+Max calls:  42304
+Min iter:  20244
+Max iter:  23804
+Min nodes:  3683
+Max nodes:  4116
+Avg iter:  22034.666666666668 2
+Avg nodes:  3914.0 2
+Min time:  29.710145
+Max time:  38.469581
+Avg time diff:  34.14665033333333
+Avg SubOpt cost:  229.20854242115243
+WITH
+Start time-stamp:  2020-03-02 10:00:44.829315
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:01:20.313931
+Iterations:  22716
+Nodes:  3927
+22207.0
+Min calls:  20246
+Max calls:  46524
+Min iter:  20244
+Max iter:  23804
+Min nodes:  3683
+Max nodes:  4116
+Avg iter:  22205.0 3
+Avg nodes:  3917.25 3
+Min time:  29.710145
+Max time:  38.469581
+Avg time diff:  34.481141750000006
+Avg SubOpt cost:  229.21829319488262
+WITH
+Start time-stamp:  2020-03-02 10:01:20.338794
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:02:00.656616
+Iterations:  23268
+Nodes:  4021
+22419.6
+Min calls:  20246
+Max calls:  65574
+Min iter:  20244
+Max iter:  23804
+Min nodes:  3683
+Max nodes:  4116
+Avg iter:  22417.6 4
+Avg nodes:  3938.0 4
+Min time:  29.710145
+Max time:  40.317822
+Avg time diff:  35.64847780000001
+Avg SubOpt cost:  229.52401915402032
+WITH
+Start time-stamp:  2020-03-02 10:02:00.675146
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:02:37.179203
+Iterations:  21462
+Nodes:  3897
+22260.333333333332
+Min calls:  20246
+Max calls:  67988
+Min iter:  20244
+Max iter:  23804
+Min nodes:  3683
+Max nodes:  4116
+Avg iter:  22258.333333333332 5
+Avg nodes:  3931.1666666666665 5
+Min time:  29.710145
+Max time:  40.317822
+Avg time diff:  35.79107433333334
+Avg SubOpt cost:  228.89312506120498
+WITH
+Start time-stamp:  2020-03-02 10:02:37.198882
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:03:13.651889
+Iterations:  22132
+Nodes:  4015
+22242.285714285714
+Min calls:  20246
+Max calls:  87708
+Min iter:  20244
+Max iter:  23804
+Min nodes:  3683
+Max nodes:  4116
+Avg iter:  22240.285714285714 6
+Avg nodes:  3943.1428571428573 6
+Min time:  29.710145
+Max time:  40.317822
+Avg time diff:  35.88563614285715
+Avg SubOpt cost:  229.01172220754464
+WITH
+Start time-stamp:  2020-03-02 10:03:13.677577
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:03:55.181566
+Iterations:  24030
+Nodes:  4153
+22466.0
+Min calls:  20246
+Max calls:  92020
+Min iter:  20244
+Max iter:  24030
+Min nodes:  3683
+Max nodes:  4153
+Avg iter:  22464.0 7
+Avg nodes:  3969.375 7
+Min time:  29.710145
+Max time:  41.503989
+Avg time diff:  36.58793025000001
+Avg SubOpt cost:  229.45893255548555
+WITH
+Start time-stamp:  2020-03-02 10:04:17.083681
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:04:56.074576
+Iterations:  21502
+Nodes:  3902
+22359.11111111111
+Min calls:  20246
+Max calls:  109212
+Min iter:  20244
+Max iter:  24030
+Min nodes:  3683
+Max nodes:  4153
+Avg iter:  22357.11111111111 8
+Avg nodes:  3961.8888888888887 8
+Min time:  29.710145
+Max time:  41.503989
+Avg time diff:  36.85492633333334
+Avg SubOpt cost:  228.64504914656962
+WITH
+Start time-stamp:  2020-03-02 10:06:44.089912
+Resolution  Angle:  45
+End time-stamp:  2020-03-02 10:07:21.594304
+Iterations:  20908
+Nodes:  3920
+22214.2
+Min calls:  20246
+Max calls:  112930
+Min iter:  20244
+Max iter:  24030
+Min nodes:  3683
+Max nodes:  4153
+Avg iter:  22212.2 9
+Avg nodes:  3957.7 9
+Min time:  29.710145
+Max time:  41.503989
+Avg time diff:  36.91987290000001
+Avg SubOpt cost:  228.05153559487016
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:08:37.348976
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:09:16.785526
+Iterations:  22384
+Nodes:  4282
+22386.0
+Min calls:  22386
+Max calls:  22386
+Min iter:  22384
+Max iter:  22384
+Min nodes:  4282
+Max nodes:  4282
+Avg iter:  22384.0 0
+Avg nodes:  4282.0 0
+Min time:  39.43655
+Max time:  39.43655
+Avg time diff:  39.43655
+Avg SubOpt cost:  232.62865993635333
+WITH
+Start time-stamp:  2020-03-02 10:09:16.816268
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:09:44.890059
+Iterations:  17970
+Nodes:  3858
+20179.0
+Min calls:  17972
+Max calls:  22386
+Min iter:  17970
+Max iter:  22384
+Min nodes:  3858
+Max nodes:  4282
+Avg iter:  20177.0 1
+Avg nodes:  4070.0 1
+Min time:  28.073791
+Max time:  39.43655
+Avg time diff:  33.7551705
+Avg SubOpt cost:  228.41579382240036
+WITH
+Start time-stamp:  2020-03-02 10:09:44.907837
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:10:12.646697
+Iterations:  17814
+Nodes:  3901
+19391.333333333332
+Min calls:  17972
+Max calls:  40202
+Min iter:  17814
+Max iter:  22384
+Min nodes:  3858
+Max nodes:  4282
+Avg iter:  19389.333333333332 2
+Avg nodes:  4013.6666666666665 2
+Min time:  27.73886
+Max time:  39.43655
+Avg time diff:  31.749733666666668
+Avg SubOpt cost:  222.49685026923694
+WITH
+Start time-stamp:  2020-03-02 10:10:12.665525
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:10:49.077614
+Iterations:  22436
+Nodes:  4197
+20153.0
+Min calls:  17972
+Max calls:  40410
+Min iter:  17814
+Max iter:  22436
+Min nodes:  3858
+Max nodes:  4282
+Avg iter:  20151.0 3
+Avg nodes:  4059.5 3
+Min time:  27.73886
+Max time:  39.43655
+Avg time diff:  32.9153225
+Avg SubOpt cost:  224.88355699913689
+WITH
+Start time-stamp:  2020-03-02 10:10:49.083952
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:11:21.928098
+Iterations:  21076
+Nodes:  4097
+20338.0
+Min calls:  17972
+Max calls:  61280
+Min iter:  17814
+Max iter:  22436
+Min nodes:  3858
+Max nodes:  4282
+Avg iter:  20336.0 4
+Avg nodes:  4067.0 4
+Min time:  27.73886
+Max time:  39.43655
+Avg time diff:  32.9010872
+Avg SubOpt cost:  224.9531392108028
+WITH
+Start time-stamp:  2020-03-02 10:11:21.934022
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:12:02.806206
+Iterations:  20830
+Nodes:  4373
+20420.333333333332
+Min calls:  17972
+Max calls:  61280
+Min iter:  17814
+Max iter:  22436
+Min nodes:  3858
+Max nodes:  4373
+Avg iter:  20418.333333333332 5
+Avg nodes:  4118.0 5
+Min time:  27.73886
+Max time:  40.872184
+Avg time diff:  34.22960333333334
+Avg SubOpt cost:  223.3993631378278
+WITH
+Start time-stamp:  2020-03-02 10:12:02.824229
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:12:38.864911
+Iterations:  19742
+Nodes:  4099
+20323.714285714286
+Min calls:  17972
+Max calls:  81024
+Min iter:  17814
+Max iter:  22436
+Min nodes:  3858
+Max nodes:  4373
+Avg iter:  20321.714285714286 6
+Avg nodes:  4115.285714285715 6
+Min time:  27.73886
+Max time:  40.872184
+Avg time diff:  34.48832885714286
+Avg SubOpt cost:  224.7839433292393
+WITH
+Start time-stamp:  2020-03-02 10:12:38.882539
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:13:22.137057
+Iterations:  22750
+Nodes:  4552
+20627.25
+Min calls:  17972
+Max calls:  83994
+Min iter:  17814
+Max iter:  22750
+Min nodes:  3858
+Max nodes:  4552
+Avg iter:  20625.25 7
+Avg nodes:  4169.875 7
+Min time:  27.73886
+Max time:  43.254518
+Avg time diff:  35.5841025
+Avg SubOpt cost:  225.38610708642508
+WITH
+Start time-stamp:  2020-03-02 10:14:28.285253
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:14:57.473896
+Iterations:  17502
+Nodes:  3738
+20280.222222222223
+Min calls:  17972
+Max calls:  98528
+Min iter:  17502
+Max iter:  22750
+Min nodes:  3738
+Max nodes:  4552
+Avg iter:  20278.222222222223 8
+Avg nodes:  4121.888888888889 8
+Min time:  27.73886
+Max time:  43.254518
+Avg time diff:  34.87349588888889
+Avg SubOpt cost:  223.97477711046298
+WITH
+Start time-stamp:  2020-03-02 10:14:57.497523
+Resolution  Angle:  40
+End time-stamp:  2020-03-02 10:15:38.758337
+Iterations:  22692
+Nodes:  4401
+20521.6
+Min calls:  17972
+Max calls:  106688
+Min iter:  17502
+Max iter:  22750
+Min nodes:  3738
+Max nodes:  4552
+Avg iter:  20519.6 9
+Avg nodes:  4149.8 9
+Min time:  27.73886
+Max time:  43.254518
+Avg time diff:  35.5122277
+Avg SubOpt cost:  225.4518165332774
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:16:36.330830
+Resolution  Angle:  30
+End time-stamp:  2020-03-02 10:17:24.107034
+Iterations:  28054
+Nodes:  4602
+28056.0
+Min calls:  28056
+Max calls:  28056
+Min iter:  28054
+Max iter:  28054
+Min nodes:  4602
+Max nodes:  4602
+Avg iter:  28054.0 0
+Avg nodes:  4602.0 0
+Min time:  47.776204
+Max time:  47.776204
+Avg time diff:  47.776204
+Avg SubOpt cost:  227.73063203834315
+WITH
+Start time-stamp:  2020-03-02 10:17:24.148028
+Resolution  Angle:  30
+End time-stamp:  2020-03-02 10:18:11.142395
+Iterations:  26130
+Nodes:  4382
+27094.0
+Min calls:  26132
+Max calls:  28056
+Min iter:  26130
+Max iter:  28054
+Min nodes:  4382
+Max nodes:  4602
+Avg iter:  27092.0 1
+Avg nodes:  4492.0 1
+Min time:  46.994367
+Max time:  47.776204
+Avg time diff:  47.385285499999995
+Avg SubOpt cost:  224.95583352181222
+WITH
+Start time-stamp:  2020-03-02 10:18:11.167398
+Resolution  Angle:  30
+End time-stamp:  2020-03-02 10:19:04.238151
+Iterations:  21866
+Nodes:  4026
+25352.0
+Min calls:  26132
+Max calls:  49924
+Min iter:  21866
+Max iter:  28054
+Min nodes:  4026
+Max nodes:  4602
+Avg iter:  25350.0 2
+Avg nodes:  4336.666666666667 2
+Min time:  46.994367
+Max time:  53.070753
+Avg time diff:  49.28044133333333
+Avg SubOpt cost:  223.211510012937
+WITH
+Start time-stamp:  2020-03-02 10:19:04.251182
+Resolution  Angle:  30
+End time-stamp:  2020-03-02 10:19:50.960944
+Iterations:  27166
+Nodes:  4454
+25806.0
+Min calls:  26132
+Max calls:  53300
+Min iter:  21866
+Max iter:  28054
+Min nodes:  4026
+Max nodes:  4602
+Avg iter:  25804.0 3
+Avg nodes:  4366.0 3
+Min time:  46.709762
+Max time:  53.070753
+Avg time diff:  48.6377715
+Avg SubOpt cost:  227.82884680725616
+WITH
+Start time-stamp:  2020-03-02 10:20:15.488918
+Resolution  Angle:  30
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 445, in build_rrt
+    change1 = tree1.add_node(parent1, new_node1, gauss1)
+  File "rgt_0.py", line 93, in add_node
+    if eul_dist(old_node, node) < self.step_size*0.9:#min(max(math.sqrt(2*(self.step_size**2) - 2*(self.step_size**2)*math.cos(self.resolution_angle*math.pi/180)) - 0.05, (self.step_size/2)*math.sqrt(2)), self.step_size - .08):
+  File "rgt_0.py", line 212, in eul_dist
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:20:57.276448
+Resolution  Angle:  22
+End time-stamp:  2020-03-02 10:21:43.569730
+Iterations:  30342
+Nodes:  3887
+30344.0
+Min calls:  30344
+Max calls:  30344
+Min iter:  30342
+Max iter:  30342
+Min nodes:  3887
+Max nodes:  3887
+Avg iter:  30342.0 0
+Avg nodes:  3887.0 0
+Min time:  46.293282
+Max time:  46.293282
+Avg time diff:  46.293282
+Avg SubOpt cost:  213.57908043898368
+WITH
+Start time-stamp:  2020-03-02 10:21:43.608857
+Resolution  Angle:  22
+End time-stamp:  2020-03-02 10:22:44.915725
+Iterations:  37470
+Nodes:  4393
+33908.0
+Min calls:  30344
+Max calls:  37472
+Min iter:  30342
+Max iter:  37470
+Min nodes:  3887
+Max nodes:  4393
+Avg iter:  33906.0 1
+Avg nodes:  4140.0 1
+Min time:  46.293282
+Max time:  61.306868
+Avg time diff:  53.800075
+Avg SubOpt cost:  217.61047853155884
+WITH
+Start time-stamp:  2020-03-02 10:22:44.919309
+Resolution  Angle:  22
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 445, in build_rrt
+    change1 = tree1.add_node(parent1, new_node1, gauss1)
+  File "rgt_0.py", line 93, in add_node
+    if eul_dist(old_node, node) < self.step_size*0.9:#min(max(math.sqrt(2*(self.step_size**2) - 2*(self.step_size**2)*math.cos(self.resolution_angle*math.pi/180)) - 0.05, (self.step_size/2)*math.sqrt(2)), self.step_size - .08):
+  File "rgt_0.py", line 212, in eul_dist
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:24:15.016804
+Resolution  Angle:  20
+End time-stamp:  2020-03-02 10:25:14.658129
+Iterations:  35172
+Nodes:  4312
+35174.0
+Min calls:  35174
+Max calls:  35174
+Min iter:  35172
+Max iter:  35172
+Min nodes:  4312
+Max nodes:  4312
+Avg iter:  35172.0 0
+Avg nodes:  4312.0 0
+Min time:  59.641325
+Max time:  59.641325
+Avg time diff:  59.641325
+Avg SubOpt cost:  217.7319187625446
+WITH
+Start time-stamp:  2020-03-02 10:25:14.675410
+Resolution  Angle:  20
+End time-stamp:  2020-03-02 10:26:09.894789
+Iterations:  32778
+Nodes:  4143
+33977.0
+Min calls:  32780
+Max calls:  35174
+Min iter:  32778
+Max iter:  35172
+Min nodes:  4143
+Max nodes:  4312
+Avg iter:  33975.0 1
+Avg nodes:  4227.5 1
+Min time:  55.219379
+Max time:  59.641325
+Avg time diff:  57.430352
+Avg SubOpt cost:  219.44773818562152
+WITH
+Start time-stamp:  2020-03-02 10:26:09.902898
+Resolution  Angle:  20
+End time-stamp:  2020-03-02 10:27:16.788071
+Iterations:  38546
+Nodes:  4313
+35500.666666666664
+Min calls:  32780
+Max calls:  73722
+Min iter:  32778
+Max iter:  38546
+Min nodes:  4143
+Max nodes:  4313
+Avg iter:  35498.666666666664 2
+Avg nodes:  4256.0 2
+Min time:  55.219379
+Max time:  66.885173
+Avg time diff:  60.581959000000005
+Avg SubOpt cost:  226.169244828381
+WITH
+Start time-stamp:  2020-03-02 10:27:16.807566
+Resolution  Angle:  20
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 444, in build_rrt
+    change = tree.add_node(parent, new_node, gauss)
+  File "rgt_0.py", line 93, in add_node
+    if eul_dist(old_node, node) < self.step_size*0.9:#min(max(math.sqrt(2*(self.step_size**2) - 2*(self.step_size**2)*math.cos(self.resolution_angle*math.pi/180)) - 0.05, (self.step_size/2)*math.sqrt(2)), self.step_size - .08):
+  File "rgt_0.py", line 212, in eul_dist
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:28:00.656795
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 10:28:33.787802
+Iterations:  17622
+Nodes:  4634
+17624.0
+Min calls:  17624
+Max calls:  17624
+Min iter:  17622
+Max iter:  17622
+Min nodes:  4634
+Max nodes:  4634
+Avg iter:  17622.0 0
+Avg nodes:  4634.0 0
+Min time:  33.131007
+Max time:  33.131007
+Avg time diff:  33.131007
+Avg SubOpt cost:  236.13381479730518
+WITH
+Start time-stamp:  2020-03-02 10:28:33.823538
+Resolution  Angle:  60
+End time-stamp:  2020-03-02 10:29:13.482512
+Iterations:  18884
+Nodes:  4908
+18255.0
+Min calls:  17624
+Max calls:  18886
+Min iter:  17622
+Max iter:  18884
+Min nodes:  4634
+Max nodes:  4908
+Avg iter:  18253.0 1
+Avg nodes:  4771.0 1
+Min time:  33.131007
+Max time:  39.658974
+Avg time diff:  36.3949905
+Avg SubOpt cost:  230.42190581673438
+WITH
+Start time-stamp:  2020-03-02 10:29:13.502777
+Resolution  Angle:  60
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 447, in build_rrt
+    index = termination(tree, tree1, new_node)
+  File "rgt_0.py", line 410, in termination
+    if eul_dist(new_node, tree2.nodes[x]) < 0.5 * tree1.step_size :#and (not tree1.canvas.check_collision(new_node, tree2.nodes[x])):
+  File "rgt_0.py", line 212, in eul_dist
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:29:57.479483
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:30:23.949430
+Iterations:  13080
+Nodes:  4442
+13082.0
+Min calls:  13082
+Max calls:  13082
+Min iter:  13080
+Max iter:  13080
+Min nodes:  4442
+Max nodes:  4442
+Avg iter:  13080.0 0
+Avg nodes:  4442.0 0
+Min time:  26.469947
+Max time:  26.469947
+Avg time diff:  26.469947
+Avg SubOpt cost:  243.70147642320237
+WITH
+Start time-stamp:  2020-03-02 10:30:23.990094
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:30:54.301039
+Iterations:  14198
+Nodes:  4798
+13641.0
+Min calls:  13082
+Max calls:  14200
+Min iter:  13080
+Max iter:  14198
+Min nodes:  4442
+Max nodes:  4798
+Avg iter:  13639.0 1
+Avg nodes:  4620.0 1
+Min time:  26.469947
+Max time:  30.310945
+Avg time diff:  28.390446
+Avg SubOpt cost:  240.16296508702396
+WITH
+Start time-stamp:  2020-03-02 10:30:54.319169
+Resolution  Angle:  90
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 455, in build_rrt
+    index = termination(tree1, tree, new_node1)
+  File "rgt_0.py", line 410, in termination
+    if eul_dist(new_node, tree2.nodes[x]) < 0.5 * tree1.step_size :#and (not tree1.canvas.check_collision(new_node, tree2.nodes[x])):
+  File "rgt_0.py", line 212, in eul_dist
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:31:35.558761
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:32:01.356099
+Iterations:  12592
+Nodes:  4497
+12594.0
+Min calls:  12594
+Max calls:  12594
+Min iter:  12592
+Max iter:  12592
+Min nodes:  4497
+Max nodes:  4497
+Avg iter:  12592.0 0
+Avg nodes:  4497.0 0
+Min time:  25.797338
+Max time:  25.797338
+Avg time diff:  25.797338
+Avg SubOpt cost:  235.69727815830583
+WITH
+Start time-stamp:  2020-03-02 10:32:01.395488
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:32:23.610744
+Iterations:  11292
+Nodes:  4136
+11944.0
+Min calls:  11294
+Max calls:  12594
+Min iter:  11292
+Max iter:  12592
+Min nodes:  4136
+Max nodes:  4497
+Avg iter:  11942.0 1
+Avg nodes:  4316.5 1
+Min time:  22.215256
+Max time:  25.797338
+Avg time diff:  24.006297
+Avg SubOpt cost:  236.92413691203166
+WITH
+Start time-stamp:  2020-03-02 10:32:23.617700
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:32:48.443321
+Iterations:  11846
+Nodes:  4348
+11912.0
+Min calls:  11294
+Max calls:  24442
+Min iter:  11292
+Max iter:  12592
+Min nodes:  4136
+Max nodes:  4497
+Avg iter:  11910.0 2
+Avg nodes:  4327.0 2
+Min time:  22.215256
+Max time:  25.797338
+Avg time diff:  24.279405
+Avg SubOpt cost:  238.17465887814845
+WITH
+Start time-stamp:  2020-03-02 10:32:48.462467
+Resolution  Angle:  90
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 445, in build_rrt
+    change1 = tree1.add_node(parent1, new_node1, gauss1)
+  File "rgt_0.py", line 93, in add_node
+    if eul_dist(old_node, node) < self.step_size*0.9:#min(max(math.sqrt(2*(self.step_size**2) - 2*(self.step_size**2)*math.cos(self.resolution_angle*math.pi/180)) - 0.05, (self.step_size/2)*math.sqrt(2)), self.step_size - .08):
+  File "rgt_0.py", line 212, in eul_dist
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:32:54.130626
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:33:18.098900
+Iterations:  11966
+Nodes:  4367
+11968.0
+Min calls:  11968
+Max calls:  11968
+Min iter:  11966
+Max iter:  11966
+Min nodes:  4367
+Max nodes:  4367
+Avg iter:  11966.0 0
+Avg nodes:  4367.0 0
+Min time:  23.968274
+Max time:  23.968274
+Avg time diff:  23.968274
+Avg SubOpt cost:  238.17000380626195
+WITH
+Start time-stamp:  2020-03-02 10:33:18.137289
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:33:39.845850
+Iterations:  11146
+Nodes:  4031
+11558.0
+Min calls:  11148
+Max calls:  11968
+Min iter:  11146
+Max iter:  11966
+Min nodes:  4031
+Max nodes:  4367
+Avg iter:  11556.0 1
+Avg nodes:  4199.0 1
+Min time:  21.708561
+Max time:  23.968274
+Avg time diff:  22.8384175
+Avg SubOpt cost:  236.89215728534754
+WITH
+Start time-stamp:  2020-03-02 10:33:39.865249
+Resolution  Angle:  90
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 444, in build_rrt
+    change = tree.add_node(parent, new_node, gauss)
+  File "rgt_0.py", line 93, in add_node
+    if eul_dist(old_node, node) < self.step_size*0.9:#min(max(math.sqrt(2*(self.step_size**2) - 2*(self.step_size**2)*math.cos(self.resolution_angle*math.pi/180)) - 0.05, (self.step_size/2)*math.sqrt(2)), self.step_size - .08):
+  File "rgt_0.py", line 212, in eul_dist
+    return math.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:34:25.973128
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:34:45.128559
+Iterations:  10416
+Nodes:  3889
+10418.0
+Min calls:  10418
+Max calls:  10418
+Min iter:  10416
+Max iter:  10416
+Min nodes:  3889
+Max nodes:  3889
+Avg iter:  10416.0 0
+Avg nodes:  3889.0 0
+Min time:  19.155431
+Max time:  19.155431
+Avg time diff:  19.155431
+Avg SubOpt cost:  234.18666050970185
+WITH
+Start time-stamp:  2020-03-02 10:34:45.169091
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:35:07.898839
+Iterations:  11238
+Nodes:  4103
+10829.0
+Min calls:  10418
+Max calls:  11240
+Min iter:  10416
+Max iter:  11238
+Min nodes:  3889
+Max nodes:  4103
+Avg iter:  10827.0 1
+Avg nodes:  3996.0 1
+Min time:  19.155431
+Max time:  22.729748
+Avg time diff:  20.9425895
+Avg SubOpt cost:  234.95749847701268
+WITH
+Start time-stamp:  2020-03-02 10:35:07.917745
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:35:31.589646
+Iterations:  11630
+Nodes:  4255
+11096.666666666666
+Min calls:  10418
+Max calls:  22050
+Min iter:  10416
+Max iter:  11630
+Min nodes:  3889
+Max nodes:  4255
+Avg iter:  11094.666666666666 2
+Avg nodes:  4082.3333333333335 2
+Min time:  19.155431
+Max time:  23.671901
+Avg time diff:  21.85236
+Avg SubOpt cost:  233.352089830757
+WITH
+Start time-stamp:  2020-03-02 10:35:31.593291
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:35:56.636689
+Iterations:  12064
+Nodes:  4424
+11339.0
+Min calls:  10418
+Max calls:  23306
+Min iter:  10416
+Max iter:  12064
+Min nodes:  3889
+Max nodes:  4424
+Avg iter:  11337.0 3
+Avg nodes:  4167.75 3
+Min time:  19.155431
+Max time:  25.043398
+Avg time diff:  22.6501195
+Avg SubOpt cost:  235.44784658496297
+WITH
+Start time-stamp:  2020-03-02 10:35:56.640954
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:36:16.629139
+Iterations:  10268
+Nodes:  3814
+11125.2
+Min calls:  10418
+Max calls:  32320
+Min iter:  10268
+Max iter:  12064
+Min nodes:  3814
+Max nodes:  4424
+Avg iter:  11123.2 4
+Avg nodes:  4097.0 4
+Min time:  19.155431
+Max time:  25.043398
+Avg time diff:  22.1177326
+Avg SubOpt cost:  235.5597634393859
+WITH
+Start time-stamp:  2020-03-02 10:36:16.647154
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:36:47.039038
+Iterations:  13170
+Nodes:  4716
+11466.333333333334
+Min calls:  10418
+Max calls:  36478
+Min iter:  10268
+Max iter:  13170
+Min nodes:  3814
+Max nodes:  4716
+Avg iter:  11464.333333333334 5
+Avg nodes:  4200.166666666667 5
+Min time:  19.155431
+Max time:  30.391884
+Avg time diff:  23.496757833333334
+Avg SubOpt cost:  235.42292560217913
+WITH
+Start time-stamp:  2020-03-02 10:36:47.065351
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:37:11.118089
+Iterations:  11770
+Nodes:  4258
+11510.0
+Min calls:  10418
+Max calls:  44092
+Min iter:  10268
+Max iter:  13170
+Min nodes:  3814
+Max nodes:  4716
+Avg iter:  11508.0 6
+Avg nodes:  4208.428571428572 6
+Min time:  19.155431
+Max time:  30.391884
+Avg time diff:  23.576183571428572
+Avg SubOpt cost:  235.4663198441513
+WITH
+Start time-stamp:  2020-03-02 10:37:11.137218
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:37:34.833058
+Iterations:  11892
+Nodes:  4255
+11558.0
+Min calls:  10418
+Max calls:  48372
+Min iter:  10268
+Max iter:  13170
+Min nodes:  3814
+Max nodes:  4716
+Avg iter:  11556.0 7
+Avg nodes:  4214.25 7
+Min time:  19.155431
+Max time:  30.391884
+Avg time diff:  23.591140625
+Avg SubOpt cost:  235.7447604207784
+WITH
+Start time-stamp:  2020-03-02 10:37:34.846232
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:37:58.145935
+Iterations:  11768
+Nodes:  4300
+11581.555555555555
+Min calls:  10418
+Max calls:  55862
+Min iter:  10268
+Max iter:  13170
+Min nodes:  3814
+Max nodes:  4716
+Avg iter:  11579.555555555555 8
+Avg nodes:  4223.777777777777 8
+Min time:  19.155431
+Max time:  30.391884
+Avg time diff:  23.558758666666666
+Avg SubOpt cost:  235.56101491505297
+WITH
+Start time-stamp:  2020-03-02 10:38:57.242736
+Resolution  Angle:  90
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 444, in build_rrt
+    change = tree.add_node(parent, new_node, gauss)
+  File "rgt_0.py", line 96, in add_node
+    if not self.canvas.adv_check_collision(node, parent, self.step_size) and collision_free:   # True if no obstacles
+  File "C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment\map_canvas.py", line 69, in adv_check_collision
+    if self.obs_map[obstacle].intersects(line):
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\shapely\geometry\base.py", line 740, in intersects
+    return bool(self.impl['intersects'](self, other))
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\shapely\predicates.py", line 15, in __call__
+    return self.fn(this._geom, other._geom, *args)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:38:58.743298
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:39:23.625764
+Iterations:  12520
+Nodes:  4647
+12522.0
+Min calls:  12522
+Max calls:  12522
+Min iter:  12520
+Max iter:  12520
+Min nodes:  4647
+Max nodes:  4647
+Avg iter:  12520.0 0
+Avg nodes:  4647.0 0
+Min time:  24.882466
+Max time:  24.882466
+Avg time diff:  24.882466
+Avg SubOpt cost:  236.55052167146997
+WITH
+Start time-stamp:  2020-03-02 10:39:23.664555
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:39:49.612014
+Iterations:  12698
+Nodes:  4520
+12611.0
+Min calls:  12522
+Max calls:  12700
+Min iter:  12520
+Max iter:  12698
+Min nodes:  4520
+Max nodes:  4647
+Avg iter:  12609.0 1
+Avg nodes:  4583.5 1
+Min time:  24.882466
+Max time:  25.947459
+Avg time diff:  25.4149625
+Avg SubOpt cost:  237.11317456511085
+WITH
+Start time-stamp:  2020-03-02 10:39:49.616228
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:40:15.465619
+Iterations:  12630
+Nodes:  4483
+12618.0
+Min calls:  12522
+Max calls:  25154
+Min iter:  12520
+Max iter:  12698
+Min nodes:  4483
+Max nodes:  4647
+Avg iter:  12616.0 2
+Avg nodes:  4550.0 2
+Min time:  24.882466
+Max time:  25.947459
+Avg time diff:  25.559772
+Avg SubOpt cost:  239.12387500357863
+WITH
+Start time-stamp:  2020-03-02 10:40:54.405510
+Resolution  Angle:  90
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 445, in build_rrt
+    change1 = tree1.add_node(parent1, new_node1, gauss1)
+  File "rgt_0.py", line 96, in add_node
+    if not self.canvas.adv_check_collision(node, parent, self.step_size) and collision_free:   # True if no obstacles
+  File "C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment\map_canvas.py", line 69, in adv_check_collision
+    if self.obs_map[obstacle].intersects(line):
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\shapely\geometry\base.py", line 740, in intersects
+    return bool(self.impl['intersects'](self, other))
+  File "C:\Users\Paras Sharma\AppData\Local\Programs\Python\Python37-32\lib\site-packages\shapely\predicates.py", line 12, in __call__
+    self._validate(this)
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:41:13.926232
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:41:41.793639
+Iterations:  13086
+Nodes:  4513
+13088.0
+Min calls:  13088
+Max calls:  13088
+Min iter:  13086
+Max iter:  13086
+Min nodes:  4513
+Max nodes:  4513
+Avg iter:  13086.0 0
+Avg nodes:  4513.0 0
+Min time:  27.867407
+Max time:  27.867407
+Avg time diff:  27.867407
+Avg SubOpt cost:  236.74614149106353
+WITH
+Start time-stamp:  2020-03-02 10:41:41.817312
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:42:09.918175
+Iterations:  13048
+Nodes:  4593
+13069.0
+Min calls:  13050
+Max calls:  13088
+Min iter:  13048
+Max iter:  13086
+Min nodes:  4513
+Max nodes:  4593
+Avg iter:  13067.0 1
+Avg nodes:  4553.0 1
+Min time:  27.867407
+Max time:  28.100863
+Avg time diff:  27.984135000000002
+Avg SubOpt cost:  238.70106439762299
+WITH
+Start time-stamp:  2020-03-02 10:42:09.944262
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:42:33.077936
+Iterations:  11964
+Nodes:  4219
+12701.333333333334
+Min calls:  13050
+Max calls:  25054
+Min iter:  11964
+Max iter:  13086
+Min nodes:  4219
+Max nodes:  4593
+Avg iter:  12699.333333333334 2
+Avg nodes:  4441.666666666667 2
+Min time:  23.133674
+Max time:  28.100863
+Avg time diff:  26.36731466666667
+Avg SubOpt cost:  240.36642330541346
+WITH
+Start time-stamp:  2020-03-02 10:42:33.085620
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:42:58.821836
+Iterations:  12518
+Nodes:  4434
+12656.0
+Min calls:  13050
+Max calls:  25570
+Min iter:  11964
+Max iter:  13086
+Min nodes:  4219
+Max nodes:  4593
+Avg iter:  12654.0 3
+Avg nodes:  4439.75 3
+Min time:  23.133674
+Max time:  28.100863
+Avg time diff:  26.20954
+Avg SubOpt cost:  240.69642262620965
+WITH
+Start time-stamp:  2020-03-02 10:42:58.827818
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:43:29.860983
+Iterations:  13196
+Nodes:  4693
+12764.4
+Min calls:  13050
+Max calls:  38252
+Min iter:  11964
+Max iter:  13196
+Min nodes:  4219
+Max nodes:  4693
+Avg iter:  12762.4 4
+Avg nodes:  4490.4 4
+Min time:  23.133674
+Max time:  31.033165
+Avg time diff:  27.174265000000002
+Avg SubOpt cost:  240.47783752531376
+WITH
+Start time-stamp:  2020-03-02 10:43:29.879112
+Resolution  Angle:  90
+Traceback (most recent call last):
+  File "rgt_0.py", line 492, in <module>
+    tree, tree1, iterations, path = build_rrt()
+  File "rgt_0.py", line 444, in build_rrt
+    change = tree.add_node(parent, new_node, gauss)
+  File "rgt_0.py", line 93, in add_node
+    if eul_dist(old_node, node) < self.step_size*0.9:#min(max(math.sqrt(2*(self.step_size**2) - 2*(self.step_size**2)*math.cos(self.resolution_angle*math.pi/180)) - 0.05, (self.step_size/2)*math.sqrt(2)), self.step_size - .08):
+  File "rgt_0.py", line 205, in eul_dist
+    def eul_dist(point1, point2):
+KeyboardInterrupt
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:44:09.404131
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:44:32.613433
+Iterations:  11648
+Nodes:  4342
+11650.0
+Min calls:  11650
+Max calls:  11650
+Min iter:  11648
+Max iter:  11648
+Min nodes:  4342
+Max nodes:  4342
+Avg iter:  11648.0 0
+Avg nodes:  4342.0 0
+Min time:  23.209302
+Max time:  23.209302
+Avg time diff:  23.209302
+Avg SubOpt cost:  236.23283994889505
+WITH
+Start time-stamp:  2020-03-02 10:44:32.653463
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:44:55.241100
+Iterations:  11254
+Nodes:  4156
+11453.0
+Min calls:  11256
+Max calls:  11650
+Min iter:  11254
+Max iter:  11648
+Min nodes:  4156
+Max nodes:  4342
+Avg iter:  11451.0 1
+Avg nodes:  4249.0 1
+Min time:  22.587637
+Max time:  23.209302
+Avg time diff:  22.8984695
+Avg SubOpt cost:  239.72180518885997
+WITH
+Start time-stamp:  2020-03-02 10:44:55.250125
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:45:22.800197
+Iterations:  11992
+Nodes:  4398
+11633.333333333334
+Min calls:  11256
+Max calls:  23644
+Min iter:  11254
+Max iter:  11992
+Min nodes:  4156
+Max nodes:  4398
+Avg iter:  11631.333333333334 2
+Avg nodes:  4298.666666666667 2
+Min time:  22.587637
+Max time:  27.550072
+Avg time diff:  24.44900366666667
+Avg SubOpt cost:  240.22748341027102
+WITH
+Start time-stamp:  2020-03-02 10:45:50.049655
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:46:15.916815
+Iterations:  11962
+Nodes:  4344
+11716.0
+Min calls:  11256
+Max calls:  23644
+Min iter:  11254
+Max iter:  11992
+Min nodes:  4156
+Max nodes:  4398
+Avg iter:  11714.0 3
+Avg nodes:  4310.0 3
+Min time:  22.587637
+Max time:  27.550072
+Avg time diff:  24.803542750000002
+Avg SubOpt cost:  239.72042896768505
+WITH
+Start time-stamp:  2020-03-02 10:46:15.936745
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:46:49.340657
+Iterations:  13562
+Nodes:  4700
+12085.6
+Min calls:  11256
+Max calls:  37208
+Min iter:  11254
+Max iter:  13562
+Min nodes:  4156
+Max nodes:  4700
+Avg iter:  12083.6 4
+Avg nodes:  4388.0 4
+Min time:  22.587637
+Max time:  33.403912
+Avg time diff:  26.523616600000004
+Avg SubOpt cost:  240.1136592749619
+WITH
+Start time-stamp:  2020-03-02 10:46:55.259597
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:47:24.564272
+Iterations:  12284
+Nodes:  4513
+12119.0
+Min calls:  11256
+Max calls:  37208
+Min iter:  11254
+Max iter:  13562
+Min nodes:  4156
+Max nodes:  4700
+Avg iter:  12117.0 5
+Avg nodes:  4408.833333333333 5
+Min time:  22.587637
+Max time:  33.403912
+Avg time diff:  26.987126333333336
+Avg SubOpt cost:  239.797441363045
+WITH
+Start time-stamp:  2020-03-02 10:47:24.580544
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:47:54.655822
+Iterations:  12578
+Nodes:  4511
+12184.857142857143
+Min calls:  11256
+Max calls:  49788
+Min iter:  11254
+Max iter:  13562
+Min nodes:  4156
+Max nodes:  4700
+Avg iter:  12182.857142857143 6
+Avg nodes:  4423.428571428572 6
+Min time:  22.587637
+Max time:  33.403912
+Avg time diff:  27.42829085714286
+Avg SubOpt cost:  240.06329648457717
+WITH
+Start time-stamp:  2020-03-02 10:47:54.663785
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:48:22.275526
+Iterations:  12074
+Nodes:  4372
+12171.25
+Min calls:  11256
+Max calls:  49788
+Min iter:  11254
+Max iter:  13562
+Min nodes:  4156
+Max nodes:  4700
+Avg iter:  12169.25 7
+Avg nodes:  4417.0 7
+Min time:  22.587637
+Max time:  33.403912
+Avg time diff:  27.451222125
+Avg SubOpt cost:  240.51572058369516
+WITH
+Start time-stamp:  2020-03-02 10:48:22.298634
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:48:50.012409
+Iterations:  12192
+Nodes:  4402
+12173.777777777777
+Min calls:  11256
+Max calls:  61982
+Min iter:  11254
+Max iter:  13562
+Min nodes:  4156
+Max nodes:  4700
+Avg iter:  12171.777777777777 8
+Avg nodes:  4415.333333333333 8
+Min time:  22.587637
+Max time:  33.403912
+Avg time diff:  27.48039466666667
+Avg SubOpt cost:  239.86874095018024
+WITH
+Start time-stamp:  2020-03-02 10:48:50.030830
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:49:17.361291
+Iterations:  12094
+Nodes:  4389
+12166.0
+Min calls:  11256
+Max calls:  61982
+Min iter:  11254
+Max iter:  13562
+Min nodes:  4156
+Max nodes:  4700
+Avg iter:  12164.0 9
+Avg nodes:  4412.7 9
+Min time:  22.587637
+Max time:  33.403912
+Avg time diff:  27.465401300000003
+Avg SubOpt cost:  240.4560887697607
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>python rgt_0.py
+WITH
+Start time-stamp:  2020-03-02 10:50:10.974637
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:50:37.334507
+Iterations:  11800
+Nodes:  4346
+11802.0
+Min calls:  11802
+Max calls:  11802
+Min iter:  11800
+Max iter:  11800
+Min nodes:  4346
+Max nodes:  4346
+Avg iter:  11800.0 0
+Avg nodes:  4346.0 0
+Min time:  26.35987
+Max time:  26.35987
+Avg time diff:  26.35987
+Avg SubOpt cost:  230.67658670545987
+WITH
+Start time-stamp:  2020-03-02 10:50:37.373933
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:51:01.848815
+Iterations:  11476
+Nodes:  4230
+11640.0
+Min calls:  11478
+Max calls:  11802
+Min iter:  11476
+Max iter:  11800
+Min nodes:  4230
+Max nodes:  4346
+Avg iter:  11638.0 1
+Avg nodes:  4288.0 1
+Min time:  24.474882
+Max time:  26.35987
+Avg time diff:  25.417376
+Avg SubOpt cost:  237.6659881479062
+WITH
+Start time-stamp:  2020-03-02 10:51:01.868523
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:51:30.491525
+Iterations:  12274
+Nodes:  4456
+11852.0
+Min calls:  11478
+Max calls:  24078
+Min iter:  11476
+Max iter:  12274
+Min nodes:  4230
+Max nodes:  4456
+Avg iter:  11850.0 2
+Avg nodes:  4344.0 2
+Min time:  24.474882
+Max time:  28.623002
+Avg time diff:  26.485917999999998
+Avg SubOpt cost:  238.9783693455597
+WITH
+Start time-stamp:  2020-03-02 10:51:47.338880
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:52:13.510051
+Iterations:  12346
+Nodes:  4417
+11976.0
+Min calls:  11478
+Max calls:  24078
+Min iter:  11476
+Max iter:  12346
+Min nodes:  4230
+Max nodes:  4456
+Avg iter:  11974.0 3
+Avg nodes:  4362.25 3
+Min time:  24.474882
+Max time:  28.623002
+Avg time diff:  26.40723125
+Avg SubOpt cost:  237.2665402216948
+WITH
+Start time-stamp:  2020-03-02 10:52:25.053350
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:52:56.222168
+Iterations:  12968
+Nodes:  4519
+12174.8
+Min calls:  11478
+Max calls:  37048
+Min iter:  11476
+Max iter:  12968
+Min nodes:  4230
+Max nodes:  4519
+Avg iter:  12172.8 4
+Avg nodes:  4393.6 4
+Min time:  24.474882
+Max time:  31.168818
+Avg time diff:  27.3595486
+Avg SubOpt cost:  237.4623131348265
+WITH
+Start time-stamp:  2020-03-02 10:53:10.616482
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:53:40.151578
+Iterations:  12460
+Nodes:  4489
+12222.666666666666
+Min calls:  11478
+Max calls:  37048
+Min iter:  11476
+Max iter:  12968
+Min nodes:  4230
+Max nodes:  4519
+Avg iter:  12220.666666666666 5
+Avg nodes:  4409.5 5
+Min time:  24.474882
+Max time:  31.168818
+Avg time diff:  27.722139833333333
+Avg SubOpt cost:  236.9075920761571
+WITH
+Start time-stamp:  2020-03-02 10:53:40.175042
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:54:10.071507
+Iterations:  12640
+Nodes:  4516
+12282.57142857143
+Min calls:  11478
+Max calls:  49690
+Min iter:  11476
+Max iter:  12968
+Min nodes:  4230
+Max nodes:  4519
+Avg iter:  12280.57142857143 6
+Avg nodes:  4424.714285714285 6
+Min time:  24.474882
+Max time:  31.168818
+Avg time diff:  28.032757714285715
+Avg SubOpt cost:  237.52730262194203
+WITH
+Start time-stamp:  2020-03-02 10:54:10.100434
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:54:39.335774
+Iterations:  12544
+Nodes:  4516
+12315.5
+Min calls:  11478
+Max calls:  49690
+Min iter:  11476
+Max iter:  12968
+Min nodes:  4230
+Max nodes:  4519
+Avg iter:  12313.5 7
+Avg nodes:  4436.125 7
+Min time:  24.474882
+Max time:  31.168818
+Avg time diff:  28.183080500000003
+Avg SubOpt cost:  237.22828035521385
+WITH
+Start time-stamp:  2020-03-02 10:54:39.353726
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:55:09.853069
+Iterations:  12618
+Nodes:  4489
+12349.333333333334
+Min calls:  11478
+Max calls:  62310
+Min iter:  11476
+Max iter:  12968
+Min nodes:  4230
+Max nodes:  4519
+Avg iter:  12347.333333333334 8
+Avg nodes:  4442.0 8
+Min time:  24.474882
+Max time:  31.168818
+Avg time diff:  28.440443000000002
+Avg SubOpt cost:  237.3900421306556
+WITH
+Start time-stamp:  2020-03-02 10:55:09.871468
+Resolution  Angle:  90
+End time-stamp:  2020-03-02 10:55:32.739119
+Iterations:  11500
+Nodes:  4165
+12264.6
+Min calls:  11478
+Max calls:  62310
+Min iter:  11476
+Max iter:  12968
+Min nodes:  4165
+Max nodes:  4519
+Avg iter:  12262.6 9
+Avg nodes:  4414.3 9
+Min time:  22.867651
+Max time:  31.168818
+Avg time diff:  27.883163800000005
+Avg SubOpt cost:  236.87576541262092
+
+C:\Users\Paras Sharma\PycharmProjects\pg-rrt\venv\environment>

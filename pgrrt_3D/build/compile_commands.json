@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/build",
+  "command": "/usr/bin/g++-7    -g   -std=gnu++1z -o CMakeFiles/pgrrt.dir/main.cpp.o -c /media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/main.cpp",
+  "file": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/main.cpp"
+},
+{
+  "directory": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/build",
+  "command": "/usr/bin/g++-7    -g   -std=gnu++1z -o CMakeFiles/pgrrt.dir/Tree.cpp.o -c /media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/Tree.cpp",
+  "file": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/Tree.cpp"
+},
+{
+  "directory": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/build",
+  "command": "/usr/bin/g++-7    -g   -std=gnu++1z -o CMakeFiles/pgrrt.dir/GMM.cpp.o -c /media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/GMM.cpp",
+  "file": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/GMM.cpp"
+},
+{
+  "directory": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/build",
+  "command": "/usr/bin/g++-7    -g   -std=gnu++1z -o CMakeFiles/pgrrt.dir/Canvas.cpp.o -c /media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/Canvas.cpp",
+  "file": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/Canvas.cpp"
+},
+{
+  "directory": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/build",
+  "command": "/usr/bin/g++-7    -g   -std=gnu++1z -o CMakeFiles/pgrrt.dir/Utils.cpp.o -c /media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/Utils.cpp",
+  "file": "/media/hspcn1/Data_Drive/Desktop_new_backup/tools/old_mrpt/PG_RRT/pgrrt_yaw_fixed/Utils.cpp"
+}
+]

@@ -1,0 +1,1 @@
+/usr/bin/g++-7  -g   CMakeFiles/pgrrt.dir/main.cpp.o CMakeFiles/pgrrt.dir/Tree.cpp.o CMakeFiles/pgrrt.dir/GMM.cpp.o CMakeFiles/pgrrt.dir/Canvas.cpp.o CMakeFiles/pgrrt.dir/Utils.cpp.o  -o pgrrt 
