@@ -122,8 +122,8 @@ int main() {
 
         //Scenario - 3
         Canvas canvas;
-        std::pair<Node, float> start = std::pair(Node(10.f, 15.f), 30.f); //start/end format - coordinate, yaw
-        std::pair<Node, float> end = std::pair(Node(35.f, 17.f), -30.f);  //start/end format - coordinate, yaw
+        std::pair<Node, float> start = std::pair(Node(10.f, 15.f, 0.), 30.f); //start/end format - coordinate, yaw
+        std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), -30.f);  //start/end format - coordinate, yaw
         canvas.start = start;
         canvas.end = end;
         canvas.add_obs_from_file("../map");

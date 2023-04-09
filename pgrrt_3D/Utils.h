@@ -7,6 +7,8 @@
 
 #include <tuple>
 #include "GMM.h"
+#include "eigen/Eigen/Dense"
+#include "eigen/Eigen/Geometry"
 
 #define Node std::tuple<float, float, float>
 
@@ -14,7 +16,7 @@ class Utils {
 public:
     static Node extend(Node start, Node end, float step_size);
 
-    static Node rotate(Node root, Node node, float angle, float axis);
+    static Node rotate(Node root, Node node, float angle, float axis, float step_size);
 
     static float eul_dist(Node node1, Node node2);
 

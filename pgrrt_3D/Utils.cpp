@@ -13,16 +13,36 @@ Node Utils::extend(Node start, Node end, float step_size) {
             ((1 - ratio) * std::get<2>(start) + ratio * std::get<2>(end)));
 }
 
-Node Utils::rotate(Node root, Node node, float angle, float axis){
+Node Utils::rotate(Node root, Node node, float angle, float axis, float step_size){
     // roll, yaw, pitch
     angle *= M_PI / 180;
-    float ox = std::get<0>(root);
-    float oy = std::get<1>(root);
-    float px = std::get<0>(node);
-    float py = std::get<1>(node);
-    float qx = ox + cos(angle) * (px - ox) - sin(angle) * (py - oy);
-    float qy = oy + sin(angle) * (px - ox) + cos(angle) * (py - oy);
-    return std::make_tuple(qx, qy, 0);
+//    float ox = std::get<0>(root);
+//    float oy = std::get<1>(root);
+//    float px = std::get<0>(node);
+//    float py = std::get<1>(node);
+//    float qx = ox + cos(angle) * (px - ox) - sin(angle) * (py - oy);
+//    float qy = oy + sin(angle) * (px - ox) + cos(angle) * (py - oy);
+
+    Eigen::Vector3d parent;
+    Eigen::Vector3d child;
+    Eigen::Vector3d base;
+
+    base << step_size, 0, 0;
+    parent << std::get<0>(root), std::get<1>(root), std::get<2>(root);
+    child << std::get<0>(node), std::get<1>(node), std::get<2>(node);
+
+    Eigen::Matrix3d Rot1;
+    Rot1 = Eigen::Quaterniond().setFromTwoVectors(child - parent, base);
+
+    Eigen::Matrix3d node_rotation_mat;
+    node_rotation_mat = Eigen::AngleAxisd(axis, Eigen::Vector3d::UnitX())
+            * Eigen::AngleAxisd(0, Eigen::Vector3d::UnitY())
+            * Eigen::AngleAxisd(angle, Eigen::Vector3d::UnitZ());
+
+    Eigen::Vector3d output;
+    output = Rot1.transpose()*node_rotation_mat*base;
+    output += parent;
+    return std::make_tuple(output(0), output(1), output(2));
 }
 
 float Utils::eul_dist(Node node1, Node node2) {

@@ -21,8 +21,10 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
     special_nodes.push_back(canvas_->start.first);
 //    gauss1 = new Gaussian(5., 10.f, 0.5);
 //    gauss2 = new Gaussian(std::fmod(-5., 360.), 10.f,0.5);
-    gauss1 = new Gaussian(35., 10.f, 0.5, 0);
-    gauss2 = new Gaussian(25, 10.f,0.5, 0);
+    gauss1 = new Gaussian(10., 10.f, 0.25, 0);
+    gauss2 = new Gaussian(-10, 10.f,0.25, 0);
+    gauss1 = new Gaussian(10., 10.f, 0.25, 90*M_PI/180);
+    gauss2 = new Gaussian(-10, 10.f,0.25, 90*M_PI/180);
     std::vector<Gaussian> gauss_;
     gauss_.emplace_back(*gauss1); gauss_.emplace_back(*gauss2);
 //    GMM start_gmm(gauss_, true);
@@ -212,7 +214,7 @@ std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gau
             }
         }
         Node sample = Utils::extend(node, canvas->end.first, step_size);
-        sample = Utils::rotate(node, sample, closest, sampled_direction.second.axis);
+        sample = Utils::rotate(node, sample, closest, sampled_direction.second.axis, step_size);
         remove_action(node, closest);
         rejected_yaws[node].insert(closest);
         return std::make_tuple(true, sample, closest);
