@@ -5,9 +5,9 @@
 #ifndef UNTITLED2_CONFIG_H
 #define UNTITLED2_CONFIG_H
 
-#define RESOLUTION 30.
+#define RESOLUTION 90.
 #define SP_THRESHOLD 40.
-#define MAX_STEER_ANGLE 50.
+#define MAX_STEER_ANGLE 100.
 #define STEP_SIZE .5f
 #define print_file true
 
