@@ -7,8 +7,8 @@
 
 #include <tuple>
 #include "GMM.h"
-#include "eigen/Eigen/Dense"
-#include "eigen/Eigen/Geometry"
+#include <Eigen/Dense>
+#include <Eigen/Geometry>
 
 #define Node std::tuple<float, float, float>
 

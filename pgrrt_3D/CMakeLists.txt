@@ -3,7 +3,7 @@ project(pgrrt)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(eigen)
+include_directories(/usr/local/include/eigen3)
 find_package(PythonLibs 3)
 include_directories(include ${PYTHON_INCLUDE_DIRS})
 

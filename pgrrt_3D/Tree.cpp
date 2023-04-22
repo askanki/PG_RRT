@@ -21,10 +21,10 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
     special_nodes.push_back(canvas_->start.first);
 //    gauss1 = new Gaussian(5., 10.f, 0.5);
 //    gauss2 = new Gaussian(std::fmod(-5., 360.), 10.f,0.5);
-    gauss1 = new Gaussian(10., 10.f, 0.25, 0);
-    gauss2 = new Gaussian(-10, 10.f,0.25, 0);
-    gauss1 = new Gaussian(10., 10.f, 0.25, 90*M_PI/180);
-    gauss2 = new Gaussian(-10, 10.f,0.25, 90*M_PI/180);
+    gauss1 = new Gaussian(10., 10.f, 0.5, 0);
+    gauss2 = new Gaussian(-10, 10.f,0.5, 0);
+    //gauss1 = new Gaussian(10., 10.f, 0.25, 90*M_PI/180);
+    //gauss2 = new Gaussian(-10, 10.f,0.25, 90*M_PI/180);
     std::vector<Gaussian> gauss_;
     gauss_.emplace_back(*gauss1); gauss_.emplace_back(*gauss2);
 //    GMM start_gmm(gauss_, true);
@@ -136,7 +136,6 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
             parent[node] = parent_;
             std::vector<float> v;
             actions[node] = v;
-            parent[node] = parent_;
             std::set<float> s;
             available_yaws[node] = s;
             std::set<float> s1;
@@ -177,7 +176,7 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
 
             special_nodes.push_back(node);
             bool fake = true;
-            //AG: Check for Special Node check_threshold returns true is the parent is not special
+            //AG: Check for Special Node. check_threshold returns true if the parent is not special
             if(parent[parent_]!=parent_ && check_threshold(node, parent_, yaw)){
                 fake = false;
                 if (std::find(special_nodes.begin(), special_nodes.end(),parent_)!=special_nodes.end()){
@@ -192,7 +191,7 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
         collision_free = false;
     }
     // TODO: migrate change_probability to GMM class
-    //AG: Update the porbabitlity of Parent node
+    //AG: Update the probabitlity of Parent node
     change_proability(reinterpret_cast<Gaussian *>(&gauss));
 
     return collision_free;

@@ -17,7 +17,7 @@
 class Tree {
 
 
-
+//Threshold_theta : SP Angle, Resolution Angle: For action space
 public:
     Tree(Canvas *canvas, float threshold_theta, float resolution_angle, float step_size);
 
@@ -32,12 +32,12 @@ public:
     std::vector <Node> special_nodes;         //AG: This will hold the current candidate nodes
     std::vector <Node> prev_special_nodes;    //AG: This will hold the nodes which were special in the last collection of special_nodes but now out of all the actions
     std::map <Node, bool> used_special_nodes; //AG: This will list all the nodes which were special nodes at some time but now exausted
-    std::map <Node, GMM> prob_dist;
-    std::map <Node, Node> parent;
-    std::map <std::pair<Node, float>, std::set<std::pair<Node, float>>> parents; //AG: This will save the <current node and action> and all the various <parent and yaw> pairs used to reach this combination
-    std::map <Node, std::vector<float>> actions; //AG: This will hold the nodes on which action has been taken and the list of actions
-    std::map <Node, bool> actions_taken;
-    std::map<Node, std::set<float>> available_yaws;
+    std::map <Node, GMM> prob_dist;           //AG: This will save the node and the associated GMM   
+    std::map <Node, Node> parent;             //AG: This will store the current node and it's parent
+    std::map <std::pair<Node, float>, std::set<std::pair<Node, float>>> parents; //AG: This will save the <current node and feasible action> from all possible <parent and yaw> pairs used to reach this combination
+    std::map <Node, std::vector<float>> actions; //AG: This will hold the nodes on which action has been taken and the list of actions; This is used in make_action function and will on;y contain the available feasible actions which have not been taken yet 
+    std::map <Node, bool> actions_taken;         //AG: This will indicate if an action is taken from a particular node  
+    std::map<Node, std::set<float>> available_yaws;  //AG: This will hold the nodes on which action has been taken and the list of all feasible actions;
     std::map<Node, std::set<float>> rejected_yaws;
     float threshold_theta;
     float resolution_angle;

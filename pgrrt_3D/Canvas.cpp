@@ -36,7 +36,8 @@ void Canvas::add_obs_from_file(std::string path_to_file) {
             std::copy(std::istream_iterator<float>(line_),
                       std::istream_iterator<float>(),
                       std::back_inserter(v));
-            obs_points.emplace_back(v[0], v[1], v[2]);
+            //obs_points.emplace_back(v[0], v[1], v[2]);
+            obs_points.emplace_back(v[0], v[1], 0.);
         }
         obs_file.close();
     }

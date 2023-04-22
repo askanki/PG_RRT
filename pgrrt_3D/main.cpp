@@ -14,8 +14,8 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
     if(print_file) {
         std::ofstream myfile;
         myfile.open ("path_raw.txt");
-        myfile << std::get<0>(tree->canvas->start.first) << " " << std::get<1>(tree->canvas->start.first) << std::endl;
-        myfile << std::get<0>(tree1->canvas->start.first) << " " << std::get<1>(tree1->canvas->start.first) << std::endl;
+        myfile << std::get<0>(tree->canvas->start.first) << " " << std::get<1>(tree->canvas->start.first) <<" "<< std::get<2>(tree->canvas->start.first)<< std::endl;
+        myfile << std::get<0>(tree1->canvas->start.first) << " " << std::get<1>(tree1->canvas->start.first) <<" "<<std::get<2>(tree1->canvas->start.first)<< std::endl;
         myfile.close();
         std::ofstream myfile1;
         myfile1.open ("removed.txt");
@@ -27,17 +27,20 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
         myfile3.open ("path.txt");
         myfile3.close();
     }
-    while(iterations < 100000){
+    while(iterations < MAX_ITERATION){
         //AG: return: parent_node_, new_node_, direction_, parent_gaussian_
         std::tuple<Node, Node, float, Gaussian> par_node_yaw_gauss = tree->pick_random(iterations);
         std::tuple<Node, Node, float,  Gaussian> par_node_yaw_gauss1 = tree1->pick_random(iterations);
         bool change = tree->add_node(std::get<0>(par_node_yaw_gauss), std::get<1>(par_node_yaw_gauss), std::get<2>(par_node_yaw_gauss), &std::get<3>(par_node_yaw_gauss));
+        //TODO: Code only works when both the trees expand
         bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), &std::get<3>(par_node_yaw_gauss1));
+        
         if(change){
             if(print_file) {
                 std::ofstream myfile;
                 myfile.open ("path_raw.txt", std::ios_base::app);
-                myfile << std::get<0>(std::get<1>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<1>(par_node_yaw_gauss)) << " " <<  std::get<0>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss)) << "\n";
+                myfile << std::get<0>(std::get<1>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<1>(par_node_yaw_gauss)) << " " << std::get<2>(std::get<1>(par_node_yaw_gauss)) <<" "
+                       << std::get<0>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<2>(std::get<0>(par_node_yaw_gauss)) << "\n";
                 myfile.close();
             }
             //AG: Check for convergence; if the new node is close to the End node of Tree
@@ -70,7 +73,8 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
             if(print_file) {
                 std::ofstream myfile;
                 myfile.open ("path_raw.txt", std::ios_base::app);
-                myfile << std::get<0>(std::get<1>(par_node_yaw_gauss1)) << " " << std::get<1>(std::get<1>(par_node_yaw_gauss1)) << " " <<  std::get<0>(std::get<0>(par_node_yaw_gauss1)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss1)) << "\n";
+                myfile << std::get<0>(std::get<1>(par_node_yaw_gauss1)) << " " << std::get<1>(std::get<1>(par_node_yaw_gauss1)) << " " << std::get<2>(std::get<1>(par_node_yaw_gauss1)) << " "
+                       << std::get<0>(std::get<0>(par_node_yaw_gauss1)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss1)) << " " << std::get<2>(std::get<0>(par_node_yaw_gauss1)) << "\n";
                 myfile.close();
             }
             //AG: Check for convergence; if the new node is close to the End node of Tree-1
