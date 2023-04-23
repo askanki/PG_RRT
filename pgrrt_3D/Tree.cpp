@@ -190,15 +190,16 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
     } else{
         collision_free = false;
     }
-    // TODO: migrate change_probability to GMM class
+    //TODO: Fix this implementation; check the functionality of the code
     //AG: Update the probabitlity of Parent node
-    change_proability(reinterpret_cast<Gaussian *>(&gauss));
+    //change_proability(reinterpret_cast<Gaussian *>(&gauss));
+    change_proability(gauss);
 
     return collision_free;
 }
 
 //AG: return value: is_sucessfull, node, yaw_direction
-std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gaussian> sampled_direction){
+std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gaussian *> sampled_direction){
     if(actions.find(node) != actions.end()){
         std::vector<float> actions_ = actions[node];
         if(actions_.empty()){
@@ -213,7 +214,7 @@ std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gau
             }
         }
         Node sample = Utils::extend(node, canvas->end.first, step_size);
-        sample = Utils::rotate(node, sample, closest, sampled_direction.second.axis, step_size);
+        sample = Utils::rotate(node, sample, closest, sampled_direction.second->axis, step_size);
         remove_action(node, closest);
         rejected_yaws[node].insert(closest);
         return std::make_tuple(true, sample, closest);
@@ -301,7 +302,7 @@ void Tree::get_path(Node end_node) {
 }
 
 //AG: return: parent_node_, new_node_, direction_, parent_gaussian_  
-std::tuple<Node, Node, float, Gaussian> Tree::pick_random(int &iterations) {
+std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations) {
     std::default_random_engine generator;
     generator.seed(time(0));
     while(true){
@@ -336,7 +337,7 @@ std::tuple<Node, Node, float, Gaussian> Tree::pick_random(int &iterations) {
         std::uniform_real_distribution<> dis(0, special_nodes.size()-1);
         int random_index = ceil(dis(generator));
         Node parent_ = special_nodes[random_index];
-        std::pair<float , Gaussian> sample_direction = prob_dist[parent_].sample();
+        std::pair<float , Gaussian *> sample_direction = prob_dist[parent_].sample();
         std::tuple<bool, Node, float> new_Node = make_action(parent_, sample_direction);
         if(std::get<0>(new_Node)){
             return std::make_tuple(parent_, std::get<1>(new_Node), std::get<2>(new_Node), sample_direction.second);
@@ -351,7 +352,7 @@ std::tuple<Node, Node, float, Gaussian> Tree::pick_random(int &iterations) {
 }
 
 void Tree::change_proability(Gaussian *gaussian) {
-    float mean_shift = resolution_angle*.9f;
+    float mean_shift = resolution_angle*.25f;
     gaussian->mean = Utils::shift_away(gaussian->mean,  0, mean_shift);
     float variance_shift = 2.f;
     gaussian->variance += variance_shift;

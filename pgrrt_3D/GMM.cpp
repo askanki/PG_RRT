@@ -35,17 +35,19 @@ Gaussian GMM::find_nearest_gaussian(Gaussian gauss){
     return gauss_list[0];
 }
 
-std::pair<float, Gaussian> GMM::sample(){
+std::pair<float, Gaussian *> GMM::sample(){
     std::default_random_engine generator;
     generator.seed(time(0));
     normalize();
     std::uniform_real_distribution<> dis(0, 1.0);
     float rand_ = dis(generator);
+    auto iter =0;
     for(auto gauss: gauss_list){
         if(rand_ < gauss.probability_end){
             std::normal_distribution<double> distribution(gauss.mean, gauss.variance);
-            return std::pair<float , Gaussian>(distribution(generator), gauss);
+            return std::pair<float , Gaussian *>(distribution(generator), &gauss_list[iter]);
         }
+        iter++;
     }
 }
 

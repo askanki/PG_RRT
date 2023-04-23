@@ -30,7 +30,7 @@ public:
     void normalize();
     Gaussian find_nearest_gaussian(Gaussian gauss);
 
-    std::pair<float, Gaussian> sample();
+    std::pair<float, Gaussian *> sample();
 };
 
 

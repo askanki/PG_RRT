@@ -29,11 +29,11 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
     }
     while(iterations < MAX_ITERATION){
         //AG: return: parent_node_, new_node_, direction_, parent_gaussian_
-        std::tuple<Node, Node, float, Gaussian> par_node_yaw_gauss = tree->pick_random(iterations);
-        std::tuple<Node, Node, float,  Gaussian> par_node_yaw_gauss1 = tree1->pick_random(iterations);
-        bool change = tree->add_node(std::get<0>(par_node_yaw_gauss), std::get<1>(par_node_yaw_gauss), std::get<2>(par_node_yaw_gauss), &std::get<3>(par_node_yaw_gauss));
+        std::tuple<Node, Node, float, Gaussian *> par_node_yaw_gauss = tree->pick_random(iterations);
+        std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1 = tree1->pick_random(iterations);
+        bool change = tree->add_node(std::get<0>(par_node_yaw_gauss), std::get<1>(par_node_yaw_gauss), std::get<2>(par_node_yaw_gauss), std::get<3>(par_node_yaw_gauss));
         //TODO: Code only works when both the trees expand
-        bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), &std::get<3>(par_node_yaw_gauss1));
+        bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), std::get<3>(par_node_yaw_gauss1));
         
         if(change){
             if(print_file) {
