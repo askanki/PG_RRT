@@ -30,11 +30,13 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
     while(iterations < MAX_ITERATION){
         //AG: return: parent_node_, new_node_, direction_, parent_gaussian_
         std::tuple<Node, Node, float, Gaussian *> par_node_yaw_gauss = tree->pick_random(iterations);
-        std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1 = tree1->pick_random(iterations);
         bool change = tree->add_node(std::get<0>(par_node_yaw_gauss), std::get<1>(par_node_yaw_gauss), std::get<2>(par_node_yaw_gauss), std::get<3>(par_node_yaw_gauss));
         //TODO: Code only works when both the trees expand
-        bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), std::get<3>(par_node_yaw_gauss1));
-        
+        //std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1 = tree1->pick_random(iterations);
+        //bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), std::get<3>(par_node_yaw_gauss1));
+        std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1; 
+        bool change1 = false;
+
         if(change){
             if(print_file) {
                 std::ofstream myfile;
@@ -44,7 +46,7 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
                 myfile.close();
             }
             //AG: Check for convergence; if the new node is close to the End node of Tree
-            if(Utils::eul_dist(std::get<1>(par_node_yaw_gauss), tree->canvas->end.first) < tree->step_size){
+            if(Utils::eul_dist(std::get<1>(par_node_yaw_gauss), tree->canvas->end.first) <= tree->step_size){
                 std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
                 std::chrono::duration<double, std::milli> time_span = t2 - t1;
                 std::cout << "Search time: " << time_span.count() << std::endl;
@@ -126,8 +128,10 @@ int main() {
 
         //Scenario - 3
         Canvas canvas;
-        std::pair<Node, float> start = std::pair(Node(10.f, 15.f, 0.), 30.f); //start/end format - coordinate, yaw
-        std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), -30.f);  //start/end format - coordinate, yaw
+        std::pair<Node, float> start = std::pair(Node(2.0f, 15.f, 0.), 0.f); //start/end format - coordinate, yaw
+        std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), 0.f);   //start/end format - coordinate, yaw
+        //std::pair<Node, float> start = std::pair(Node(10.f, 15.f, 0.), 30.f);   //start/end format - coordinate, yaw
+        //std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), -30.f);    //start/end format - coordinate, yaw
         canvas.start = start;
         canvas.end = end;
         canvas.add_obs_from_file("../map");

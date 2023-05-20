@@ -13,6 +13,7 @@
 class Canvas {
 
 public:
+    //TODO: This can be extended to include the Axis information
     //start/end format - coordinate, yaw
     std::pair<Node, float> start;
     std::pair<Node, float> end;

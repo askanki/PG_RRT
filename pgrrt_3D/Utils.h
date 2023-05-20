@@ -11,6 +11,7 @@
 #include <Eigen/Geometry>
 
 #define Node std::tuple<float, float, float>
+#define Orientation std::map<float, std::vector<float>>  //Axis, yaw
 
 class Utils {
 public:
@@ -31,6 +32,8 @@ public:
     static float get_angle(Node node, Node parent, Node parent_parent);
 
     static bool feasible(Node parent, float yaw, Node node, float angle, float max_turn);
+    
+    static bool feasible_3D(Node parent, Node end, Node node, float axis, float angle, float max_turn, float step_size);
 };
 
 

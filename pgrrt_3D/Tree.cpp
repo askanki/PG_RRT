@@ -19,27 +19,33 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
     step_size = step_size_;
     nodes.push_back(canvas_->start.first);
     special_nodes.push_back(canvas_->start.first);
-//    gauss1 = new Gaussian(5., 10.f, 0.5);
-//    gauss2 = new Gaussian(std::fmod(-5., 360.), 10.f,0.5);
+    //AG: Gaussian(mean, variance, probability, axis)
     gauss1 = new Gaussian(10., 10.f, 0.5, 0);
     gauss2 = new Gaussian(-10, 10.f,0.5, 0);
     //gauss1 = new Gaussian(10., 10.f, 0.25, 90*M_PI/180);
     //gauss2 = new Gaussian(-10, 10.f,0.25, 90*M_PI/180);
     std::vector<Gaussian> gauss_;
-    gauss_.emplace_back(*gauss1); gauss_.emplace_back(*gauss2);
-//    GMM start_gmm(gauss_, true);
+    gauss_.emplace_back(*gauss1); 
+    gauss_.emplace_back(*gauss2);
     prob_dist[canvas_->start.first].gauss_list = gauss_;
     parent[canvas_->start.first] =  canvas_->start.first;
-    std::set<std::pair<Node, float>> se{std::pair(canvas_->start.first, canvas_->start.second)};
-    parents[std::pair(canvas_->start.first, canvas_->start.second)] = se;
+    //TODO: Fix the Axis of the starting and end node; it should be w.r.t. the some refrence frame
+    std::set<std::tuple<Node, float, float>> se{std::tuple(canvas_->start.first, canvas_->start.second, 0.)};
+    parents[std::tuple(canvas_->start.first, canvas_->start.second, 0.)] = se;
 //    setup_action(canvas_->start);
-    std::vector<float> v{canvas_->start.second};
+    //std::vector<float> v{canvas_->start.second};
+    Orientation v;
+    v[0].push_back(canvas_->start.second);
     actions[canvas_->start.first] = v;
     actions_taken[canvas_->start.first] = true;
-    std::set<float> s{canvas_->start.second};
+    //std::set<float> s{canvas_->start.second};
+    Orientation s;
+    s[0].push_back(canvas_->start.second);
     available_yaws[canvas_->start.first] = s;
-    std::set<float> s1;
-    rejected_yaws[canvas_->start.first] = s1;
+    std::vector<float> s1;
+    Orientation o1;
+    o1[0] = s1;
+    rejected_yaws[canvas_->start.first] = o1;
 }
 
 //void Tree::setup_action(Node node) {
@@ -70,6 +76,7 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
 //}
 
 bool Tree::check_threshold(Node node, Node parent_, float yaw){
+    /*
     float temp = INFINITY;
 //    if(parents.find(std::pair(parent_, yaw)) == parents.end()){
 ////        std::cout << "BA";
@@ -79,7 +86,8 @@ bool Tree::check_threshold(Node node, Node parent_, float yaw){
             temp = std::min(Utils::get_angle(node, parent_, std::get<0>(parent__)), std::abs(360 - Utils::get_angle(node, parent_, std::get<0>(parent__))));
         }
     }
-    return temp > 180 - threshold_theta;
+    return temp > 180 - threshold_theta;*/
+    return true;
 }
 
 
@@ -89,41 +97,52 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
         bool flag = true;
         for (auto node_: nodes){
             bool plot_flag = true;
-            //AG: This is to reduce the node clutter & finiding is there exist another node in the vicinity
+            //AG:Added to this code to avoid checking the condition on the nodes generated from same parent
+            if(parent[node_] == parent_)
+               continue;
+            //AG: This is to reduce the node clutter & finiding if there exist another node in the vicinity
             if(Utils::eul_dist(node_, node) < step_size/pow(2,.5)){
-                for(int angle=0; angle<ceil(360/resolution_angle); angle++){
-                    //AG: Checking kinematic constraint on the selected node
-                    if (Utils::feasible(parent_, yaw, node_, angle*resolution_angle, MAX_STEER_ANGLE)){
-                        if(rejected_yaws[node_].find(angle*resolution_angle)==rejected_yaws[node_].end()) {
-                            if(available_yaws[node_].find(angle*resolution_angle)==available_yaws[node_].end()) {
-                                available_yaws[node_].insert(angle * resolution_angle);
-                                if (actions.find(node_) == actions.end()) {
-                                    std::vector<float> v;
-                                    actions[node_] = v;
-                                }
-                                if (std::find(actions[node_].begin(), actions[node_].end(), angle * resolution_angle) ==
-                                    actions[node_].end()) {
-                                    actions[node_].emplace_back(angle * resolution_angle);
-                                    if (std::find(special_nodes.begin(), special_nodes.end(), node_) ==
-                                        special_nodes.end()) {
-                                        special_nodes.emplace_back(node_);
+                //AG: Adding extra loop for Axis search
+                for(int axis=0; axis < TOTAL_AXIS; axis++){
+                    for(int angle=0; angle<ceil(360/resolution_angle); angle++){
+                        //AG: Checking kinematic constraint on the selected node
+                        //if (Utils::feasible(parent_, yaw, node_, angle*resolution_angle, MAX_STEER_ANGLE)){
+                        if (Utils::feasible_3D(parent_, canvas->end.first, node_, axis, angle*resolution_angle, MAX_STEER_ANGLE, step_size)){
+                            //if(rejected_yaws[node_][axis].find(angle*resolution_angle)==rejected_yaws[node_][axis].end()) {
+                            if(std::find(rejected_yaws[node_][axis].begin(), rejected_yaws[node_][axis].end(), angle*resolution_angle)==rejected_yaws[node_][axis].end()) {
+                                //if(available_yaws[node_][axis].find(angle*resolution_angle)==available_yaws[node_][axis].end()) {
+                                if(std::find(available_yaws[node_][axis].begin(), available_yaws[node_][axis].end(), angle*resolution_angle)==available_yaws[node_][axis].end()) {
+                                    //available_yaws[node_][axis].insert(angle * resolution_angle);
+                                    available_yaws[node_][axis].push_back(angle * resolution_angle);
+                                    if (actions.find(node_) == actions.end()) {
+                                        //std::vector<float> v;
+                                        Orientation n;
+                                        actions[node_] = n;
+                                    }
+                                    if (std::find(actions[node_][axis].begin(), actions[node_][axis].end(), angle * resolution_angle) ==
+                                        actions[node_][axis].end()) {
+                                        actions[node_][axis].emplace_back(angle * resolution_angle);
+                                        if (std::find(special_nodes.begin(), special_nodes.end(), node_) ==
+                                            special_nodes.end()) {
+                                            special_nodes.emplace_back(node_);
 
+                                        }
                                     }
                                 }
                             }
-                        }
-                        if (parents.find(std::pair(node_, angle*resolution_angle)) == parents.end()) {
-                            std::set<std::pair<Node, float>> s;
-                            parents[std::pair(node_, angle*resolution_angle)] = s;
-                        }
-                        parents[std::pair(node_, angle*resolution_angle)].insert(std::pair(parent_, yaw));
-                        if (plot_flag && print_file) {
-                            std::ofstream myfile;
-                            myfile.open("kino.txt", std::ios_base::app);
-                            myfile << std::get<0>(node_) << " " << std::get<1>(node_) << " "
-                                   << std::get<0>(parent_) << " " << std::get<1>(parent_) << "\n";
-                            myfile.close();
-                            plot_flag = false;
+                            if (parents.find(std::tuple(node_, angle*resolution_angle, axis)) == parents.end()) {
+                                std::set<std::tuple<Node, float, float>> s;
+                                parents[std::tuple(node_, angle*resolution_angle, axis)] = s;
+                            }
+                            parents[std::tuple(node_, angle*resolution_angle, axis)].insert(std::tuple(parent_, yaw, gauss->axis));
+                            if (plot_flag && print_file) {
+                                std::ofstream myfile;
+                                myfile.open("kino.txt", std::ios_base::app);
+                                myfile << std::get<0>(node_) << " " << std::get<1>(node_) << " "
+                                       << std::get<0>(parent_) << " " << std::get<1>(parent_) << "\n";
+                                myfile.close();
+                                plot_flag = false;
+                            }
                         }
                     }
                 }
@@ -134,30 +153,38 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
         if(flag){ //AG: Creating a new Node
             nodes.emplace_back(node);
             parent[node] = parent_;
-            std::vector<float> v;
+            //std::vector<float> v;
+            Orientation v;
             actions[node] = v;
-            std::set<float> s;
+            //std::set<float> s;
+            Orientation s;
             available_yaws[node] = s;
-            std::set<float> s1;
+            //std::set<float> s1;
+            Orientation s1;
             rejected_yaws[node] = s1;
-            for(int angle=0; angle<ceil(360/resolution_angle); angle++){
-                //AG: Store all the possbile <node, action> pairs for the given <parent, yaw> combination
-                //AG: actions and available_yaw stores all the possible actions for the new node from <parent, yaw> pair
-                if (Utils::feasible(parent_, yaw, node, angle*resolution_angle, MAX_STEER_ANGLE)){
-                    //TODO: This if can be removed as the new node is just created
-                    if(available_yaws[node].find(angle*resolution_angle)==available_yaws[node].end()){
-                        available_yaws[node].insert(angle*resolution_angle);
-                        if(actions.find(node)==actions.end()){
-                            std::vector<float> v;
-                            actions[node] = v;
-                        }
-                        if(parents.find(std::pair(node, angle*resolution_angle))==parents.end()){
-                            std::set<std::pair<Node, float>> s;
-                            parents[std::pair(node, angle*resolution_angle)] = s;
-                        }
-                        parents[std::pair(node, angle*resolution_angle)].insert(std::pair(parent_, yaw));
-                        if (std::find(actions[node].begin(), actions[node].end(),angle*resolution_angle)==actions[node].end()){
-                            actions[node].emplace_back(angle*resolution_angle);
+            for(int axis =0; axis < TOTAL_AXIS; axis++) {
+                for(int angle=0; angle<ceil(360/resolution_angle); angle++){
+                    //AG: Store all the possbile <node, action> pairs for the given <parent, yaw> combination
+                    //AG: actions and available_yaw stores all the possible actions for the new node from <parent, yaw> pair
+                    //if (Utils::feasible(parent_, yaw, node, angle*resolution_angle, MAX_STEER_ANGLE)){
+                    if (Utils::feasible_3D(parent_, canvas->end.first, node, axis, angle*resolution_angle, MAX_STEER_ANGLE, step_size)){
+                        //TODO: This if can be removed as the new node is just created
+                        if(std::find(available_yaws[node][axis].begin(), available_yaws[node][axis].end(), angle*resolution_angle)==available_yaws[node][axis].end()){
+                            //available_yaws[node][axis].insert(angle*resolution_angle);
+                            available_yaws[node][axis].push_back(angle*resolution_angle);
+                            if(actions.find(node)==actions.end()){
+                                //std::vector<float> v;
+                                Orientation v;
+                                actions[node] = v;
+                            }
+                            if(parents.find(std::tuple(node, angle*resolution_angle, axis))==parents.end()){
+                                std::set<std::tuple<Node, float, float>> s;
+                                parents[std::tuple(node, angle*resolution_angle, axis)] = s;
+                            }
+                            parents[std::tuple(node, angle*resolution_angle, axis)].insert(std::tuple(parent_, yaw, gauss->axis));
+                            if (std::find(actions[node][axis].begin(), actions[node][axis].end(),angle*resolution_angle)==actions[node][axis].end()){
+                                actions[node][axis].emplace_back(angle*resolution_angle);
+                            }
                         }
                     }
                 }
@@ -201,22 +228,25 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
 //AG: return value: is_sucessfull, node, yaw_direction
 std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gaussian *> sampled_direction){
     if(actions.find(node) != actions.end()){
-        std::vector<float> actions_ = actions[node];
+        //std::vector<float> actions_ = actions[node];
+        Orientation actions_ = actions[node];
         if(actions_.empty()){
             actions.erase(node);
             // TODO:: change this
             return std::tuple(false, std::make_tuple(-1, -1, -1), -1);
         }
-        float closest = actions_[0];
-        for(auto action: actions_){
+        //AG: Selecting the closest action on the selected Axis
+        float closest = actions_[sampled_direction.second->axis][0];
+        for(auto action: actions_[sampled_direction.second->axis]){
             if(Utils::dist_mean(action, sampled_direction.first) < Utils::dist_mean(closest, sampled_direction.first)){
                 closest = action;
             }
         }
         Node sample = Utils::extend(node, canvas->end.first, step_size);
         sample = Utils::rotate(node, sample, closest, sampled_direction.second->axis, step_size);
-        remove_action(node, closest);
-        rejected_yaws[node].insert(closest);
+        remove_action(node, closest, sampled_direction.second->axis);
+        //rejected_yaws[node].insert(closest);
+        rejected_yaws[node][sampled_direction.second->axis].push_back(closest);
         return std::make_tuple(true, sample, closest);
     }
     // TODO:: change this
@@ -225,12 +255,18 @@ std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gau
 
 //AG: Remove the action from the current node which is used to generate a new sample
 //Remove the node from special node list if all the actions are exhausted
-void Tree::remove_action(Node node, float action) {
-    std::vector<float> actions_ = actions[node];
+void Tree::remove_action(Node node, float action, float axis) {
+    std::vector<float> actions_ = actions[node][axis];
     // TODO: Remove nested loop
     if (std::find(actions_.begin(), actions_.end(),action)!=actions_.end()){
-        actions[node].erase(std::remove(actions[node].begin(), actions[node].end(), action), actions[node].end());
+        actions[node][axis].erase(std::remove(actions[node][axis].begin(), actions[node][axis].end(), action), actions[node][axis].end());
     }
+    
+    //AG: Added new, this is to remove the axis if all the actions are exhausted
+    if(actions[node][axis].empty()){
+      actions[node].erase(axis); 
+    }
+    
     if(actions[node].empty()){
 //        std::ofstream myfile;
 //        myfile.open ("removed.txt", std::ios_base::app);
@@ -244,28 +280,33 @@ void Tree::remove_action(Node node, float action) {
 }
 
 void Tree::get_path(Node end_node) {
+
     struct Node_{
-        std::pair<Node, float> node_;
-        std::pair<Node, float> parent_;
-        std::vector<std::pair<Node, float>> childs;
+        std::tuple<Node, float, float> node_;
+        std::tuple<Node, float, float> parent_;
+        std::vector<std::tuple<Node, float, float>> childs;
     };
-    std::vector<std::pair<Node, float>> queue;
-    std::map<std::pair<Node, float>, Node_> nodes_;
-    for(int angle=0; angle<ceil(360/resolution_angle); angle++) {
-        if(parents.find(std::pair(end_node, angle*resolution_angle))!=parents.end()){
-            queue.emplace_back(std::pair(end_node, angle*resolution_angle));
-            Node_ n;
-            n.node_ = std::pair(end_node, angle*resolution_angle);
-            n.parent_ = std::pair(end_node, angle*resolution_angle);
-            nodes_[std::pair(end_node, angle*resolution_angle)] = n;
+    std::vector<std::tuple<Node, float, float>> queue;
+    std::map<std::tuple<Node, float, float>, Node_> nodes_;
+
+    for(int axis =0; axis < TOTAL_AXIS; axis++) {
+        for(int angle=0; angle<ceil(360/resolution_angle); angle++) {
+            if(parents.find(std::tuple(end_node, angle*resolution_angle, axis))!=parents.end()){
+                queue.emplace_back(std::tuple(end_node, angle*resolution_angle, axis));
+                Node_ n;
+                n.node_ = std::tuple(end_node, angle*resolution_angle, axis);
+                n.parent_ = std::tuple(end_node, angle*resolution_angle, axis);
+                nodes_[std::tuple(end_node, angle*resolution_angle, axis)] = n;
+            }
         }
     }
-    std::pair<Node, float> current;
-    std::map<std::pair<Node, float>, bool> visited;
+    std::tuple<Node, float, float> current;
+    std::map<std::tuple<Node, float, float>, bool> visited;
     while(true){
         current = queue.front();
         queue.erase(queue.begin());
-        if(current==canvas->start){
+        //TODO: Check for the Axis as well
+        if(std::get<0>(current)==canvas->start.first && std::get<1>(current)==canvas->start.second && std::get<2>(current)== 0.){
             break;
         }
         if(visited.find(current)!=visited.end()){
@@ -282,29 +323,31 @@ void Tree::get_path(Node end_node) {
                 queue.emplace_back(parent__);
                 std::ofstream myfile;
                 myfile.open ("removed.txt", std::ios_base::app);
-                myfile << std::get<0>(parent__.first) << " " << std::get<1>(parent__.first) <<"\n";
+                myfile << std::get<0>(std::get<0>(parent__)) << " " << std::get<1>(std::get<0>(parent__)) <<"\n";
                 myfile.close();
             }
         }
     }
-    std::vector<std::pair<Node, float>> path;
-    while (current.first!=end_node){
+    std::vector<std::tuple<Node, float, float>> path;
+    while (std::get<0>(current)!=end_node){
         path.emplace_back(current);
         if(print_file){
             std::ofstream myfile;
             myfile.open ("path.txt", std::ios_base::app);
-            myfile << std::get<0>(current.first) << " " << std::get<1>(current.first) <<"\n";
+            myfile << std::get<0>(std::get<0>(current)) << " " << std::get<1>(std::get<0>(current)) <<"\n";
             myfile.close();
         }
         current = nodes_[current].parent_;
     }
     std::cout<<path.size()<<std::endl;
+    std::cout<<"Path Search Ended"<<std::endl;
 }
 
 //AG: return: parent_node_, new_node_, direction_, parent_gaussian_  
 std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations) {
     std::default_random_engine generator;
-    generator.seed(time(0));
+    //generator.seed(time(0));
+    generator.seed();
     while(true){
         iterations++;
         if(special_nodes.empty()){
@@ -352,9 +395,9 @@ std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations) {
 }
 
 void Tree::change_proability(Gaussian *gaussian) {
-    float mean_shift = resolution_angle*.25f;
+    float mean_shift = resolution_angle*.5f;
     gaussian->mean = Utils::shift_away(gaussian->mean,  0, mean_shift);
     float variance_shift = 2.f;
     gaussian->variance += variance_shift;
-    gaussian->variance = fmax(5, gaussian->variance);
+    gaussian->variance = fmax(20, gaussian->variance);
 }

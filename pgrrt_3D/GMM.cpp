@@ -37,7 +37,8 @@ Gaussian GMM::find_nearest_gaussian(Gaussian gauss){
 
 std::pair<float, Gaussian *> GMM::sample(){
     std::default_random_engine generator;
-    generator.seed(time(0));
+    //generator.seed(time(0));
+    generator.seed();
     normalize();
     std::uniform_real_distribution<> dis(0, 1.0);
     float rand_ = dis(generator);
