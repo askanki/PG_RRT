@@ -24,7 +24,7 @@ public:
     std::tuple<Node, Node, float, Gaussian *> pick_random(int &iterations);
 
     bool add_node(Node parent, Node node, float yaw, Gaussian *gaussian);
-    bool check_threshold(Node node, Node parent, float yaw);
+    bool check_threshold(Node node, Node parent, float yaw, float axis);
 
     Canvas *canvas;
     float step_size;

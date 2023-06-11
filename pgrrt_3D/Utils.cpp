@@ -16,17 +16,14 @@ Node Utils::extend(Node start, Node end, float step_size) {
 Node Utils::rotate(Node root, Node node, float angle, float axis, float step_size){
     // roll, yaw, pitch
     angle *= M_PI / 180;
-
     
-    //TODO: Test code, remove afterwards
+    //TODO: For testing Rotating Matrix Implementation in 2D. Test code, remove afterwards
     float ox = std::get<0>(root);
     float oy = std::get<1>(root);
     float px = std::get<0>(node);
     float py = std::get<1>(node);
     float qx = ox + cos(angle) * (px - ox) - sin(angle) * (py - oy);
     float qy = oy + sin(angle) * (px - ox) + cos(angle) * (py - oy);
-    //return std::make_tuple(qx, qy, 0);
-
     
     Eigen::Vector3d parent;
     Eigen::Vector3d child;
@@ -35,52 +32,58 @@ Node Utils::rotate(Node root, Node node, float angle, float axis, float step_siz
 
     world_coordinate_ref << 1, 0, 0;
      
-    /*
+    /* 
+    //AG: For testing Rotating Matrix Implementation
     base << 1.,0.,0.;
     parent << 0.,0.,0.;
-    child << 1.,1.,0.;
-    
-    
+    child << 0.,0.,1.;
     axis = 90 * M_PI / 180;
-    angle = 30 * M_PI / 180;*/
+    angle = 90 * M_PI / 180;*/
 
-     
+         
     base << step_size, 0, 0;
     parent << std::get<0>(root), std::get<1>(root), std::get<2>(root);
     child << std::get<0>(node), std::get<1>(node), std::get<2>(node);
     
     //AG: setFromTwoVectors(a, b) gives a rotation matrix to represent a rotation
     //sending the line of direction a to the line of direction b
-    Eigen::Matrix3d Rot1;
-    Rot1 = Eigen::Quaterniond().setFromTwoVectors(child - parent, world_coordinate_ref);
+    //w.r.t. Coordinate rotation this Rotation Matrix repreents the co-ordinate rotation from ref b to ref a (Passive Rotation)
+    //Refer: https://danceswithcode.net/engineeringnotes/rotations_in_3d/rotations_in_3d_part1.html
 
-    Eigen::Matrix3d node_rotation_mat;
-    /*
-    node_rotation_mat = Eigen::AngleAxisd(axis, Eigen::Vector3d::UnitX())
-            * Eigen::AngleAxisd(0, Eigen::Vector3d::UnitY())
-            * Eigen::AngleAxisd(angle, Eigen::Vector3d::UnitZ());
-    
-    node_rotation_mat = Eigen::AngleAxisd(angle, Eigen::Vector3d::UnitZ())
-            * Eigen::AngleAxisd(axis, Eigen::Vector3d::UnitX());
-    
-    std::cout<<"Node Rotation Matix :\n"<<node_rotation_mat<<std::endl;*/
+    Eigen::Matrix3d Rot1;
+    //Rot1 = Eigen::Quaterniond().setFromTwoVectors(child - parent, world_coordinate_ref);
+    Rot1 = Eigen::Quaterniond().setFromTwoVectors(world_coordinate_ref, child - parent);
+    //std::cout<<"Node to World Coordinate - Rotation Matrix :\n"<<Rot1<<std::endl;
 
     //AG: Rotation is performed in the follwoing order: Roll (Axis), Yaw (Angle) about x and z axis respectively
+    //AG: This is performing Intrinsic, Active Rotation onf the input vector
+    //Refer: https://danceswithcode.net/engineeringnotes/rotations_in_3d/rotations_in_3d_part1.html
+    /*
     Eigen::Quaterniond q_angle(Eigen::AngleAxisd(angle, Eigen::Vector3d::UnitZ())); 
     Eigen::Quaterniond q_axis(Eigen::AngleAxisd(axis , Eigen::Vector3d::UnitX())); 
+    Eigen::Quaterniond q_resultant = q_axis * q_angle;
+    std::cout<<"Node Rotation Matix from Q:\n"<<q_resultant.normalized().toRotationMatrix()<<std::endl;*/
 
-    Eigen::Quaterniond q_resultant = q_angle * q_axis;
-    
-    std::cout<<"Roatation Matrix :"<<Rot1<<std::endl;
-    //std::cout<<"Node Rotation Matix from Q:\n"<<q_resultant.normalized().toRotationMatrix()<<std::endl;
+    Eigen::Matrix3d node_rotation_mat;
+    node_rotation_mat = Eigen::AngleAxisd(axis, Eigen::Vector3d::UnitX())
+            * Eigen::AngleAxisd(angle, Eigen::Vector3d::UnitZ());
+    //std::cout<<"Next Node Rotation Matix :\n"<<node_rotation_mat<<std::endl;
 
     Eigen::Vector3d output;
-    //output = Rot1.transpose()*node_rotation_mat*base;
-    output = Rot1.transpose()*q_resultant.normalized().toRotationMatrix()*base;
+    output = Rot1*node_rotation_mat*base;
+    //output = Rot1*q_resultant.normalized().toRotationMatrix()*base;
     output += parent;
     
-    std::cout<<"2D Rotation result :"<<qx<<" "<<qy<<std::endl;
-    std::cout<<"Output vector :\n"<<output<<std::endl;
+    //std::cout<<"2D Rotation result :"<<qx<<" "<<qy<<std::endl;
+    //std::cout<<"Output vector in Node Coordinate :\n"<<node_rotation_mat*base<<std::endl;
+    //std::cout<<"Output vector :\n"<<output<<std::endl;
+    
+    if((output[0]-qx > 1e-4) || (output[1]-qy > 1e-4))
+    {
+       std::cout<<"Rotation Matrix Error :"<<output[0]-qx<<" "<<output[1]-qy<<std::endl;
+       std::cout<<"2D Rotation result :"<<qx<<" "<<qy<<std::endl;
+       std::cout<<"Output vector :\n"<<output<<std::endl;
+    }
 
     return std::make_tuple(output(0), output(1), output(2));
 }

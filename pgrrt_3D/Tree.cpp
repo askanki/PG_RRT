@@ -75,7 +75,7 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
 //    }
 //}
 
-bool Tree::check_threshold(Node node, Node parent_, float yaw){
+bool Tree::check_threshold(Node node, Node parent_, float yaw, float axis){
     /*
     float temp = INFINITY;
 //    if(parents.find(std::pair(parent_, yaw)) == parents.end()){
@@ -87,7 +87,54 @@ bool Tree::check_threshold(Node node, Node parent_, float yaw){
         }
     }
     return temp > 180 - threshold_theta;*/
-    return true;
+
+    //std::cout<<"Got yaw "<<yaw<<" axis "<<axis<<std::endl;
+
+    //AG: Implementation for 3D angle calcultation
+    float temp = INFINITY;
+    
+    if(parents.find(std::tuple(parent_, yaw, axis)) == parents.end()){
+          std::cout << "BA";
+    }
+    
+    float a1 =  (std::get<0>(node) - std::get<0>(parent_));
+    float a2 =  (std::get<1>(node) - std::get<1>(parent_));
+    float a3 =  (std::get<2>(node) - std::get<2>(parent_));
+    
+    for(auto parent__: parents[std::tuple(parent_, yaw, axis)]){
+
+        float b1 = (std::get<0>(parent_) - std::get<0>(std::get<0>(parent__)));
+        float b2 = (std::get<1>(parent_) - std::get<1>(std::get<0>(parent__)));
+        float b3 = (std::get<2>(parent_) - std::get<2>(std::get<0>(parent__)));
+        //Calculate the angle between the 3D lines created by the nodes
+        //Length of Parent_Current_Node vector = step_size
+        float a1b1 =  a1*b1;
+        float a2b2 =  a2*b2;
+        float a3b3 =  a3*b3;
+
+        //Calculate the length of two vectors
+        float a_len =  std::sqrt(std::pow(a1,2) + std::pow(a2,2) + std::pow(a3,2));
+        float b_len =  std::sqrt(std::pow(b1,2) + std::pow(b2,2) + std::pow(b3,2));
+        
+        float cos_angle_between_vectors =  (a1b1+a2b2+a3b3)/(a_len*b_len);
+    
+        if (cos_angle_between_vectors > 1)
+           cos_angle_between_vectors = 1;
+        else if(cos_angle_between_vectors < -1)
+           cos_angle_between_vectors = -1;   
+    
+        float angle_between_vectors =  acos(cos_angle_between_vectors);
+        
+        if(temp > std::abs(angle_between_vectors))
+           temp = std::abs(angle_between_vectors); 
+    }
+
+    bool feasibility = temp * 180/M_PI < threshold_theta; 
+    
+    //if(!feasibility)
+    //   std::cout<<"check threshold "<<feasibility<<" Angle between vectors "<<temp*180/M_PI<<std::endl; 
+    
+    return feasibility;
 }
 
 
@@ -108,12 +155,14 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
                         //AG: Checking kinematic constraint on the selected node
                         //if (Utils::feasible(parent_, yaw, node_, angle*resolution_angle, MAX_STEER_ANGLE)){
                         if (Utils::feasible_3D(parent_, canvas->end.first, node_, axis, angle*resolution_angle, MAX_STEER_ANGLE, step_size)){
+                            //AG: Move to next iteration as this angle is already rejected
                             //if(rejected_yaws[node_][axis].find(angle*resolution_angle)==rejected_yaws[node_][axis].end()) {
                             if(std::find(rejected_yaws[node_][axis].begin(), rejected_yaws[node_][axis].end(), angle*resolution_angle)==rejected_yaws[node_][axis].end()) {
                                 //if(available_yaws[node_][axis].find(angle*resolution_angle)==available_yaws[node_][axis].end()) {
                                 if(std::find(available_yaws[node_][axis].begin(), available_yaws[node_][axis].end(), angle*resolution_angle)==available_yaws[node_][axis].end()) {
                                     //available_yaws[node_][axis].insert(angle * resolution_angle);
                                     available_yaws[node_][axis].push_back(angle * resolution_angle);
+                                    //AG: Technically this will not happen
                                     if (actions.find(node_) == actions.end()) {
                                         //std::vector<float> v;
                                         Orientation n;
@@ -122,6 +171,7 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
                                     if (std::find(actions[node_][axis].begin(), actions[node_][axis].end(), angle * resolution_angle) ==
                                         actions[node_][axis].end()) {
                                         actions[node_][axis].emplace_back(angle * resolution_angle);
+                                        //AG: Adding this node_ to special_node list as this is leaf now a leaf node
                                         if (std::find(special_nodes.begin(), special_nodes.end(), node_) ==
                                             special_nodes.end()) {
                                             special_nodes.emplace_back(node_);
@@ -134,6 +184,7 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
                                 std::set<std::tuple<Node, float, float>> s;
                                 parents[std::tuple(node_, angle*resolution_angle, axis)] = s;
                             }
+                            //AG: TODO Why this is updated even for the node which is in rejected yaw list
                             parents[std::tuple(node_, angle*resolution_angle, axis)].insert(std::tuple(parent_, yaw, gauss->axis));
                             if (plot_flag && print_file) {
                                 std::ofstream myfile;
@@ -204,15 +255,15 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
             special_nodes.push_back(node);
             bool fake = true;
             //AG: Check for Special Node. check_threshold returns true if the parent is not special
-            if(parent[parent_]!=parent_ && check_threshold(node, parent_, yaw)){
+            if(parent[parent_]!=parent_ && check_threshold(node, parent_, yaw, gauss->axis)){
                 fake = false;
                 if (std::find(special_nodes.begin(), special_nodes.end(),parent_)!=special_nodes.end()){
                     special_nodes.erase(std::remove(special_nodes.begin(), special_nodes.end(), parent_), special_nodes.end());
                 }
             }
-//            if(fake){
-//                std::cout << "NA";
-//            }
+            //if(fake){
+            //    std::cout << "Parent Not Removed "<<std::get<0>(parent_)<<" "<<std::get<1>(parent_)<<std::endl;
+            //}
         }
     } else{
         collision_free = false;
@@ -279,8 +330,10 @@ void Tree::remove_action(Node node, float action, float axis) {
     }
 }
 
+//AG: We are performing Breath first search. Starting from the end_node and parse all the possible configurations
+//and save all the parent nodes and then expand these parent nodes furthur till we reach the start point and create 
+//a child parent link in the reverse direction. Once start point is hit. Parse this parent-child link to get the path
 void Tree::get_path(Node end_node) {
-
     struct Node_{
         std::tuple<Node, float, float> node_;
         std::tuple<Node, float, float> parent_;
@@ -300,6 +353,7 @@ void Tree::get_path(Node end_node) {
             }
         }
     }
+    //AG: Breadth first search
     std::tuple<Node, float, float> current;
     std::map<std::tuple<Node, float, float>, bool> visited;
     while(true){
@@ -321,13 +375,14 @@ void Tree::get_path(Node end_node) {
                 n.parent_ = current;
                 nodes_[parent__] = n;
                 queue.emplace_back(parent__);
-                std::ofstream myfile;
-                myfile.open ("removed.txt", std::ios_base::app);
-                myfile << std::get<0>(std::get<0>(parent__)) << " " << std::get<1>(std::get<0>(parent__)) <<"\n";
-                myfile.close();
+                //std::ofstream myfile;
+                //myfile.open ("removed.txt", std::ios_base::app);
+                //myfile << std::get<0>(std::get<0>(parent__)) << " " << std::get<1>(std::get<0>(parent__)) <<"\n";
+                //myfile.close();
             }
         }
     }
+    //AG: Path is collection of pose, node position and axis, angle
     std::vector<std::tuple<Node, float, float>> path;
     while (std::get<0>(current)!=end_node){
         path.emplace_back(current);
@@ -346,8 +401,8 @@ void Tree::get_path(Node end_node) {
 //AG: return: parent_node_, new_node_, direction_, parent_gaussian_  
 std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations) {
     std::default_random_engine generator;
-    //generator.seed(time(0));
-    generator.seed();
+    generator.seed(time(0));
+    //generator.seed();
     while(true){
         iterations++;
         if(special_nodes.empty()){
