@@ -189,8 +189,8 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
                             if (plot_flag && print_file) {
                                 std::ofstream myfile;
                                 myfile.open("kino.txt", std::ios_base::app);
-                                myfile << std::get<0>(node_) << " " << std::get<1>(node_) << " "
-                                       << std::get<0>(parent_) << " " << std::get<1>(parent_) << "\n";
+                                myfile << std::get<0>(node_) << " " << std::get<1>(node_) << " " << std::get<2>(node_) << " "
+                                       << std::get<0>(parent_) << " " << std::get<1>(parent_) << " " << std::get<2>(parent_) << "\n";
                                 myfile.close();
                                 plot_flag = false;
                             }
@@ -389,7 +389,7 @@ void Tree::get_path(Node end_node) {
         if(print_file){
             std::ofstream myfile;
             myfile.open ("path.txt", std::ios_base::app);
-            myfile << std::get<0>(std::get<0>(current)) << " " << std::get<1>(std::get<0>(current)) <<"\n";
+            myfile << std::get<0>(std::get<0>(current)) << " " << std::get<1>(std::get<0>(current)) << " " << std::get<2>(std::get<0>(current)) <<"\n";
             myfile.close();
         }
         current = nodes_[current].parent_;

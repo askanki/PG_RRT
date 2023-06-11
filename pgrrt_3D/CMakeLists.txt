@@ -3,10 +3,6 @@ project(pgrrt)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(/usr/local/include/eigen3)
-find_package(PythonLibs 3)
-include_directories(include ${PYTHON_INCLUDE_DIRS})
+include_directories(C:\\Users\\Paras\\CLionProjects\\PG_RRT\\eigen3\\eigen3)
 
 add_executable(pgrrt main.cpp Tree.cpp Tree.h GMM.cpp GMM.h Canvas.cpp Canvas.h Utils.cpp Utils.h config.h matplotlibcpp.h)
-
-target_link_libraries(pgrrt python3.8)
