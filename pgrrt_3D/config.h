@@ -7,7 +7,7 @@
 
 #define RESOLUTION 30.        //AG: This parameter is to disretize the action space
 #define SP_THRESHOLD 60.      //AG: This parameter is to identify the Special node
-#define MAX_STEER_ANGLE 60.   //AG: Kino constraint of the vehicle
+#define MAX_STEER_ANGLE 30.   //AG: Kino constraint of the vehicle
 #define STEP_SIZE 1.f         //AG: Step size is 0.5 in 2D case 
 #define MAP_RESOLUTION .1f
 #define TOTAL_AXIS 1
@@ -16,6 +16,8 @@
 #define USE_OCOTMAP 1
 #define WRITE_OCTOMAP_FROM_FILE 0
 #define NUMBER_OF_GAUSSIAN_PER_AXIS 2 //Not completely implemented
+#define INITIAL_GAUSSIAN_VARIANCE 20. 
+#define MAX_GAUSSIAN_VARIANCE 35. 
 
 #if (TOTAL_AXIS == 1)
 //Algo performance important Parameter

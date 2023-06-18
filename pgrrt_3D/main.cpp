@@ -32,19 +32,21 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
     while(iterations < MAX_ITERATION){
         //AG: return: parent_node_, new_node_, direction_, parent_gaussian_
         std::tuple<Node, Node, float, Gaussian *> par_node_yaw_gauss = tree->pick_random(iterations, &generator);
-        bool change = tree->add_node(std::get<0>(par_node_yaw_gauss), std::get<1>(par_node_yaw_gauss), std::get<2>(par_node_yaw_gauss), std::get<3>(par_node_yaw_gauss));
-        //TODO: Code only works when both the trees expand
+        std::pair<bool, bool> change = tree->add_node(std::get<0>(par_node_yaw_gauss), std::get<1>(par_node_yaw_gauss), std::get<2>(par_node_yaw_gauss), std::get<3>(par_node_yaw_gauss));
+        //Second Tree creation
         //std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1 = tree1->pick_random(iterations, &generator);
-        //bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), std::get<3>(par_node_yaw_gauss1));
+        //std::pair<bool, bool> change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), std::get<3>(par_node_yaw_gauss1));
         std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1; 
-        bool change1 = false;
+        std::pair<bool, bool> change1 = std::pair(false, false);
 
-        if(change){
-            if(print_file) {
+        //AG: change.first returns if the node creation was successful and change.second tells if the mew node is inserted. change.second = false means the old node was used   
+        if(change.first){
+            if(print_file & change.second) {
                 std::ofstream myfile;
                 myfile.open ("path_raw.txt", std::ios_base::app);
                 myfile << std::get<0>(std::get<1>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<1>(par_node_yaw_gauss)) << " " << std::get<2>(std::get<1>(par_node_yaw_gauss)) <<" "
-                       << std::get<0>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<2>(std::get<0>(par_node_yaw_gauss)) << "\n";
+                       << std::get<0>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<2>(std::get<0>(par_node_yaw_gauss)) <<" "
+                       << (std::get<3>(par_node_yaw_gauss))->axis<<"\n";
                 myfile.close();
             }
             //AG: Check for convergence; if the new node is close to the End node of Tree
@@ -73,12 +75,13 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
             }
             if (flag){break;}
         }
-        if(change1){
-            if(print_file) {
+        if(change1.first){
+            if(print_file & change1.second) {
                 std::ofstream myfile;
                 myfile.open ("path_raw.txt", std::ios_base::app);
                 myfile << std::get<0>(std::get<1>(par_node_yaw_gauss1)) << " " << std::get<1>(std::get<1>(par_node_yaw_gauss1)) << " " << std::get<2>(std::get<1>(par_node_yaw_gauss1)) << " "
-                       << std::get<0>(std::get<0>(par_node_yaw_gauss1)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss1)) << " " << std::get<2>(std::get<0>(par_node_yaw_gauss1)) << "\n";
+                       << std::get<0>(std::get<0>(par_node_yaw_gauss1)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss1)) << " " << std::get<2>(std::get<0>(par_node_yaw_gauss1)) << " "
+                       << (std::get<3>(par_node_yaw_gauss1))->axis<<"\n";
                 myfile.close();
             }
             //AG: Check for convergence; if the new node is close to the End node of Tree-1
@@ -115,8 +118,8 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
 int main() {
     
     //Initilizing the seed
-    //generator.seed(time(0));
-    generator.seed(1687079248); //(1686993888);
+    generator.seed(time(0));
+    //generator.seed(1687079248); //(1686993888);
     std::cout<<"[RG-RRT Main] Seed is :"<<time(0)<<std::endl;    
     
     float iter_ts_pcost[4] = {0., 0., 0., 0.};
@@ -187,9 +190,12 @@ int main() {
 
         //3D Scenario - 1
         Canvas canvas;
-        std::pair<Node, float> start = std::pair(Node(10.f, 10.f, 6.), 30.f);   //start/end format - coordinate, yaw
-        std::pair<Node, float> end = std::pair(Node(35.f, 10.f, 40.), -30.f);    //start/end format - coordinate, yaw
-        //std::pair<Node, float> end = std::pair(Node(25.f, 50.f, 20.), -30.f);    //start/end format - coordinate, yaw
+        std::pair<Node, float> start = std::pair(Node(10.f, 10.f, 6.), 30.f);    //start/end format - coordinate, yaw
+        std::pair<Node, float> end = std::pair(Node(35.f, 10.f, 40.), -30.f);    //start/end format - coordinate, yaw ; End point behind the obstacle
+        //std::pair<Node, float> end = std::pair(Node(25.f, 50.f, 20.), -30.f);    //start/end format - coordinate, yaw ; End point on same side
+        
+        //std::pair<Node, float> start = std::pair(Node(10.f, 10.f, 6.), 30.f);    //start/end format - coordinate, yaw
+        //std::pair<Node, float> end = std::pair(Node(25.f, 50.f, 35.), 0.f);    //start/end format - coordinate, yaw ; End point on same side
         canvas.start = start;
         canvas.end = end;
 

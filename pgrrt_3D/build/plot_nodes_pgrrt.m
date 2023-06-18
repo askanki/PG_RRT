@@ -23,8 +23,8 @@ StartPose = StartPose';
 GoalPose = fscanf(fileID,formatSpec,sizeStart_Node);
 GoalPose = GoalPose';
 
-formatSpec = '%f %f %f %f %f %f';
-size_Node = [6 Inf];
+formatSpec = '%f %f %f %f %f %f %d';
+size_Node = [7 Inf];
 
 Nodes = fscanf(fileID,formatSpec,size_Node);
 Nodes = Nodes';

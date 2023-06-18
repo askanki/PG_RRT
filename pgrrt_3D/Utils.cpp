@@ -91,7 +91,7 @@ Node Utils::rotate(Node root, Node node, float angle, float axis, float step_siz
 }
 
 float Utils::eul_dist(Node node1, Node node2) {
-    return sqrt(pow(std::get<0>(node1) - std::get<0>(node2), 2) +  pow(std::get<1>(node1) - std::get<1>(node2), 2));
+    return sqrt(pow(std::get<0>(node1) - std::get<0>(node2), 2) +  pow(std::get<1>(node1) - std::get<1>(node2), 2) + pow(std::get<2>(node1) - std::get<2>(node2), 2));
 }
 
 float Utils::shift_toward(float mean, float centre, float shift) {

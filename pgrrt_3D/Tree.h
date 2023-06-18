@@ -23,7 +23,7 @@ public:
 
     std::tuple<Node, Node, float, Gaussian *> pick_random(int &iterations, std::default_random_engine *generator);
 
-    bool add_node(Node parent, Node node, float yaw, Gaussian *gaussian);
+    std::pair<bool,bool> add_node(Node parent, Node node, float yaw, Gaussian *gaussian);
     bool check_threshold(Node node, Node parent, float yaw, float axis);
 
     Canvas *canvas;

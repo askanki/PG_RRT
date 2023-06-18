@@ -40,17 +40,18 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
     {
         for (int j =0; j < NUMBER_OF_GAUSSIAN_PER_AXIS; j++) {
             float curr_mean = std::pow(-1,j) * mean_value;
-            Gaussian* gauss = new Gaussian(curr_mean, 10.f, starting_probability, (float)i);
+            Gaussian* gauss = new Gaussian(curr_mean, INITIAL_GAUSSIAN_VARIANCE, starting_probability, (float)i);
             gauss_.emplace_back(*gauss); 
         }
     }
     
     prob_dist[canvas_->start.first].gauss_list = gauss_;
     parent[canvas_->start.first] =  canvas_->start.first;
+    
     //TODO: Fix the Axis of the starting and end node; it should be w.r.t. the some refrence frame
     std::set<std::tuple<Node, float, float>> se{std::tuple(canvas_->start.first, canvas_->start.second, 0.)};
     parents[std::tuple(canvas_->start.first, canvas_->start.second, 0.)] = se;
-//    setup_action(canvas_->start);
+    //setup_action(canvas_->start);
     //std::vector<float> v{canvas_->start.second};
     Orientation v;
     v[0].push_back(canvas_->start.second);
@@ -156,10 +157,11 @@ bool Tree::check_threshold(Node node, Node parent_, float yaw, float axis){
 }
 
 
-bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
+std::pair<bool, bool> Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
     bool collision_free = true; //AG: This is to indicate if node addition is successful
+    bool flag = true;
     if(!canvas->check_collision(node, parent_, step_size)){
-        bool flag = true;
+        //bool flag = true;
         for (auto node_: nodes){
             bool plot_flag = false;
             //AG:Added to this code to avoid checking the condition on the nodes generated from same parent
@@ -293,7 +295,7 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
     //change_proability(reinterpret_cast<Gaussian *>(&gauss));
     change_proability(gauss);
 
-    return collision_free;
+    return std::pair(collision_free, flag);
 }
 
 //AG: return value: is_sucessfull, node, yaw_direction
@@ -482,5 +484,5 @@ void Tree::change_proability(Gaussian *gaussian) {
     //float variance_shift = 2.f;
     float variance_shift = gaussian->variance*PARENT_VAR_SHIFT_PERCENTAGE;
     gaussian->variance += variance_shift;
-    gaussian->variance = fmax(20, gaussian->variance);
+    gaussian->variance = fmax(MAX_GAUSSIAN_VARIANCE, gaussian->variance);
 }
