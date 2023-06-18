@@ -21,7 +21,7 @@ class Tree {
 public:
     Tree(Canvas *canvas, float threshold_theta, float resolution_angle, float step_size);
 
-    std::tuple<Node, Node, float, Gaussian *> pick_random(int &iterations);
+    std::tuple<Node, Node, float, Gaussian *> pick_random(int &iterations, std::default_random_engine *generator);
 
     bool add_node(Node parent, Node node, float yaw, Gaussian *gaussian);
     bool check_threshold(Node node, Node parent, float yaw, float axis);
@@ -46,6 +46,7 @@ public:
     std::map<Node, Orientation> rejected_yaws;
     float threshold_theta;
     float resolution_angle;
+    
     Gaussian *gauss1;
     Gaussian *gauss2;
 

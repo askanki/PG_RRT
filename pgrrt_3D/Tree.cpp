@@ -12,21 +12,39 @@
 #include <time.h>
 
 Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, float step_size_){
-//    Canvas *canvas1 = canvas;
+    
+    //Initilizing the seed
+    //generator.seed(time(0));
+    //generator.seed(1686993888);
+    //std::cout<<"Seed in pick_sample is :"<<time(0)<<std::endl;
+
     canvas = canvas_;
     threshold_theta = threshold_theta_;
     resolution_angle = resolution_angle_;
     step_size = step_size_;
     nodes.push_back(canvas_->start.first);
     special_nodes.push_back(canvas_->start.first);
+    
     //AG: Gaussian(mean, variance, probability, axis)
-    gauss1 = new Gaussian(10., 10.f, 0.5, 0);
-    gauss2 = new Gaussian(-10, 10.f,0.5, 0);
-    //gauss1 = new Gaussian(10., 10.f, 0.25, 90*M_PI/180);
-    //gauss2 = new Gaussian(-10, 10.f,0.25, 90*M_PI/180);
     std::vector<Gaussian> gauss_;
-    gauss_.emplace_back(*gauss1); 
-    gauss_.emplace_back(*gauss2);
+    //gauss1 = new Gaussian(10., 10.f, 0.5, 0);
+    //gauss2 = new Gaussian(-10, 10.f,0.5, 0);
+    //gauss_.emplace_back(*gauss1); 
+    //gauss_.emplace_back(*gauss2);
+
+    float mean_value = 10;
+    float mean_shift = 0; 
+    float starting_probability = 1./(float)(TOTAL_AXIS * NUMBER_OF_GAUSSIAN_PER_AXIS);
+    
+    for(int i =0; i < TOTAL_AXIS; i++)
+    {
+        for (int j =0; j < NUMBER_OF_GAUSSIAN_PER_AXIS; j++) {
+            float curr_mean = std::pow(-1,j) * mean_value;
+            Gaussian* gauss = new Gaussian(curr_mean, 10.f, starting_probability, (float)i);
+            gauss_.emplace_back(*gauss); 
+        }
+    }
+    
     prob_dist[canvas_->start.first].gauss_list = gauss_;
     parent[canvas_->start.first] =  canvas_->start.first;
     //TODO: Fix the Axis of the starting and end node; it should be w.r.t. the some refrence frame
@@ -143,7 +161,7 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
     if(!canvas->check_collision(node, parent_, step_size)){
         bool flag = true;
         for (auto node_: nodes){
-            bool plot_flag = true;
+            bool plot_flag = false;
             //AG:Added to this code to avoid checking the condition on the nodes generated from same parent
             if(parent[node_] == parent_)
                continue;
@@ -245,8 +263,10 @@ bool Tree::add_node(Node parent_, Node node, float yaw, Gaussian *gauss){
             prob_dist[node] = prob_dist[parent_]; //Look for pointer issue
             //AG: Copy the Gaussian from parent and update all the Gaussian for child
             for(auto &gauss_ : prob_dist[node].gauss_list){
-                float mean_shift = resolution_angle * 0.2;
-                float variance_shift = 2;
+                //float mean_shift = resolution_angle * 0.2;
+                float mean_shift = gauss_.mean * CHILD_MEAN_SHIFT_PERCENTAGE;
+                //float variance_shift = 2;
+                float variance_shift = gauss_.variance * CHILD_VAR_SHIFT_PERCENTAGE;
                 gauss_.mean = Utils::shift_toward(gauss_.mean, 0, mean_shift);
                 gauss_.variance -= variance_shift;
                 gauss_.variance = std::max(5.f, gauss_.variance);
@@ -286,19 +306,22 @@ std::tuple<bool, Node, float> Tree::make_action(Node node, std::pair<float , Gau
             // TODO:: change this
             return std::tuple(false, std::make_tuple(-1, -1, -1), -1);
         }
-        //AG: Selecting the closest action on the selected Axis
-        float closest = actions_[sampled_direction.second->axis][0];
-        for(auto action: actions_[sampled_direction.second->axis]){
-            if(Utils::dist_mean(action, sampled_direction.first) < Utils::dist_mean(closest, sampled_direction.first)){
-                closest = action;
+        if(!actions_[sampled_direction.second->axis].empty())
+        {
+            //AG: Selecting the closest action on the selected Axis
+            float closest = actions_[sampled_direction.second->axis][0];
+            for(auto action: actions_[sampled_direction.second->axis]){
+                if(Utils::dist_mean(action, sampled_direction.first) < Utils::dist_mean(closest, sampled_direction.first)){
+                    closest = action;
+                }
             }
+            Node sample = Utils::extend(node, canvas->end.first, step_size);
+            sample = Utils::rotate(node, sample, closest, sampled_direction.second->axis, step_size);
+            remove_action(node, closest, sampled_direction.second->axis);
+            //rejected_yaws[node].insert(closest);
+            rejected_yaws[node][sampled_direction.second->axis].push_back(closest);
+            return std::make_tuple(true, sample, closest);
         }
-        Node sample = Utils::extend(node, canvas->end.first, step_size);
-        sample = Utils::rotate(node, sample, closest, sampled_direction.second->axis, step_size);
-        remove_action(node, closest, sampled_direction.second->axis);
-        //rejected_yaws[node].insert(closest);
-        rejected_yaws[node][sampled_direction.second->axis].push_back(closest);
-        return std::make_tuple(true, sample, closest);
     }
     // TODO:: change this
     return std::make_tuple(false, std::make_tuple(-1, -1, -1), -1);
@@ -399,9 +422,9 @@ void Tree::get_path(Node end_node) {
 }
 
 //AG: return: parent_node_, new_node_, direction_, parent_gaussian_  
-std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations) {
-    std::default_random_engine generator;
-    generator.seed(time(0));
+std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations , std::default_random_engine* generator) {
+    //std::default_random_engine generator;
+    //generator.seed(time(0));
     //generator.seed();
     while(true){
         iterations++;
@@ -433,9 +456,12 @@ std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations) {
             std::copy(special_nodes_.begin(), special_nodes_.end(), std::back_inserter(special_nodes));
         }
         std::uniform_real_distribution<> dis(0, special_nodes.size()-1);
-        int random_index = ceil(dis(generator));
+        int random_index = ceil(dis(*generator));
+        //float rand_value_ = dis(*generator); 
+        //int random_index = ceil(rand_value_);
+        //std::cout<<"Rand value [pick_random] :"<<rand_value_<<std::endl;
         Node parent_ = special_nodes[random_index];
-        std::pair<float , Gaussian *> sample_direction = prob_dist[parent_].sample();
+        std::pair<float , Gaussian *> sample_direction = prob_dist[parent_].sample(generator);
         std::tuple<bool, Node, float> new_Node = make_action(parent_, sample_direction);
         if(std::get<0>(new_Node)){
             return std::make_tuple(parent_, std::get<1>(new_Node), std::get<2>(new_Node), sample_direction.second);
@@ -450,9 +476,11 @@ std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations) {
 }
 
 void Tree::change_proability(Gaussian *gaussian) {
-    float mean_shift = resolution_angle*.5f;
+    //float mean_shift = resolution_angle*.5f;
+    float mean_shift = gaussian->mean*PARENT_MEAN_SHIFT_PERCENTAGE;
     gaussian->mean = Utils::shift_away(gaussian->mean,  0, mean_shift);
-    float variance_shift = 2.f;
+    //float variance_shift = 2.f;
+    float variance_shift = gaussian->variance*PARENT_VAR_SHIFT_PERCENTAGE;
     gaussian->variance += variance_shift;
     gaussian->variance = fmax(20, gaussian->variance);
 }

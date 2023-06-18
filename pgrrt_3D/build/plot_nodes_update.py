@@ -33,10 +33,10 @@ while True:
 #while loop_iter < 10:
     loop_iter += 1 
     plt.cla()
-    plt.axis("equal")
+    plt.axis("auto")
     
     plt.plot(x_obs,y_obs, color="black", marker="o",linestyle=" ")
-    f = open("../cmake-build-debug/path_raw.txt", "r+")
+    f = open("path_raw.txt", "r+")
     line = f.readline()
     k = 0
     start = []
@@ -63,7 +63,7 @@ while True:
     plt.plot(end[0], end[1], color="r", marker="o")
     
 
-    f = open("../cmake-build-debug/kino.txt", "r+")
+    f = open("kino.txt", "r+")
     line = f.readline()
     while line:
         line = list(map(float, line.split(" ")))
@@ -81,7 +81,7 @@ while True:
     x =[]
     y =[]
     z = []
-    f = open("../cmake-build-debug/path.txt", "r+")
+    f = open("path.txt", "r+")
     line = f.readline()
     while line:
         line = list(map(float, line.split(" ")))

@@ -6,6 +6,10 @@
 #define PGRRT_GMM_H
 
 #include <vector>
+#include <algorithm>
+#include <random>
+#include <chrono>
+#include <iostream>
 
 struct Gaussian{
     Gaussian(float mean_, float variance_, float probability_, float axis_);
@@ -30,7 +34,7 @@ public:
     void normalize();
     Gaussian find_nearest_gaussian(Gaussian gauss);
 
-    std::pair<float, Gaussian *> sample();
+    std::pair<float, Gaussian *> sample(std::default_random_engine *generator);
 };
 
 

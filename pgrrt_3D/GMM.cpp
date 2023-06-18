@@ -2,10 +2,7 @@
 // Created by Paras Sharma on 6/7/2020.
 //
 
-#include <algorithm>
-#include <random>
 #include "GMM.h"
-#include <chrono>
 
 void GMM::normalize(){
     float total_var = 0.f;
@@ -35,25 +32,34 @@ Gaussian GMM::find_nearest_gaussian(Gaussian gauss){
     return gauss_list[0];
 }
 
-std::pair<float, Gaussian *> GMM::sample(){
-    std::default_random_engine generator;
-    generator.seed(time(0));
-    //generator.seed();
+std::pair<float, Gaussian *> GMM::sample(std::default_random_engine* generator){
+    //std::default_random_engine generator;
+    //generator.seed(time(0));
+    //generator.seed(1686993888);
+    //std::cout<<"Seed in GMM::sample is :"<<time(0)<<std::endl;
     normalize();
     std::uniform_real_distribution<> dis(0, 1.0);
-    float rand_ = dis(generator);
+    float rand_ = dis(*generator);
+    //std::cout<<"rand_ value "<<rand_<<std::endl;
     auto iter =0;
     for(auto gauss: gauss_list){
         if(rand_ < gauss.probability_end){
             std::normal_distribution<double> distribution(gauss.mean, gauss.variance);
-            return std::pair<float , Gaussian *>(distribution(generator), &gauss_list[iter]);
+            float rand_norm_ = distribution(*generator);
+            //std::cout<<"Rand norm value "<<rand_norm_<<std::endl;
+            return std::pair<float , Gaussian *>(rand_norm_, &gauss_list[iter]);
         }
         iter++;
     }
 }
 
 GMM::GMM() {
-
+    /*
+    if(!is_updated){
+        std::cout<<"Generator seed updated"<<std::endl;
+        generator.seed(1686993888);
+        is_updated = true;
+    }*/
 }
 
 Gaussian::Gaussian(float mean_, float variance_, float probability_, float axis_) {

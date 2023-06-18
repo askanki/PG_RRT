@@ -9,6 +9,7 @@
 #include "GMM.h"
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
+#include "config.h"
 
 #define Node std::tuple<float, float, float>
 #define Orientation std::map<float, std::vector<float>>  //Axis, yaw

@@ -14,16 +14,17 @@ Node Utils::extend(Node start, Node end, float step_size) {
 }
 
 Node Utils::rotate(Node root, Node node, float angle, float axis, float step_size){
-    // roll, yaw, pitch
+    // roll, yaw -> axis (roll angle), angle (yaw angle) 
     angle *= M_PI / 180;
-    
+    axis = (M_PI/TOTAL_AXIS) * axis;  
+
     //TODO: For testing Rotating Matrix Implementation in 2D. Test code, remove afterwards
-    float ox = std::get<0>(root);
-    float oy = std::get<1>(root);
-    float px = std::get<0>(node);
-    float py = std::get<1>(node);
-    float qx = ox + cos(angle) * (px - ox) - sin(angle) * (py - oy);
-    float qy = oy + sin(angle) * (px - ox) + cos(angle) * (py - oy);
+    //float ox = std::get<0>(root);
+    //float oy = std::get<1>(root);
+    //float px = std::get<0>(node);
+    //float py = std::get<1>(node);
+    //float qx = ox + cos(angle) * (px - ox) - sin(angle) * (py - oy);
+    //float qy = oy + sin(angle) * (px - ox) + cos(angle) * (py - oy);
     
     Eigen::Vector3d parent;
     Eigen::Vector3d child;
@@ -78,12 +79,13 @@ Node Utils::rotate(Node root, Node node, float angle, float axis, float step_siz
     //std::cout<<"Output vector in Node Coordinate :\n"<<node_rotation_mat*base<<std::endl;
     //std::cout<<"Output vector :\n"<<output<<std::endl;
     
+    /*
     if((output[0]-qx > 1e-4) || (output[1]-qy > 1e-4))
     {
        std::cout<<"Rotation Matrix Error :"<<output[0]-qx<<" "<<output[1]-qy<<std::endl;
        std::cout<<"2D Rotation result :"<<qx<<" "<<qy<<std::endl;
        std::cout<<"Output vector :\n"<<output<<std::endl;
-    }
+    }*/
 
     return std::make_tuple(output(0), output(1), output(2));
 }
@@ -134,8 +136,8 @@ bool Utils::feasible(Node parent, float yaw, Node node, float angle, float max_t
 bool Utils::feasible_3D(Node parent, Node end, Node node, float axis, float angle, float max_turn, float step_size) {
     
     //Call extend function and get the next possible node
-    Node new_unitl_potential_node = extend(node, end, 1.);
-    new_unitl_potential_node = rotate(node, new_unitl_potential_node, angle, axis, 1.);
+    Node new_unitl_potential_node = Utils::extend(node, end, 1.);
+    new_unitl_potential_node = Utils::rotate(node, new_unitl_potential_node, angle, axis, 1.);
     
     //Length of Parent_Current_Node vector = step_size
     float a1b1 =  (std::get<0>(node) - std::get<0>(parent))*(std::get<0>(new_unitl_potential_node) - std::get<0>(node));
@@ -155,7 +157,7 @@ bool Utils::feasible_3D(Node parent, Node end, Node node, float axis, float angl
 
     bool feasibility = angle_between_vectors <= max_turn; 
     
-    if(!feasibility)
+    if(!feasibility & (max_turn == 180))
        std::cout<<"Feasibility Error"<<std::endl;
 
     return feasibility;

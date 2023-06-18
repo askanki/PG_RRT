@@ -6,6 +6,8 @@
 #include "Tree.h"
 #include "Utils.h"
 
+std::default_random_engine generator;
+
 std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
     int iterations = 0;
     auto timenow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
@@ -29,13 +31,13 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
     }
     while(iterations < MAX_ITERATION){
         //AG: return: parent_node_, new_node_, direction_, parent_gaussian_
-        std::tuple<Node, Node, float, Gaussian *> par_node_yaw_gauss = tree->pick_random(iterations);
+        std::tuple<Node, Node, float, Gaussian *> par_node_yaw_gauss = tree->pick_random(iterations, &generator);
         bool change = tree->add_node(std::get<0>(par_node_yaw_gauss), std::get<1>(par_node_yaw_gauss), std::get<2>(par_node_yaw_gauss), std::get<3>(par_node_yaw_gauss));
         //TODO: Code only works when both the trees expand
-        std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1 = tree1->pick_random(iterations);
-        bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), std::get<3>(par_node_yaw_gauss1));
-//        std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1;
-//        bool change1 = false;
+        //std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1 = tree1->pick_random(iterations, &generator);
+        //bool change1 = tree1->add_node(std::get<0>(par_node_yaw_gauss1), std::get<1>(par_node_yaw_gauss1), std::get<2>(par_node_yaw_gauss1), std::get<3>(par_node_yaw_gauss1));
+        std::tuple<Node, Node, float,  Gaussian *> par_node_yaw_gauss1; 
+        bool change1 = false;
 
         if(change){
             if(print_file) {
@@ -111,9 +113,15 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
 }
 
 int main() {
+    
+    //Initilizing the seed
+    //generator.seed(time(0));
+    generator.seed(1687079248); //(1686993888);
+    std::cout<<"[RG-RRT Main] Seed is :"<<time(0)<<std::endl;    
+    
     float iter_ts_pcost[4] = {0., 0., 0., 0.};
     for(int count=1; count<=1; count++) {
-        //Scenario - 1
+        //2D Scenario - 1
         // Canvas canvas;
         // canvas.start = Node(5.f, 5.f);
         // canvas.end = Node(15.f, 15.f);
@@ -126,25 +134,7 @@ int main() {
         // canvas1.add_obs_from_file("../Scenario_1.txt");
         // Tree tree1(&canvas1, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
 
-        //Scenario - 3
-        Canvas canvas;
-        //std::pair<Node, float> start = std::pair(Node(2.0f, 15.f, 0.), 0.f); //start/end format - coordinate, yaw
-        //std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), 0.f);   //start/end format - coordinate, yaw
-        std::pair<Node, float> start = std::pair(Node(10.f, 15.f, 0.), 30.f);   //start/end format - coordinate, yaw
-        std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), -30.f);    //start/end format - coordinate, yaw
-        canvas.start = start;
-        canvas.end = end;
-        canvas.add_obs_from_file("../map");
-        Tree tree(&canvas, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
-
-        Canvas canvas1;
-        canvas1.end = start;;
-        canvas1.start = end;
-        canvas1.add_obs_from_file("../map");
-        Tree tree1(&canvas1, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
-
-
-        //Scenario - 2
+        //2D Scenario - 2
         // Canvas canvas;
         // canvas.start = Node(1.f, 0.f);
         // canvas.end = Node(13.f, -5.f);
@@ -156,8 +146,33 @@ int main() {
         // canvas1.start = Node(13.f, -5.f);
         // canvas1.add_obs_from_file("../H.txt");
         // Tree tree1(&canvas1, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
-       
-        //Scenario - 4
+
+        //2D Scenario - 3
+        //Canvas canvas;
+        ////std::pair<Node, float> start = std::pair(Node(2.0f, 15.f, 0.), 0.f); //start/end format - coordinate, yaw
+        ////std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), 0.f);   //start/end format - coordinate, yaw
+        //std::pair<Node, float> start = std::pair(Node(10.f, 15.f, 0.), 30.f);   //start/end format - coordinate, yaw
+        //std::pair<Node, float> end = std::pair(Node(35.f, 17.f, 0.), -30.f);    //start/end format - coordinate, yaw
+        //canvas.start = start;
+        //canvas.end = end;
+
+        //if(USE_OCOTMAP) 
+        //    canvas.add_obs_from_octomap("octomap_from_file.ot");
+        //else
+        //    canvas.add_obs_from_file("../map");
+
+        //Tree tree(&canvas, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
+
+        //Canvas canvas1;
+        //canvas1.end = start;;
+        //canvas1.start = end;
+        //if(USE_OCOTMAP) 
+        //    canvas1.add_obs_from_octomap("octomap_from_file.ot");
+        //else
+        //    canvas1.add_obs_from_file("../map");
+        //Tree tree1(&canvas1, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
+
+        //2D Scenario - 4
         // Canvas canvas;
         // canvas.start = Node(2.f, 0.f);
         // canvas.end = Node(27.f, 13.f);
@@ -169,6 +184,36 @@ int main() {
         // canvas1.start = Node(27.f, 13.f);
         // canvas1.add_obs_from_file("../Scenario_4.txt");
         // Tree tree1(&canvas1, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
+
+        //3D Scenario - 1
+        Canvas canvas;
+        std::pair<Node, float> start = std::pair(Node(10.f, 10.f, 6.), 30.f);   //start/end format - coordinate, yaw
+        std::pair<Node, float> end = std::pair(Node(35.f, 10.f, 40.), -30.f);    //start/end format - coordinate, yaw
+        //std::pair<Node, float> end = std::pair(Node(25.f, 50.f, 20.), -30.f);    //start/end format - coordinate, yaw
+        canvas.start = start;
+        canvas.end = end;
+
+        if(USE_OCOTMAP) 
+            canvas.add_obs_from_octomap("../single_obstacle_map.ot");
+        else{
+            std::cout<<"Wrong Configuration, 3D only works with OctoMap"<<std::endl;
+            exit(0);
+        }
+             
+        Tree tree(&canvas, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
+
+        Canvas canvas1;
+        canvas1.end = start;;
+        canvas1.start = end;
+        
+        if(USE_OCOTMAP) 
+            canvas1.add_obs_from_octomap("../single_obstacle_map.ot");
+        else{
+            std::cout<<"Wrong Configuration, 3D only works with OctoMap"<<std::endl;
+            exit(0);
+        }
+        
+        Tree tree1(&canvas1, SP_THRESHOLD, RESOLUTION, STEP_SIZE);
 
         std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
         std::tuple<Tree *, Tree *, int> tree_iter = build_rrt(&tree, &tree1);
