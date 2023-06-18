@@ -10,7 +10,7 @@
 #define MAX_STEER_ANGLE 60.   //AG: Kino constraint of the vehicle
 #define STEP_SIZE 1.f         //AG: Step size is 0.5 in 2D case 
 #define MAP_RESOLUTION .1f
-#define TOTAL_AXIS 2
+#define TOTAL_AXIS 1
 #define print_file true
 #define MAX_ITERATION 100000
 #define USE_OCOTMAP 1
