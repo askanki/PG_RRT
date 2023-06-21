@@ -32,7 +32,7 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
     //gauss_.emplace_back(*gauss1); 
     //gauss_.emplace_back(*gauss2);
 
-    float mean_value = 10;
+    float mean_value = INITIAL_GAUSSIAN_MEAN;
     float mean_shift = 0; 
     float starting_probability = 1./(float)(TOTAL_AXIS * NUMBER_OF_GAUSSIAN_PER_AXIS);
     
@@ -44,6 +44,11 @@ Tree::Tree(Canvas *canvas_, float threshold_theta_, float resolution_angle_, flo
             gauss_.emplace_back(*gauss); 
         }
     }
+
+    //gauss_[0].variance = 20;
+    //gauss_[1].variance = 20;
+    //gauss_[2].variance = 30;
+    //gauss_[3].variance = 30;
     
     prob_dist[canvas_->start.first].gauss_list = gauss_;
     parent[canvas_->start.first] =  canvas_->start.first;
@@ -150,8 +155,8 @@ bool Tree::check_threshold(Node node, Node parent_, float yaw, float axis){
 
     bool feasibility = temp * 180/M_PI < threshold_theta; 
     
-    //if(!feasibility)
-    //   std::cout<<"check threshold "<<feasibility<<" Angle between vectors "<<temp*180/M_PI<<std::endl; 
+    if(!feasibility)
+       std::cout<<"check threshold "<<feasibility<<" Angle between vectors "<<temp*180/M_PI<<std::endl; 
     
     return feasibility;
 }
@@ -265,13 +270,19 @@ std::pair<bool, bool> Tree::add_node(Node parent_, Node node, float yaw, Gaussia
             prob_dist[node] = prob_dist[parent_]; //Look for pointer issue
             //AG: Copy the Gaussian from parent and update all the Gaussian for child
             for(auto &gauss_ : prob_dist[node].gauss_list){
-                //float mean_shift = resolution_angle * 0.2;
-                float mean_shift = gauss_.mean * CHILD_MEAN_SHIFT_PERCENTAGE;
-                //float variance_shift = 2;
-                float variance_shift = gauss_.variance * CHILD_VAR_SHIFT_PERCENTAGE;
-                gauss_.mean = Utils::shift_toward(gauss_.mean, 0, mean_shift);
-                gauss_.variance -= variance_shift;
-                gauss_.variance = std::max(5.f, gauss_.variance);
+                //AG: TODO temp fix, check the behaviour of code
+                if((gauss_.mean == gauss->mean) & (gauss_.axis == gauss->axis))
+                {
+                    //float mean_shift = resolution_angle * 0.2;
+                    float mean_shift = gauss_.mean * CHILD_MEAN_SHIFT_PERCENTAGE;
+                    //float variance_shift = 2;
+                    float variance_shift = gauss_.variance * CHILD_VAR_SHIFT_PERCENTAGE;
+                    float mean_sign = (gauss_.mean >= 0) ? 1 : -1; 
+                    gauss_.mean = fmax(INITIAL_GAUSSIAN_MEAN, abs(Utils::shift_toward(gauss_.mean, 0, mean_shift)));
+                    gauss_.mean *= mean_sign;
+                    gauss_.variance -= variance_shift;
+                    gauss_.variance = fmax(INITIAL_GAUSSIAN_VARIANCE, gauss_.variance);
+                }
             }
 
             special_nodes.push_back(node);
@@ -463,11 +474,15 @@ std::tuple<Node, Node, float, Gaussian *> Tree::pick_random(int &iterations , st
         //int random_index = ceil(rand_value_);
         //std::cout<<"Rand value [pick_random] :"<<rand_value_<<std::endl;
         Node parent_ = special_nodes[random_index];
+        
         std::pair<float , Gaussian *> sample_direction = prob_dist[parent_].sample(generator);
         std::tuple<bool, Node, float> new_Node = make_action(parent_, sample_direction);
         if(std::get<0>(new_Node)){
             return std::make_tuple(parent_, std::get<1>(new_Node), std::get<2>(new_Node), sample_direction.second);
         } else{
+            //AG: If make_action is false update the mean-variance of the gaussian
+            change_proability(sample_direction.second);
+
             if(actions[parent_].empty()) {
                 prev_special_nodes.emplace_back(parent_);
                 special_nodes.erase(std::remove(special_nodes.begin(), special_nodes.end(), parent_),
@@ -484,5 +499,5 @@ void Tree::change_proability(Gaussian *gaussian) {
     //float variance_shift = 2.f;
     float variance_shift = gaussian->variance*PARENT_VAR_SHIFT_PERCENTAGE;
     gaussian->variance += variance_shift;
-    gaussian->variance = fmax(MAX_GAUSSIAN_VARIANCE, gaussian->variance);
+    gaussian->variance = fmin(MAX_GAUSSIAN_VARIANCE, gaussian->variance);
 }

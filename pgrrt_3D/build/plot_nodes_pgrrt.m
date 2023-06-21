@@ -62,7 +62,7 @@ hExplored = drawArrow(Nodes(:,4:6),Nodes(:,1:3),'linewidth',3,'color','c');
 
 % Plot the interpolated path based on UAV Dubins connections
 % hReference = plot3(PathNodes(:,1), PathNodes(:,2), PathNodes(:,3),"LineWidth",2,"Color","g");
-hReference = scatter3(PathNodes(:,1), PathNodes(:,2), PathNodes(:,3),"magenta","filled");
+hReference = scatter3(PathNodes(:,1), PathNodes(:,2), PathNodes(:,3),200, "magenta","filled");
 legend([hReference,hExplored],"Reference","Explored Nodes", "Location","best")
 
 hold off

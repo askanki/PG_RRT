@@ -8,6 +8,8 @@
 
 std::default_random_engine generator;
 
+int global_iter = 0;
+
 std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
     int iterations = 0;
     auto timenow = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
@@ -48,6 +50,7 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
                        << std::get<0>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<1>(std::get<0>(par_node_yaw_gauss)) << " " << std::get<2>(std::get<0>(par_node_yaw_gauss)) <<" "
                        << (std::get<3>(par_node_yaw_gauss))->axis<<"\n";
                 myfile.close();
+                global_iter++;
             }
             //AG: Check for convergence; if the new node is close to the End node of Tree
             if(Utils::eul_dist(std::get<1>(par_node_yaw_gauss), tree->canvas->end.first) <= tree->step_size){
@@ -110,7 +113,9 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
             }
             if (flag){break;}
         }
-//        if (iterations%100==0){std::cout<<iterations<<std::endl;}
+        //if (global_iter == 40){
+        //    std::cout<<iterations<<std::endl;
+        //}
     }
     return std::make_tuple(tree, tree1, iterations);
 }
@@ -118,9 +123,9 @@ std::tuple<Tree*, Tree*, int> build_rrt(Tree *tree, Tree *tree1){
 int main() {
     
     //Initilizing the seed
-    generator.seed(time(0));
-    //generator.seed(1687079248); //(1686993888);
-    std::cout<<"[RG-RRT Main] Seed is :"<<time(0)<<std::endl;    
+    auto seed_value = 1687273447; //*/time(0);
+    generator.seed(seed_value);
+    std::cout<<"[PG-RRT Main] Seed is :"<<seed_value<<std::endl;    
     
     float iter_ts_pcost[4] = {0., 0., 0., 0.};
     for(int count=1; count<=1; count++) {

@@ -6,15 +6,25 @@
 
 void GMM::normalize(){
     float total_var = 0.f;
-    for (auto gauss: gauss_list){
+    float total_prob = 0.f;
+    
+    //AG: Bug fix to update the probability of Gaussian
+    for (auto &gauss: gauss_list){
         total_var += gauss.variance;
     }
-    for (auto gauss: gauss_list){
-        gauss.probability = 1 - gauss.variance/total_var;
+
+    for (auto &gauss: gauss_list){
+        gauss.probability = 1/gauss.variance; //(1 - gauss.variance/total_var);
+        total_prob += gauss.probability;
     }
+
+    for (auto &gauss: gauss_list){
+        gauss.probability = gauss.probability/total_prob;
+    }
+
     std::sort(std::begin(gauss_list), std::end(gauss_list),
               [](Gaussian const & a, Gaussian const & b) -> bool
-              { return a.variance < b.variance; } );
+              { return a.variance > b.variance; } );
     float global_probability = 0.f;
     for (auto &gauss: gauss_list){
         gauss.probability_start = global_probability;

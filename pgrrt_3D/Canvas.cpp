@@ -123,6 +123,7 @@ void Canvas::add_obs_from_octomap(std::string path_to_file) {
     std::cout<<"Metric min: "<<min_x<<","<<min_y<<","<<min_z<<std::endl;
     obsmap->getMetricMax(max_x,max_y,max_z);
     octomap::point3d max(max_x,max_y,max_z);
+    max_z += 4; 
     std::cout<<"Metric max: "<<max_x<<","<<max_y<<","<<max_z<<std::endl;
 
     bool unknownAsOccupied = true;
